@@ -1,0 +1,82 @@
+i {
+    margin:5px;
+}
+
+
+input[type="date"] {
+    border-radius: 10px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    font-weight: 600;
+    max-width: 800px;
+
+}
+
+.search-bar button {
+
+    top: 0;
+    right: 0;
+    background-color: #FF5A5F;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    height:32px;
+    width: 32px;
+    margin:3px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.search-bar input {
+    border-right: 1px solid #dcdcdc;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-icon {
+
+    transition: all 0.3s ease;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+.contenaire{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenaire > label {
+    margin-bottom:0;
+    color:black;
+}
+
+.contenaire > label:hover {
+    text-decoration:none;
+    color:black;
+    cursor: pointer;
+}
+

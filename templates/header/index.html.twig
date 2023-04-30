@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ymara{% endblock %}</title>
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('style/search-bar.css') }}">
+    <link rel="stylesheet" href="{{ asset("style/navbar.css") }} ">
+    <link rel="stylesheet"  href="{{ asset("style/dropdown-menu.css") }}" >
+
+{% endblock %}
+
+</head>
+<body>
+{% block body %}
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="#"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
+            <div class="search-bar">
+                <a class="contenaire">
+                    <input type="text"  name="location" id="location" placeholder="Où ?">
+                </a>
+                <div class="vr"></div>
+
+                <a class="contenaire" >
+                    <label for="check-in">Du</label>
+                    <input type="date"  name="check-in" id="check-in">
+                </a>
+
+                <a class="contenaire">
+                    <label for="check-out">Au</label>
+                    <input type="date"  name="check-out" id="check-out">
+                </a>
+
+                <div class="dropdown search-bar-item">
+                    <a onclick="dropdownFunction('#myDropdown','show')" class="dropbtn">Voyageurs</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="dropdown-item adults-container" >
+                            <div class="label adults-label">
+                                Adultes
+                            </div>
+                            <div class="adult-control">
+                                <button disabled="true" title="Decrement" class="decrement-btn adultes" onclick="decrement('#adult-value','.adultes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i></button>
+                                <a id="adult-value">0</a>
+                                <button title="Increment" class="increment-btn adultes" onclick="increment('#adult-value','.adultes')"><i class="fa-solid fa-plus fa-xs"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-item enfants-container" >
+                            <div class="label enfants-label">
+                                Enfants
+                            </div>
+                            <div class="enfants-control">
+                                <button disabled="true" title="decrement" class="decrement-btn enfants" onclick="decrement('#enfant-value','.enfants')" type="submit"><i class="fa-solid fa-xs fa-minus"></i></button>
+                                <a id="enfant-value">0</a>
+                                <button title="increment" class="increment-btn enfants" onclick="increment('#enfant-value','.enfants')"><i class="fa-solid fa-xs fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-item bebes-container" >
+                            <div class="label bebes-label">Bebes</div>
+                            <div class="bebes-control">
+                                <button disabled="true" title="decrement" class="decrement-btn bebes" onclick="decrement('#bebe-value','.bebes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i></button>
+                                <a id="bebe-value">0</a>
+                                <button title="increment" class="increment-btn bebes" onclick="increment('#bebe-value','.bebes')"><i class="fa-solid fa-xs fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="search-container">
+                    <button title="search" id="search-btn" class="search-icon" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+            <a id="logement" class="navbar-item" type="submit" >
+                Mettre mon logement sur Ymara
+            </a>
+
+            <div class="menu" >
+                <button class="navbar-item account-dropbtn" id="navbar-icons" onclick="dropdownFunction('#account','account-show')">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-user"></i>
+                </button>
+                <div id="account" class="dropdown-menu dropdown-account-content">
+                    <a class="dropdown-item dropdown-account" >Connexion</a>
+                    <a class="dropdown-item dropdown-account">Inscription</a>
+                    <hr/>
+                    <a class="dropdown-divider dropdown-account"></a>
+                    <a class="dropdown-item dropdown-account" >Mettre logement</a>
+                    <a class="dropdown-item dropdown-account">Aide</a>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/81363d573b.js" crossorigin="anonymous"></script>
+     <script src="{{  asset("script/dropdown-menu.js") }} "></script>
+    <script src="{{ asset("script/dropdown-buttons.js") }}"></script>
+    <script src="{{  asset("script/search-bar.js") }}"></script>
+{% endblock %}
+</body>
+</html>
