@@ -2,10 +2,6 @@ document.querySelector('#email').addEventListener('blur', validateEmail);
 document.querySelector('#password').addEventListener('blur', validatePassword);
 document.querySelector('#tel').addEventListener('blur', validatePhone);
 document.querySelector('#ddn').addEventListener('blur', validateAge);
-document.querySelector('#nom').addEventListener('blur', validateNom);
-document.querySelector('#prenom').addEventListener('blur', validatePrenom);
-
-
 document.querySelector('.btn1').addEventListener('click', validateEmail);
 document.querySelector('.btn1').addEventListener('click', validatePassword);
 document.querySelector('.btn1').addEventListener('click', validateAge);
