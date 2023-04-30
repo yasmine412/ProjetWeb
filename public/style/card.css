@@ -1,10 +1,7 @@
 .grand_conteneur{
     display: flex;
     gap: 3%;
-    margin-top: 20px;
-    margin-bottom: 60px;
-    margin-left:40px ;
-    margin-right: 30px;
+    margin: 30px;
     flex-wrap: wrap;
 
 }
