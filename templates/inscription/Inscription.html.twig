@@ -1,0 +1,102 @@
+{% extends 'connexion/connexion.html.twig' %}
+{% block title %}Inscription{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('style/inscription-style.css') }}">
+{% endblock %}
+
+{%  block body %}
+{{
+    parent()
+}}
+{% endblock %}
+{% block titreForm %}Bienvenu à <span style="color:#e61e4d">YMARA</span>{% endblock %}
+{% block class %}div-form {% endblock %}
+{% block name %}
+     <div class="form-row">
+         <div class="form-floating col-lg-7">
+             <input type="text" id="nom" name="nom" class="form-control my-3 " placeholder="Nom" required/>
+             <label for="nom" >Nom</label>
+             <div class="invalid-feedback">
+                 vérifier votre nom
+             </div>
+             <div class="valid-feedback">
+                 bien!
+             </div>
+         </div>
+     </div>
+     <div class="form-row">
+         <div class="form-floating col-lg-7">
+             <input type="text" id="prenom" name="prenom" class="form-control my-3 " placeholder="Prénom"  required/>
+             <label for="prenom" >Prénom</label>
+             <div class="invalid-feedback">
+                 vérifier votre prénom
+             </div>
+             <div class="valid-feedback">
+                 bien!
+             </div>
+         </div>
+     </div>
+{% endblock %}
+
+{% block form %}
+     <div class="form-row">
+         <div class="form-floating col-lg-7">
+
+             <select class="form-select my-3" id="countries" name="country" aria-label="floating label" required></select>
+             <label for="country">Pays</label>
+         </div>
+         <div class="invalid-feedback">
+             vérifier votre adresse mail
+         </div>
+         <div class="valid-feedback">
+             bien!
+         </div>
+     </div>
+     <div class="form-row">
+         <div class="form-floating col-lg-7">
+             <input type="tel" id="tel" name="telephone" class="form-control  my-3" placeholder="numero de téléphone" required>
+             <label for="tel" >téléphone</label>
+             <div class="valid-feedback">bien!</div>
+             <div class="invalid-feedback">vérifier votre numero de téléphone</div>
+         </div>
+     </div>
+     <div class="form-row">
+         <div class="form-floating col-lg-7">
+             <input type="text" id="ddn" name="ddn" class="form-control  my-3 " placeholder="Date de naissance"
+                    onfocus='this.type="date"' onblur='this.type="text"' required>
+             <label for="ddn" >Date de naissance</label>
+             <div class="invalid-feedback">
+                 Vous devez etre +18
+             </div>
+             <div class="valid-feedback">
+                 bien!
+             </div>
+         </div>
+
+     </div>
+     <div class="form-row">
+         <div class="form-group col-lg-7">
+             <button type="submit" class="btn1 mt-3 mb-5">S'inscrire</button>
+
+         </div>
+     </div>
+ {% endblock %}
+
+
+
+{% block javascripts %}
+<script src="{{ asset('node_modules/@popperjs/core/dist/umd/popper.js') }}"></script>
+<script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.js') }}"></script>
+
+    <script src="{{ asset('script/pays.js') }}"></script>
+    <script src="{{ asset('script/inscri.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+

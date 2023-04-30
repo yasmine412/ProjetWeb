@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: white;  /* fallback for old browsers */
+
+
+
+}
+.row{
+    background: white;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px rgba(37, 31, 31, 0.79);
+}
+#uiImg {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.btn1{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    color: white;
+    border-radius: 8px;
+    background-color: #e61e4d;
+    font-weight: bold;
+}
+.btn1:hover{
+    background: white;
+    border:2px solid #e61e4d;
+    color: #e61e4d;
+}
+small .text-reset{
+    border: none;
+    background: none;
+}
+.div-form{
+    overflow-y:scroll;
+    height: 558.8px;
+
+}
+.drow{
+    height: 558.8px;
+
+}
+.logo-form{
+    height: 70px;
+    width: 55px;
+}

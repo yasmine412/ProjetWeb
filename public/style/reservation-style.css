@@ -1,0 +1,43 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: black;
+}
+hr{
+    color: black;
+    opacity: 1;
+}
+body{
+    font-family:sans-serif;
+}
+.nav-container{
+    display: flex;
+    margin-left: 30px;
+    padding-left: 10px;
+    flex-wrap: nowrap;
+}
+
+.nav-link {
+    position: relative;
+}
+.nav-link:after{
+    content:'';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: #e61e4d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.nav-link:hover{
+    color: #e61e4d;
+}
+.nav-link:hover::after{
+    opacity: 1;
+}

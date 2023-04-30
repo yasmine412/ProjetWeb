@@ -1,0 +1,39 @@
+
+.carousel-item{
+
+    background: #7d7d7d;
+    height: 300px;
+
+}
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: 10px;
+
+}
+
+.bi.bi-arrow-right-circle-fill {
+    font-size: 25px;
+
+}
+.bi.bi-arrow-left-circle-fill {
+    font-size: 25px;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+.carousel:not(:hover) .carousel-control-prev,
+.carousel:not(:hover) .carousel-control-next,
+.carousel:not(:hover) .carousel-indicators {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next,
+.carousel:hover .carousel-indicators {
+    opacity: 1;
+}
