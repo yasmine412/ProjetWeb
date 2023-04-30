@@ -1,0 +1,39 @@
+* {
+    background-color: white;
+
+}
+
+.footer_container {
+    margin: 0;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+}
+
+#myContent1 {
+    padding-top: 10px;
+}
+
+#myContent2 {
+
+    padding: 50px;
+
+}
+
+
+#myToggle1 {
+    font-weight: bold;
+}
+
+li:hover {
+    text-decoration: underline;
+
+}
+
+h5 {
+    padding-bottom: 10px;
+}

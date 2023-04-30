@@ -1,0 +1,242 @@
+<div class="form-body" xmlns="http://www.w3.org/1999/html">
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Mettre mon logemet sur Ymara</h3>
+
+                <p>Remplir le formulaire suivant</p>
+                <form class="requires-validation" novalidate>
+
+                    <fieldset>
+
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label class="form-label" for="type">Type du logement proposé: </label>
+                            <br>
+                            <input type="radio" class="btn-check" name="type" id="maison" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="maison">
+                                <i class="bi bi-house-door"></i>
+                                <span>Maison</span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="type" id="appartement" autocomplete="off"
+                                   required>
+                            <label class="btn btn-sm btn-outline-secondary" for="appartement">
+                                <i class="bi bi-building"></i>
+                                <span>Appartement</span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="type" id="maison_hôtes" autocomplete="off"
+                                   required>
+                            <label class="btn btn-sm btn-outline-secondary" for="maison_hôtes">
+                                <i class="bi bi-house"></i>
+                                <span>Maison d'hôtes</span>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="type" id="ferme" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="ferme">
+                                <span>Ferme</span></label>
+
+                            <input type="radio" class="btn-check" name="type" id="hôtel" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="hôtel">
+                                <i class="bi bi-bank"></i>
+                                <span>Hôtel</span></label>
+
+                            <div class="valid-feedback mv-up">Type de logement sélectionné!</div>
+                            <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de logement!</div>
+
+                        </div>
+
+
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label class="form-label">Type de l'espace proposé: </label>
+                            <select class="form-select " required>
+                                <option selected disabled value="">Espace</option>
+                                <option value="entier">Un logement entier</option>
+                                <option value="privée">Une chambre privée</option>
+                                <option value="partagée">Une chambre partagée</option>
+                            </select>
+                            <div class="valid-feedback mv-up">Type de l'espace sélectionné!</div>
+                            <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de l'espace!</div>
+
+                        </div>
+                        <div class="col-md-12 mb-4 mt-4">
+
+                        <div class="row">
+                        <div class="col-md-3 " >
+                            <div class="col-md-12">
+                                <label class="form-label" for="numero">N°logement:</label>
+                                <select class="form-control" id="numero" name="numero"  required>
+                                </select>
+                            </div>
+
+                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
+                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
+                        </div>
+
+                            <div class="col-md-9" >
+                            <div class="col-md-12">
+                                <label class="form-label" for="rue">Rue:</label>
+                                <input class="form-control" type="text" name="rue" placeholder="Rue"
+                                       required>
+
+                            </div>
+
+                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
+                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
+                            </div></div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+                            <div class="col-md-12">
+                            <label for="country">Pays:</label>
+                                <select class="form-control" id="countries" name="country" required></select>
+                            </div>
+
+                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
+                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
+                        </div>
+
+                                <div class="col-md-9 ">
+                                    <div class="col-md-12">
+                                        <label class="form-label" for="Ville">Ville:</label>
+                                        <input class="form-control" type="text" name="ville" placeholder="Ville"
+                                               required>
+
+                                    </div>
+
+                                  </div>
+                            </div></div>
+
+
+
+                    </fieldset>
+                    <fieldset>
+                        <div class="col md-12">
+                            <label class="form-label">Informations principales:</label>
+
+                               <div id="myCounter" class="count-content">
+                                <div class="item-container">
+
+                                    <div class="label item-label">
+                                        Chambres
+                                    </div>
+                                    <div class="item-control">
+                                        <button disabled="disabled" type="button" title="Decrement"
+                                                class="decrement-btn item" id="chambre-decrement"
+                                                onclick="decrement('#chambre')"><i class="fa-solid fa-xs fa-minus"></i>
+                                        </button>
+                                        <a id="chambre-value">0</a>
+                                        <button type="button" title="Increment" class="increment-btn item"
+                                                id="chambre-increment" onclick="increment('#chambre')"><i
+                                                    class="fa-solid fa-plus fa-xs"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class=" item-container">
+                                    <div class="label item-label">
+                                        Salles de bain
+                                    </div>
+                                    <div class="item-control">
+                                        <button disabled="disabled" type="button" title="Decrement"
+                                                class="decrement-btn item" id="salle-decrement"
+                                                onclick="decrement('#salle')"><i class="fa-solid fa-xs fa-minus"></i>
+                                        </button>
+                                        <a id="salle-value">0</a>
+                                        <button type="button" title="Increment" class="increment-btn item"
+                                                id="salle-increment" onclick="increment('#salle')"><i
+                                                    class="fa-solid fa-xs fa-plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="item-container">
+                                    <div class="label item-label">Lits</div>
+                                    <div class="item-control">
+                                        <button disabled="disabled" type="button" title="Decrement"
+                                                class="decrement-btn item" id="lit-decrement"
+                                                onclick="decrement('#lit')"><i class="fa-solid fa-xs fa-minus"></i>
+                                        </button>
+                                        <a id="lit-value">0</a>
+                                        <button type="button" title="Increment" class="increment-btn item"
+                                                id="lit-increment" onclick="increment('#lit')"><i
+                                                    class="fa-solid fa-xs fa-plus"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-4 mt-4 ">
+                            <label class="form-label" for="equipement">Equipements: </label>
+                            <br>
+                            <input type="checkbox" class="btn-check" name="equipement" id="wifi" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="wifi">
+                                <i class="bi bi-wifi"></i>
+                                Wifi
+                            </label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="television" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="television">
+                                <i class="bi bi-tv"></i>
+                                <span>Télévision</span>
+                            </label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="climatisation"
+                                   autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="climatisation">
+                                <i class="bi bi-thermometer-snow"></i>
+                                <span>Climatisation</span>
+                            </label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="parking" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="parking">
+                                <i class="bi bi-p-car-front-fill"></i>
+                                <span>Parking</span>
+                            </label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="cuisine" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="cuisine">
+                                <i class="bi bi-cup"></i>
+                                <span>Cuisine</span></label>
+
+                        </div>
+
+
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label for="formFileDisabled" class="form-label">Veuillez saisir des images de votre
+                                logement</label>
+                            <input class="form-control" type="file" id="formFileDisabled" multiple required>
+                        </div>
+
+                    </fieldset>
+
+
+                    <fieldset>
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label class="form-label" for="titre">Titre de l'annonce:</label>
+                            <input class="form-control" type="text" name="titre" placeholder="Titre de l'annonce"
+                                   required>
+
+                        </div>
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label class="form-label">Description:</label>
+                            <div>
+                                <TEXTAREA class="form-control" placeholder="Description" NAME="description" ROWS=5 COLS=150> </TEXTAREA>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-4 mt-4">
+                            <label class="form-label" for="typeNumber">Prix par nuit:</label>
+                            <input type="text" id="typeNumber" class="form-control" placeholder="Prix" required/>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="form-button ">
+                        <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

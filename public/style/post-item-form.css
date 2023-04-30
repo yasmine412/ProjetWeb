@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+}
+
+html, body {
+    height: 100%;
+    background-color: white;
+
+}
+
+
+.form-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.form-holder .form-content {
+    position: relative;
+    text-align: center;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-content .form-items {
+    border: 3px solid black;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+
+    border-radius: 10px;
+    text-align: left;
+
+
+}
+
+
+.form-content h3 {
+    color: black;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-content h3.form-title {
+    margin-bottom: 30px;
+}
+
+.form-content p {
+    color: black;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+
+.form-content label {
+    color: black;
+}
+
+
+
+.form-content select {
+    width: 100%;
+    padding: 2px 20px;
+    text-align: left;
+    border: 2px;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    margin-top: 1px;
+    margin-bottom: 16px;
+}
+
+
+.btn-primary {
+    background-color: #6C757D;
+    outline: none;
+    border: 0;
+    box-shadow: none;
+    float:right;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+
+.form-content textarea {
+    position: static !important;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #fff;
+    border-color: darkgrey;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    margin-bottom: 14px;
+}
+
+
+input[type="text"] {
+    position: static !important;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #fff;
+    border-color: darkgrey;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    margin-bottom: 14px;
+}
+
+
+#map {
+    width: 400px;
+    height: 200px;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #6C757D;
+    color: #ffffff;
+    box-shadow: 0 15px 45px rgb(24, 249, 141, 0.2);
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #6C757D;
+    color: #ffffff;
+    box-shadow: 0 15px 45px rgb(24, 249, 141, 0.2);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input-group {
+    clear: both;
+    margin: 15px 0;
+    position: relative;
+}
+
+.input-group input[type='button'] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: #eeeeee;
+    min-width: 38px;
+    width: auto;
+    transition: all 300ms ease;
+}
+ button[disabled='disabled'] {
+
+    cursor: not-allowed;
+}
+
+
+fieldset {
+
+    border: 1px solid #888;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    border-radius: 25px;
+    padding: 20px 50px 20px 50px;
+    margin: 50px;
+
+
+}
+
+
+.form-label {
+    color: black;
+    padding: 2px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.counter input-group {
+    position: center;
+    display: flex;
+
+
+}
+
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.count-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.item-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+}
+
+.item-control {
+    display: flex;
+    align-items: center;
+}
+
+.item-label {
+    display: flex;
+
+}
+
+
+
+
+
+.label {
+    font-weight: 500;
+}
+
+
+
+.decrement-btn, .increment-btn {
+    border-radius: 70%;
+
+}
+
+input[type="file"] {
+    background-color: white;
+    padding: 0;
+    height: 31px;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+form-label {
+    padding-left: 50px;
+}
+
