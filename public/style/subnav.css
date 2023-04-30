@@ -1,0 +1,421 @@
+.subnav {
+    display:flex;
+    justify-content: flex-end;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+
+#open-modal {
+
+    padding: 12px;
+    border: 1px solid #e0E0E0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+
+
+}
+
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0,0.4); /* Black with opacity */
+
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 1.8% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    /* margin-top:7px; */
+    width:780px;
+    height:537px;
+    border-radius:9.5px;
+}
+
+/* Close button */
+.close {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.modal-backdrop.fade.show {
+    display:none;
+}
+
+.modal.fade.show {
+    margin: 0 0 0 0;
+    overflow: hidden;
+}
+
+.modal-body {
+    overflow-y:scroll;
+}
+
+
+
+.modal-dialog {
+    position:relative;
+    display:table;
+}
+
+.header {
+    border-bottom: 1px solid #e0E0E0;
+    height: 55px;
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: 650;
+    margin-right:350px;
+}
+
+.fourchette-prix {
+    height:250px;
+}
+
+.modal-item {
+    border-bottom: 1px solid #e0E0E0;
+
+}
+
+.modal-body > div {
+
+    margin-top: 20px;
+    padding: 10px;
+}
+
+div > label {
+    margin-top: 30px;
+}
+
+.type-logement > label:first-child {
+    margin-top: 50px;
+}
+
+.number-selector {
+    display: flex;
+    align-items: center;
+}
+
+.number-boxes {
+    display: flex;
+    align-items: center;
+}
+
+.number-boxes span {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    margin-right: 7px;
+    text-align: center;
+    padding: 7px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border:1px solid #e0E0E0;
+    cursor: pointer;
+}
+
+.number-boxes span:hover {
+    color: black;
+    background-color: #ffffff;
+    border:1px solid #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+.number-boxes span.selected {
+
+    background-color: #000000;
+    color: white;
+    border:1px solid #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+.tout {
+    width:80px;
+    padding-bottom:9px;
+}
+
+.chambres-lits > div
+{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.chambres-lits > div > div {
+
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.type {
+    margin-top: 30px;
+    height:115px;
+    width:166px;
+    border:1px solid #e0E0E0;
+    margin-right:20px;
+    border-radius:15px;
+    display:flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left:10px;
+    margin-bottom: 30px;
+}
+.type-propriete {
+    display:flex;
+    justify-content: flex-start;
+    font-weight:600;
+}
+
+.type:hover {
+    border:1px solid #000000;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.type.selected-type {
+    border:2px solid #000000;
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: auto auto;
+}
+
+.equipement-base > h6 {
+    margin-top: 30px;
+
+}
+
+.equipement-base {
+    margin-left:0;
+}
+#toggleOptions,#accessOptions {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration-line:underline;
+    cursor: pointer;
+}
+
+.grid-item {
+    margin-left:0;
+    width:349px;
+    height: 74px;
+    display:flex;
+    align-items:end;
+}
+
+
+.hide {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #000000;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.option-reservation {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+.description {
+    margin-top: 5px;
+}
+
+.description > span:first-child {
+    font-weight: 500;
+}
+
+.btn-secondary {
+    background-color: black;
+}
+
+/* Style the track */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* Style the thumb */
+input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #FF5A5F;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
+
+/* Hide the default styling */
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* Set the thumb position based on the value */
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 1px;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #ddd;
+    border-radius: 2px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 2.6px;
+}
+
+input[type=range]::-ms-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+    margin-top: 0;
+    /*Needed to keep the Edge thumb centred*/
+}
+
+#prix-affiche {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+#price {
+    margin-top: 50px;
+}
+
+#price-div {
+    margin-top: 30px;
+}
+
+.last {
+    border-bottom:none;
+}
+
+
+
+
+
+

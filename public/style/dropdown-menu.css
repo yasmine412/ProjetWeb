@@ -1,0 +1,186 @@
+.dropbtn {
+    color:black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown > a:hover {
+    text-decoration: none;
+}
+
+.dropdown {
+    display: block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.dropdown-item {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: white;
+    color:black;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    color:black;
+}
+
+.show {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* left:-100%;
+     top:0;
+     margin:25px;
+     padding:0;
+     display:block;
+     right:100%; */
+    right: 0;
+    left: auto;
+    margin:25px;
+
+
+}
+
+#myDropdown {
+    width: 400px;
+    height: 400px;
+    padding : 30px;
+    font-size: 16px;
+    text-align:center;
+    margin-right:0;
+}
+
+
+.adults-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+}
+
+.adult-control {
+    display:flex;
+    align-items: center;
+}
+
+.adults-label {
+    display:flex;
+
+}
+
+.enfants-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+}
+
+.enfants-control {
+    display:flex;
+    align-items: center;
+}
+
+.enfants-label {
+    display:flex;
+}
+
+.bebes-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.bebes-control {
+    display:flex;
+    align-items: center;
+}
+
+.bebes-label {
+    display:flex;
+}
+
+.dropdown-item button {
+    border: 1px solid darkgrey;
+    background-color: #ffffff;
+    padding: 3px;
+    cursor: pointer;
+    color:grey;
+}
+
+.dropdown-item button:hover {
+    border: 1px solid black;
+}
+
+.dropdown-item button:disabled {
+    color:gainsboro;
+    border: 1px solid gainsboro;
+    cursor:not-allowed;
+}
+
+
+.dropdown-item:hover {
+    cursor: pointer;
+}
+
+.label {
+    font-weight:500;
+}
+
+.dropdown-item.dropdown-account {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown-item.dropdown-account:active {
+    background-color: #f1f1f1;
+    color:black;
+}
+
+
+
+.account-show {
+    display: block;
+    border-radius: 10px;
+    right: 4px;
+    left:auto;
+    margin-top:4px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border:none;
+    margin-right:52px;
+    padding: 8px 5px;
+    width:220px;
+}
+
+
+
