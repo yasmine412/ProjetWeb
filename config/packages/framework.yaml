@@ -14,7 +14,7 @@ framework:
         storage_factory_id: session.storage.factory.native
 
     #esi: true
-    #fragments: true
+    #reservation: true
     php_errors:
         log: true
 
