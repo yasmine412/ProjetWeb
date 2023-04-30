@@ -1,0 +1,211 @@
+
+<
+<div class="reservation">
+
+    <div class="RightSide">
+        <div class="containerRow containerCal-item" style="align-content: space-between;">
+            <div  class="containerCal">
+                <h3>le titre </h3>
+                <p class="texte" style="font-size: 13px;">nb1 voyageurs nb2 chambres nb3 lits nb4 salles de bain et nb5 toilette</p>
+            </div>
+            <div class="user">
+                <img width="45px" height="40px" src="{{ asset('assets/user.svg')}}">
+            </div>
+        </div>
+        <div class="containerCal containerCal-item texte">
+            <div class="containerRow">
+                <img width="30px" src="{{ asset('assets/piscine.svg')}}">
+                <b class="texte">particularite 1</b>
+            </div>
+            <div class="texte" style="font-size: 13px;">description de la particularite</div>
+        </div>
+        <div class="containerRow containerCal-item">
+            <img width="30px" src="{{ asset('assets/calendar.svg')}}">
+
+            <b>Annulation gratuite pendant 48 heures.</b>
+        </div>
+
+
+
+
+        <div class="descrip containerCal-item">
+            <u class="texte">dscription:</u>
+            <div class="texte-partiel">
+                <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez</p>
+                <button id="btn-en-savoir-plus"><u>En savoir plus></u></button>
+                <div id="texte-complet" >
+                    <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez le repos et la paix, vous allez adorer cet endroit :-)
+                        Le logementBianca est un château rustique de 120 ans à la recherche d'une vieille maison située à Xewkija, Gozo. </p>
+                </div>
+            </div>
+        </div>
+        <div class="equipement containerCal-item2">
+            <u>Ce que propose ce logement </u><br>
+            <div class="containerRow containerCal-item2">
+                <img width="30px" src="{{ asset('assets/cuisine.png')}}">
+                cuisine
+            </div>
+            <div class="containerRow containerCal-item2">
+                <img width="30px" src="{{ asset('assets/wifi.png')}}">
+                wifi
+            </div>
+            <div class="containerRow containerCal-item2">
+                <img width="30px" src="{{ asset('assets/parking.png')}}">
+                Parking gratuit sur place
+            </div>
+            <div class="containerRow containerCal-item2">
+                <img width="30px" src="{{ asset('assets/climatisation.png')}}">
+                Climatisation : système split sans évacuation
+            </div>
+            <div class="containerRow containerCal-item2">
+                <img width="30px" src="{{ asset('assets/lave-vaisselle.png')}}"">
+                Lave-vaisselle
+            </div>
+            <!-- le bouton qui affiche tous les aquipements -->
+            <button id="open-modal">afficher tous les quipements </button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close"><i class="fa-solid fa-xmark fa-xs"></i></span>
+                    <!-- <span class="close">&times;</span> -->
+                    <p>Modal content goes here.</p>
+                    <div>
+                        <div class="containerRow containerCal-item2">
+                            <img width="30px" src="{{ asset('assets/cuisine.png')}}">
+                            cuisine
+                        </div>
+                        <div class="containerRow containerCal-item2">
+                            <img width="30px" src="{{ asset('assets/wifi.png')}}">
+                            wifi
+                        </div>
+                        <div class="containerRow containerCal-item2">
+                            <img width="30px" src="{{ asset('assets/parking.png')}}">
+                            Parking gratuit sur place
+                        </div>
+                        <div class="containerRow containerCal-item2">
+                            <img width="30px" src="{{ asset('assets/climatisation.png')}}">
+                            Climatisation : système split sans évacuation
+                        </div>
+                        <div class="containerRow containerCal-item2">
+                            <img width="30px" src="{{ asset('assets/lave-vaisselle.png')}}">
+                            Lave-vaisselle
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="LeftSide texteR">
+        <p>  prix par nuit</p>
+        <div class="select">
+            <div  class="LaDate">
+                <div class="Arrivee">
+                    <p class="texteR" >ARRIVEE</p>
+                    <label for="date"></label><input type="date" id="date">
+                </div>
+                <div class="Depart">
+                    <p class="texteR">DEPART</p>
+                    <input type="date" id="date">
+                </div>
+            </div>
+
+            <div class="dropdown search-bar-item ">
+                <div class="texteCenter">
+                    <a onclick="dropdownFunction('#myDropdown','show')" class="dropbtn texteR  ">Voyageurs
+                        <p class="texteR "><a id="voyageur-value"> 0</a>voyageurs</p>
+                    </a>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="dropdown-item adults-container" >
+                        <!--  <label class="adults-label" for="adults">Adultes</label> -->
+                        <div class="label adults-label">
+                            Adultes<br>
+                            13 ans et plus
+                        </div>
+                        <div class="adult-control">
+                            <button disabled="true" title="Decrement" class="decrement-btn adultes" onclick="decrement('#adult-value','.adultes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                <img width=30px src="{{ asset('assets/minus.svg')}}">
+                            </button>
+                            <a id="adult-value">0</a>
+
+                            <button title="Increment" class="increment-btn adultes" onclick="increment('#adult-value','.adultes')"><i class="fa-solid fa-plus fa-xs"></i>
+                                <img width=30px src="{{ asset('assets/plus.svg')}}">
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item enfants-container" >
+                        <div class="label enfants-label">
+                            Enfants<br>
+                            De 2 à 12 ans
+                        </div>
+                        <div class="enfants-control">
+
+                            <button disabled="true" title="decrement" class="decrement-btn enfants" onclick="decrement('#enfant-value','.enfants')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                <img width=30px src="{{ asset('assets/minus.svg')}}">
+                            </button>
+                            <a id="enfant-value">0</a>
+                            <button title="increment" class="increment-btn enfants" onclick="increment('#enfant-value','.enfants')"><i class="fa-solid fa-xs fa-plus"></i>
+                                <img width=30px src="{{ asset('assets/plus.svg')}}">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item bebes-container" >
+                        <div class="label bebes-label">
+                            Bébés<br>
+                            - de 2 ans
+                        </div>
+                        <div class="bebes-control">
+                            <button disabled="true" title="decrement" class="decrement-btn bebes" onclick="decrement('#bebe-value','.bebes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                <img width=30px src="{{ asset('assets/minus.svg')}}">
+                            </button>
+                            <a id="bebe-value">0</a>
+                            <button title="increment" class="increment-btn bebes" onclick="increment('#bebe-value','.bebes')"><i class="fa-solid fa-xs fa-plus"></i>
+                                <img width=30px src="{{ asset('assets/plus.svg')}}">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div><button style="width: 80%; margin-left: 1cm; margin-top: 0.5cm;" type="button" class="btn btn-danger">Réserver</button></div>
+        <div class="texte">
+            <p class="texteR" style="margin-bottom: 0;"> Aucun montant ne vous sera</p>
+            <p class="texteR" style="margin-top: 0;"> debité pour le moment </p>
+        </div>
+        <div class="prix">
+            <div class="nbJour">
+                <div style="justify-content: space-between;" class="containerRow texteR" >
+                    <p> PRIX x NBjour</p>
+                    <p> Total prix</p>
+                </div>
+
+                <div style="justify-content: space-between;" class="containerRow texteR" >
+                    <p> Frais de service <br> YMARA (10%)</p>
+                    <p> frais service </p>
+                </div>
+
+            </div>
+            <div style="justify-content: space-between;" class="prixTOT texteR">
+                <p><b>TOTOAL</b></p>
+                <p><b>prix total</b></p>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>

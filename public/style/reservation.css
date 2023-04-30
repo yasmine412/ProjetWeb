@@ -1,0 +1,391 @@
+body{
+    display: flex;
+    justify-content: center;
+    padding:6cm;
+}
+
+.descrip{
+    border-bottom: 0.2px solid rgb(200, 197, 197);
+    border-top: 0.2px solid rgb(200, 197, 197);
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    font-family: system-ui;
+}
+
+.photo1 img{padding: 0.2em;}
+.rounded{
+    display: flex;
+    flex-direction: row;
+}
+.img-container{
+    border-radius: 25px;
+    padding: 0 0 0 0;
+
+    /*position: absolute;
+    z-index: 1;*/
+}
+.afficher{
+    position: absolute;
+    z-index: 2;
+}
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width:50%;
+
+}
+.containerCal-item{
+    padding: 20px;
+}
+.containerCal-item2{
+    padding: 10px;
+}
+.LeftSide{
+    border-radius: 25px;
+    border: 1px solid #e0E0E0;
+    padding: 0.6cm;
+
+    height: fit-content;
+    box-shadow: 0px 20px 20px 0px rgb(0,0,0,0.1);
+
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+}
+#coeur {
+    cursor: pointer;
+    width:20px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.fav {  display: flex;
+    flex-direction: row;
+    align-self: self-end;
+}
+.imag{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.boximg{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.containerRow{
+    display: flex;
+    flex-direction: row;
+}
+.dd{
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    border-color: rgb(57, 56, 56);
+    border-width: thin;
+}
+.Depart{
+    display: flex;
+    flex-direction: column;
+
+    border-left: 1px solid rgb(57, 56, 56);
+}
+.containerComm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 600px;
+    height: 250px;
+}
+.containerCal
+{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.2px solid rgb(200, 197, 197);
+    justify-content: space-around;
+
+
+}
+.equipement{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    border-bottom: 0.2px solid rgb(200, 197, 197);
+
+
+}
+.containerC{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.user{
+    margin-top: 0.3cm;
+    margin-left: 0.3cm;
+    border-bottom: 0.2px solid rgb(200, 197, 197);
+
+}
+.reservation{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 1cm;
+
+}
+.Apropos{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.reserver{
+    display: flex;
+    flex-direction: column;
+    margin-top:3cm;
+    border-style:ridge;
+    border-radius: 30px;
+    border-color: rgb(57, 56, 56);
+    height: 65%;
+    border-width: thin;
+    padding: 0.5cm;
+}
+.select{
+
+
+    border-radius: 25px;
+    border-color: #605e5e;
+    border-style: ridge;
+    border-width: thin;
+    height: 19%;
+    align-content: center;
+}
+.LaDate{
+    display: flex;
+    flex-direction: row;
+}
+.texte{
+
+    font-size: 9x;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 0;
+
+
+}
+.texteR{
+    font-size: 9x;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 10px;
+
+}
+.texteCenter{
+    display: flex;
+    justify-content:center;
+    padding-left: 0;
+    flex-direction: column;
+}
+.texte p{text-align: center;}
+.containerUser{
+    display: flex;
+    flex-direction: column;
+}
+
+.prix{
+    margin-top: 1.2cm;
+}
+.prixTOT{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    border-top: 0.2px solid rgb(200, 197, 197);;
+}
+
+.dropbtn {
+    color:black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    /*align-items: center; */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.dropdown-item {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    color:black;
+}
+
+.show {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#myDropdown {
+    width: 400px;
+    height: 400px;
+    padding : 30px;
+    font-size: 16px;
+    text-align:center;
+}
+
+.adults-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+}
+
+.adult-control {
+    display:flex;
+    align-items: center;
+}
+
+.adults-label {
+    display:flex;
+
+}
+
+.enfants-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkgrey;
+}
+
+.enfants-control {
+    display:flex;
+    align-items: center;
+}
+
+.enfants-label {
+    display:flex;
+}
+
+.bebes-container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.bebes-control {
+    display:flex;
+    align-items: center;
+}
+
+.bebes-label {
+    display:flex;
+}
+
+.dropdown-item button {
+    border: 1px solid darkgrey;
+    background-color: #ffffff;
+    padding: 3px;
+    cursor: pointer;
+    color:grey;
+}
+
+.dropdown-item button:hover {
+    border:1px solid black;
+}
+
+.label {
+    font-weight:500;
+}
+
+/* en savoir plus */
+#texte-complet {
+    display: none;
+}
+#btn-en-savoir-plus {
+    background-color: #ffffff;
+    border: #ffffff;
+    display: block;
+}
+
+
+/* pour le bouton qui affiche tous les aquipements */
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0,0.4); /* Black with opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#open-modal{
+    width:50%;
+    height: 1cm;
+    align-content: center;
+    border-radius: 25px;
+    margin-top: 0.7cm;
+
+
+}
+
+
+
+
+
