@@ -3,20 +3,16 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body{
     background:White;
 }
-.row{height: 60vh;
+.row{
     background: white;
     border-radius: 30px;
     box-shadow: 12px 12px 22px grey;
 }
 .drow{
-    height: 100%;
-}
-#formulaire{
-    margin-top: 10vh;
+    height: 578.8px;
 }
 #uiImg{
     border-top-left-radius: 30px;
