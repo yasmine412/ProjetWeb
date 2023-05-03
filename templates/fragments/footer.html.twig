@@ -1,5 +1,5 @@
 <footer class="footer_container" id="myContent">
-    <footer id="myContent1" class="footer1">
+    <footer id="myContent1" class="content footer1">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">© 2023 Ymara, Inc</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">·</a></li>
@@ -17,7 +17,7 @@
                             class="bi bi-chevron-bar-up"></i> </a></li>
         </ul>
     </footer>
-    <footer id="myContent2" class="row row-cols-1 row-cols-sm-2 row-cols-md-5 border-top">
+    <footer id="myContent2" class="content row row-cols-1 row-cols-sm-2 row-cols-md-5 border-top">
         <p id="myToggle2"><i class="bi bi-x-circle"></i></p>
         <div class="col mb-3">
             <h5>Assitance</h5>
@@ -70,4 +70,8 @@
         </div>
     </footer>
 </footer>
+{% block javascripts %}
+    <script src="{{ asset('script/footer.js') }}"></script>
+
+{% endblock %}
 

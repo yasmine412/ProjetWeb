@@ -3,6 +3,9 @@ var toggleDown = document.getElementById('myToggle1');
 var toggleQuit = document.getElementById('myToggle2');
 var content1 = document.getElementById('myContent1');
 var content2 = document.getElementById('myContent2');
+
+const content = document.querySelectorAll('.content');
+
 content2.style.display = 'none';
 
 toggleDown.addEventListener('click', function () {
@@ -22,4 +25,12 @@ toggleQuit.addEventListener('click', function () {
 
             bodyItems[i].style.opacity = 1;
         }*/
+});
+
+document.addEventListener("click", (event) => {
+    let isClickInside = content1.contains(event.target) || content2.contains(event.target);
+    if (!isClickInside) {
+        content1.style.display = '';
+        content2.style.display = 'none';
+    }
 });
