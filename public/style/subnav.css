@@ -1,8 +1,9 @@
 .subnav {
     display:flex;
     justify-content: flex-end;
-    margin-top:30px;
+    margin-top: 3vh;
     margin-bottom: 30px;
+
 }
 
 #open-modal {

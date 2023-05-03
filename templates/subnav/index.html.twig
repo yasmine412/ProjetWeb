@@ -1,18 +1,15 @@
 
 
-{% include 'header/index.html.twig' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{  asset("style/subnav.css") }}" >
 
-{% endblock %}
+
 
 
 {% block body %}
     <div class="subnav">
         <button id="open-modal" data-toggle="modal"  data-target="#myModal">
             <i class="fa-solid fa-sliders "></i>
-            Filters
+            Filtres
         </button>
         <div id="myModal" class="modal fade" >
             <div class="modal-dialog">
@@ -506,6 +503,4 @@
     </div>
 {% endblock %}
 
-{%  block javascripts %}
-<script src="{{  asset("script/subnav.js") }}"></script>
-{% endblock %}
+
