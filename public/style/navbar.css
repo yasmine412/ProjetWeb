@@ -3,14 +3,20 @@ header {
     border-bottom: 1px solid #ebebeb;
     padding:6px;
     color:#484848;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    /*
+      z-index: 1;
+     margin: 0;
+     position: fixed;
+     width: 100%;
+     left: 0;
+     right: 0;
+     pointer-events: none;
+     height:15vh;
+    */
 }
-
-/*nav {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 
 
 nav a {
@@ -40,9 +46,6 @@ nav form {
     align-items: center;
 }
 
-nav label {
-    /*margin-right: 10px;*/
-}
 
 nav input[type="text"],
 nav input[type="date"],
@@ -86,7 +89,7 @@ button:disabled {
 #navbar-icons {
     border: 1px solid #e0E0E0;
     color:grey;
-    margin-right: 45px;
+    margin-right: 7vh;
 }
 
 

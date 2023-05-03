@@ -12,9 +12,10 @@
     border: 1px solid #e0E0E0;
     background-color: #ffffff;
     border-radius: 10px;
-    margin-right: 10px;
+    margin-right: 10vh;
     font-size: 12px;
     font-weight: 600;
+    width: 90px;
 
 
 }
