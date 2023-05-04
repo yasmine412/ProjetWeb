@@ -5,7 +5,7 @@
     position: sticky;
     bottom: 0;
     z-index: 20;
-    width: 100%;
+    width: 200vh;
 }
 
 
@@ -34,4 +34,8 @@ li:hover {
 
 h5 {
     padding-bottom: 10px;
+}
+
+.nav-item {
+    cursor:pointer;
 }
