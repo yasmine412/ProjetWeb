@@ -101,7 +101,7 @@ function decrement(inputField,inputClass) {
 
 
 
-
+// en savoir plus
 const btnEnSavoirPlus = document.getElementById('btn-en-savoir-plus');
 const texteComplet = document.getElementById('texte-complet');
 
@@ -109,6 +109,8 @@ btnEnSavoirPlus.addEventListener('click', function() {
     texteComplet.style.display = 'block';
     btnEnSavoirPlus.style.display = 'none';
 });
+
+
 
 
 /* pour le bouton qui affiche tous les aquipements */
@@ -119,26 +121,70 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("open-modal");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+//var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+/*span.onclick = function() {
+    modal.style.display = "none";
+}*/
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
+
+
+// When the user clicks anywhere outside of the modal, close it
+/*window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}*/
+
+
+
+
+
+/* pour le bouton qui affiche tous les aquipements */
+// Get the modal
+var modal1 = document.getElementById("myModal1");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("open-modal1");
+
+// Get the <span> element that closes the modal
+/*var span1 = document.getElementsByClassName("close")[1];
+
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+span1.onclick = function() {
+    modal1.style.display = "none";
 }
+
+ */
+// When the user clicks the button, open the modal
+btn1.onclick = function() {
+    modal1.style.display = "block";
+}
+
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+
 }
 
 
+
+
+
+//commentaire
 const commentTextarea = document.querySelector('#floatingTextarea2');
 const submitBtn = document.querySelector('btn-outline-secondary');
 
@@ -149,3 +195,47 @@ commentTextarea.addEventListener('keyup', () => {
         submitBtn.disabled = false;
     }
 });
+
+
+
+
+/* calendrier personalisé
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        selectable: true,
+        selectHelper: true,
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,basicWeek,basicDay'
+        },
+        eventRender: function(event, element) {
+            if (event.available == false) {
+                element.css('text-decoration', 'line-through');
+                element.css('color', '#9e9e9e');
+                element.draggable = false;
+            }
+        },
+        events: [
+            {
+                title: 'Disponible',
+                start: '2023-05-01',
+                end: '2023-05-03',
+                available: true
+            },
+            {
+                title: 'Non disponible',
+                start: '2023-05-05',
+                end: '2023-05-07',
+                available: false
+            }
+        ]
+    });
+});*/
+
+
+// le clique sur le boutton reserver
+function redirectToReservationController() {
+    window.location.href = "/reservation";
+}

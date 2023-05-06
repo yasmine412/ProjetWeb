@@ -13,20 +13,37 @@ body{
 }
 
 .photo1 img{padding: 0.2em;}
+.ph1{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.ph3{
+    border-top-right-radius: 12px;
+}
+.ph5{
+    border-bottom-right-radius: 12px;
+}
+
 .rounded{
     display: flex;
     flex-direction: row;
 }
 .img-container{
-    border-radius: 25px;
-    padding: 0 0 0 0;
 
-    /*position: absolute;
-    z-index: 1;*/
+    padding: 0 0 0 0;
+    position: relative;
 }
+
 .afficher{
     position: absolute;
-    z-index: 2;
+    bottom: 10px;
+    right: 15px;
+    width: 6cm;
+    height:1cm;
+    border: #939292;
+    background: rgba(248, 247, 247, 0.85);
+    border-radius: 14px;
+
 }
 .RightSide{
     display: flex;
@@ -386,6 +403,45 @@ body{
 }
 
 
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;}
+.modal{
+    display: none; /* Hide the modal by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0,0.4); /* Black with opacity */
+}
+.modal-content2{
+    background-color: #fefefe;
+    margin: 3% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 25px;
+}
+
+.bi bi-x-circle close{
+    z-index: 100;
+}
+.centerImg{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
 
 
+.containerRowImg {
+
+    margin-left: 5.1cm;
+}
 

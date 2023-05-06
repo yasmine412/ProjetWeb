@@ -24,24 +24,62 @@
     </div>
 
     <div class="img-container">
-        <div class="containerRow">
-
+        <div class="containerRow" style="margin: 0">
             <div class="photo1">
-                <img width="600px" height="400px" src="../assets/villa.webp">
+                <img class="ph1" width="600px" height="400px" src="../assets/villa.webp">
             </div>
             <div class="photo1 containerCal">
                 <div class="containerRow">
-                    <img width="300px" height="200px" src="../assets/villa2.webp">
-                    <img width="300px" height="200px"src="../assets/villa3.webp">
+                    <img class="ph2" width="300px" height="200px" src="../assets/villa2.webp">
+                    <img class="ph3" width="300px" height="200px" src="../assets/villa3.webp">
                 </div>
                 <div class="containerRow">
-                    <img width="300px" height="200px" src="../assets/villa4.webp">
-                    <img width="300px" height="200px" src="../assets/villa6.webp">
+                    <img class="ph4" width="300px" height="200px" src="../assets/villa4.webp">
+                    <div style="position: relative;">
+                        <img class="ph5" width="300px" height="200px" src="../assets/villa6.webp">
+
+                        <button class="afficher" id="open-modal1"> afficher toutes les image </button>
+
+                        <div class="modal" id="myModal1">
+                            <div class="modal-content2">
+                                <span class="close"><i class="fa-solid fa-xmark fa-xs"></i></span>
+
+
+                                <div class="centerImg">
+                                    <img class="containerCal-item2" width="60%" height="500px" src="../assets/villa.webp">
+                                    <div class="containerRowImg">
+                                        <img  width="39%" height="300px" src="../assets/villa2.webp">
+                                        <img  width="39%" height="300px" src="../assets/villa3.webp">
+                                    </div>
+                                    <img  width="60%" height="500px" src="../assets/villa4.webp">
+                                    <div class="containerRowImg">
+                                        <img  width="39%" height="300px" src="../assets/villa5.webp">
+                                        <img  width="39%" height="300px" src="../assets/villa6.webp">
+                                    </div>
+                                    <img  width="60%" height="500px" src="../assets/villa7.webp">
+                                    <div class="containerRowImg">
+                                        <img  width="39%" height="300px" src="../assets/villa8.webp">
+                                        <img  width="39%" height="300px" src="../assets/villa9.webp">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!--<button id="open-modal afficher">afficher toutes les images </button>-->
+        <!-- <div id="afficher"><button id="open-modal afficher">s </button></div>-->
+
+
+
 
         <!--<div id="myModal" class="modal">
             <div class="modal-content">
@@ -54,305 +92,320 @@
             </div>
         </div>-->
 
-    </div>
 
 
 
 
 
 
-
-    <div class="reservation">
-        <div class="RightSide">
-            <div class="containerRow containerCal-item" style="align-content: space-between;">
-                <div  class="containerCal">
-                    <h3>le titre </h3>
-                    <p class="texte" style="font-size: 13px;">nb1 voyageurs nb2 chambres nb3 lits nb4 salles de bain et nb5 toilette</p>
-                </div>
-                <div class="user">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                </div>
-            </div>
-            <div class="containerCal containerCal-item texte">
-                <div class="containerRow">
-                    <img width="30px" src="../assets/piscine.png">
-                    <b class="texte">particularite 1</b>
-                </div>
-                <div class="texte" style="font-size: 13px;">description de la particularite</div>
-            </div>
-            <div class="containerRow containerCal-item">
-                <img width="30px" src="../assets/calendar.png">
-
-                <b>Annulation gratuite pendant 48 heures.</b>
-            </div>
-
-
-
-
-            <div class="descrip containerCal-item">
-                <u class="texte">dscription:</u>
-                <div class="texte-partiel">
-                    <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez</p>
-                    <button id="btn-en-savoir-plus"><u>En savoir plus></u></button>
-                    <div id="texte-complet" >
-                        <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez le repos et la paix, vous allez adorer cet endroit :-)
-                            Le logementBianca est un château rustique de 120 ans à la recherche d'une vieille maison située à Xewkija, Gozo. </p>
+        <div class="reservation">
+            <div class="RightSide">
+                <div class="containerRow containerCal-item" style="align-content: space-between;">
+                    <div  class="containerCal">
+                        <h3>le titre </h3>
+                        <p class="texte" style="font-size: 13px;">nb1 voyageurs nb2 chambres nb3 lits nb4 salles de bain et nb5 toilette</p>
+                    </div>
+                    <div class="user">
+                        <img width="45px" height="40px" src="../assets/user.png">
                     </div>
                 </div>
-            </div>
-            <div class="equipement containerCal-item2">
-                <u>Ce que propose ce logement </u><br>
-                <div class="containerRow containerCal-item2">
-                    <img width="30px" src="../assets/cuisine.png">
-                    cuisine
+                <div class="containerCal containerCal-item texte">
+                    <div class="containerRow">
+                        <img width="30px" src="../assets/piscine.png">
+                        <b class="texte">particularite 1</b>
+                    </div>
+                    <div class="texte" style="font-size: 13px;">description de la particularite</div>
                 </div>
-                <div class="containerRow containerCal-item2">
-                    <img width="30px" src="../assets/wifi.png">
-                    wifi
-                </div>
-                <div class="containerRow containerCal-item2">
-                    <img width="30px" src="../assets/parking.png">
-                    Parking gratuit sur place
-                </div>
-                <div class="containerRow containerCal-item2">
-                    <img width="30px" src="../assets/climatisation.png">
-                    Climatisation : système split sans évacuation
-                </div>
-                <div class="containerRow containerCal-item2">
-                    <img width="30px" src="../assets/Lave-vaisselle.png">
-                    Lave-vaisselle
-                </div>
-                <!-- le bouton qui affiche tous les aquipements -->
-                <button id="open-modal">afficher tous les quipements </button>
+                <div class="containerRow containerCal-item">
+                    <img width="30px" src="../assets/calendar.png">
 
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close"><i class="fa-solid fa-xmark fa-xs"></i></span>
-                        <!-- <span class="close">&times;</span> -->
-                        <p>Modal content goes here.</p>
-                        <div>
-                            <div class="containerRow">
-                                <img width="30px" src="../assets/cuisine.png">
-                                cuisine
-                            </div>
-                            <div class="containerRow">
-                                <img width="30px" src="../assets/wifi.png">
-                                wifi
-                            </div>
-                            <div class="containerRow">
-                                <img width="30px" src="../assets/parking.png">
-                                Parking gratuit sur place
-                            </div>
-                            <div class="containerRow">
-                                <img width="30px" src="../assets/climatisation.png">
-                                Climatisation : système split sans évacuation
-                            </div>
-                            <div class="containerRow">
-                                <img width="30px" src="../assets/Lave-vaisselle.png">
-                                Lave-vaisselle
-                            </div>
+                    <b>Annulation gratuite pendant 48 heures.</b>
+                </div>
+
+
+
+
+                <div class="descrip containerCal-item">
+                    <u class="texte">dscription:</u>
+                    <div class="texte-partiel">
+                        <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez</p>
+                        <button id="btn-en-savoir-plus"><u>En savoir plus></u></button>
+                        <div id="texte-complet" >
+                            <p>Xewkija, un village dans l'île de Gozo. La population de Xewkija est de 3 115 habitants (novembre 2005), la quatrième plus importante de l'île Cette ferme confortable se trouve en face de la salle du conseil municipal, située sur une route tranquille. Si vous aimez le repos et la paix, vous allez adorer cet endroit :-)
+                                Le logementBianca est un château rustique de 120 ans à la recherche d'une vieille maison située à Xewkija, Gozo. </p>
                         </div>
                     </div>
                 </div>
+                <div class="equipement containerCal-item2">
+                    <u>Ce que propose ce logement </u><br>
+                    <div class="containerRow containerCal-item2">
+                        <img width="30px" src="../assets/cuisine.png">
+                        cuisine
+                    </div>
+                    <div class="containerRow containerCal-item2">
+                        <img width="30px" src="../assets/wifi.png">
+                        wifi
+                    </div>
+                    <div class="containerRow containerCal-item2">
+                        <img width="30px" src="../assets/parking.png">
+                        Parking gratuit sur place
+                    </div>
+                    <div class="containerRow containerCal-item2">
+                        <img width="30px" src="../assets/climatisation.png">
+                        Climatisation : système split sans évacuation
+                    </div>
+                    <div class="containerRow containerCal-item2">
+                        <img width="30px" src="../assets/Lave-vaisselle.png">
+                        Lave-vaisselle
+                    </div>
+                    <!-- le bouton qui affiche tous les aquipements -->
+                    <button id="open-modal">afficher tous les quipements </button>
+
+                    <div id="myModal" class="modal">
+                        <div class="modal-content containerCal">
+
+                            <!--<i  class="bi bi-x-circle close"></i>-->
+
+                            <!-- <span class="close">&times;</span> -->
+                            <div>
+                                <div class="containerRow">
+                                    <img width="30px" src="../assets/cuisine.png">
+                                    cuisine
+                                </div>
+                                <div class="containerRow">
+                                    <img width="30px" src="../assets/wifi.png">
+                                    wifi
+                                </div>
+                                <div class="containerRow">
+                                    <img width="30px" src="../assets/parking.png">
+                                    Parking gratuit sur place
+                                </div>
+                                <div class="containerRow">
+                                    <img width="30px" src="../assets/climatisation.png">
+                                    Climatisation : système split sans évacuation
+                                </div>
+                                <div class="containerRow">
+                                    <img width="30px" src="../assets/Lave-vaisselle.png">
+                                    Lave-vaisselle
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
+                </div>
+
+            </div>
+
+            <div class="LeftSide texteR">
+                <p>  prix par nuit</p>
+                <div class="select">
+                    <div  class="LaDate">
+                        <div class="Arrivee">
+                            <p class="texteR" >ARRIVEE</p>
+                            <input   type="date" id="date">
+                        </div>
+                        <div class="Depart">
+                            <p class="texteR">DEPART</p>
+                            <input type="date" id="date">
+                        </div>
+                    </div>
+
+                    <div class="dropdown search-bar-item ">
+                        <div class="texteCenter">
+                            <a onclick="dropdownFunction('#myDropdown','show')" class="dropbtn texteR  ">Voyageurs
+                                <p class="texteR "><a id="voyageur-value"> 0</a>voyageurs</p>
+                            </a>
+                        </div>
+                        <div id="myDropdown" class="dropdown-content">
+                            <div class="dropdown-item adults-container" >
+                                <!--  <label class="adults-label" for="adults">Adultes</label> -->
+                                <div class="label adults-label">
+                                    Adultes<br>
+                                    13 ans et plus
+                                </div>
+                                <div class="adult-control">
+                                    <button disabled="true" title="Decrement" class="decrement-btn adultes" onclick="decrement('#adult-value','.adultes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                        <img width=30px src="../assets/minus.svg">
+                                    </button>
+                                    <a id="adult-value">0</a>
+
+                                    <button title="Increment" class="increment-btn adultes" onclick="increment('#adult-value','.adultes')"><i class="fa-solid fa-plus fa-xs"></i>
+                                        <img width=30px src="../assets/plus.svg">
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="dropdown-item enfants-container" >
+                                <div class="label enfants-label">
+                                    Enfants<br>
+                                    De 2 à 12 ans
+                                </div>
+                                <div class="enfants-control">
+
+                                    <button disabled="true" title="decrement" class="decrement-btn enfants" onclick="decrement('#enfant-value','.enfants')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                        <img width=30px src="../assets/minus.svg">
+                                    </button>
+                                    <a id="enfant-value">0</a>
+                                    <button title="increment" class="increment-btn enfants" onclick="increment('#enfant-value','.enfants')"><i class="fa-solid fa-xs fa-plus"></i>
+                                        <img width=30px src="../assets/plus.svg">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-item bebes-container" >
+                                <div class="label bebes-label">
+                                    Bébés<br>
+                                    - de 2 ans
+                                </div>
+                                <div class="bebes-control">
+                                    <button disabled="true" title="decrement" class="decrement-btn bebes" onclick="decrement('#bebe-value','.bebes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
+                                        <img width=30px src="../assets/minus.svg">
+                                    </button>
+                                    <a id="bebe-value">0</a>
+                                    <button title="increment" class="increment-btn bebes" onclick="increment('#bebe-value','.bebes')"><i class="fa-solid fa-xs fa-plus"></i>
+                                        <img width=30px src="../assets/plus.svg">
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div><button style="width: 80%; margin-left: 1cm; margin-top: 0.5cm;" type="button" class="btn btn-danger" onclick="redirectToReservationController()">
+                        Réserver
+                    </button></div>
+                <div class="texte">
+                    <p class="texteR" style="margin-bottom: 0;"> Aucun montant ne vous sera</p>
+                    <p class="texteR" style="margin-top: 0;"> debité pour le moment </p>
+                </div>
+                <div class="prix">
+                    <div class="nbJour">
+                        <div style="justify-content: space-between;" class="containerRow texteR" >
+                            <p> PRIX x NBjour</p>
+                            <p> Total prix</p>
+                        </div>
+
+                        <div style="justify-content: space-between;" class="containerRow texteR" >
+                            <p> Frais de service <br> YMARA (10%)</p>
+                            <p> frais service </p>
+                        </div>
+
+                    </div>
+                    <div style="justify-content: space-between;" class="prixTOT texteR">
+                        <p><b>TOTOAL</b></p>
+                        <p><b>prix total</b></p>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <div>
+            <!-- <div class="containerRow">-->
+            <div class="containerC">
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> Très très el endroit calme et paisible. La vue est incroyable et le spa privatif très apprécié. Merci Daniel pour la qualité de l’établissement et du service</p>
+                </div>
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> Nous avons passé un très bon séjour! Tout était très bien!
+                        Merci! </p>
+                </div>
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> Le séjour était absolument parfait :) le petit déjeuner était vraiment bon et nous avons également fait une dégustation des huiles d'olive produites à la ferme </p>
+                </div>
+                <!-- </div>
+             <div class="containerCal">
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> Nous sommes toujours si positivement éblouis. Waouh. Tout le logement est juste un rêve. La piscine, la vue, les chambres ainsi que la salle de sport panoramique étaient tout</p>
+                </div>
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> L'endroit idéal pour se détendre avec un restaurant de première classe, une belle piscine et un service d'hébergement. Nous nous sommes sentis tout à fait à l'aise et </p>
+                </div>
+                <div class="containerComm">
+                    <div class="containerRow">
+                        <img width="45px" height="40px" src="../assets/user.png">
+                        <div class="containerUser">
+                            <p>  userName </p>
+                            <p style="font-size: 13px;"> date</p>
+                        </div>
+                    </div>
+                    <p> J'ai tout aimé dans ce logement ! Nouveau, magnifiquement conçu, haut dans la colline, vue incroyable, piscine impressionnante, bon petit-déjeuner et donc la liste continue. </p>
+                </div>
+            </div>-->
+            </div>
+        </div>
+        <div>
+            <div class="form-floating">
+                <textarea class="form-control  " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Comments</label>
+                <div class="form-text"> le commentaire ne doit pas contenir  de diffamation, d’injure, d’insulte ou de calomnie </div>
+                <!-- <button  style="margin-top: 1cm" type="button" class="btn btn-outline-secondary">entrer </button>-->
             </div>
 
         </div>
 
-        <div class="LeftSide texteR">
-            <p>  prix par nuit</p>
-            <div class="select">
-                <div  class="LaDate">
-                    <div class="Arrivee">
-                        <p class="texteR" >ARRIVEE</p>
-                        <input  type="date" id="date">
-                    </div>
-                    <div class="Depart">
-                        <p class="texteR">DEPART</p>
-                        <input type="date" id="date">
-                    </div>
-                </div>
-
-                <div class="dropdown search-bar-item ">
-                    <div class="texteCenter">
-                        <a onclick="dropdownFunction('#myDropdown','show')" class="dropbtn texteR  ">Voyageurs
-                            <p class="texteR "><a id="voyageur-value"> 0</a>voyageurs</p>
-                        </a>
-                    </div>
-                    <div id="myDropdown" class="dropdown-content">
-                        <div class="dropdown-item adults-container" >
-                            <!--  <label class="adults-label" for="adults">Adultes</label> -->
-                            <div class="label adults-label">
-                                Adultes<br>
-                                13 ans et plus
-                            </div>
-                            <div class="adult-control">
-                                <button disabled="true" title="Decrement" class="decrement-btn adultes" onclick="decrement('#adult-value','.adultes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
-                                    <img width=30px src="../assets/minus.svg">
-                                </button>
-                                <a id="adult-value">0</a>
-
-                                <button title="Increment" class="increment-btn adultes" onclick="increment('#adult-value','.adultes')"><i class="fa-solid fa-plus fa-xs"></i>
-                                    <img width=30px src="../assets/plus.svg">
-                                </button>
-
-                            </div>
-                        </div>
-
-                        <div class="dropdown-item enfants-container" >
-                            <div class="label enfants-label">
-                                Enfants<br>
-                                De 2 à 12 ans
-                            </div>
-                            <div class="enfants-control">
-
-                                <button disabled="true" title="decrement" class="decrement-btn enfants" onclick="decrement('#enfant-value','.enfants')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
-                                    <img width=30px src="../assets/minus.svg">
-                                </button>
-                                <a id="enfant-value">0</a>
-                                <button title="increment" class="increment-btn enfants" onclick="increment('#enfant-value','.enfants')"><i class="fa-solid fa-xs fa-plus"></i>
-                                    <img width=30px src="../assets/plus.svg">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="dropdown-item bebes-container" >
-                            <div class="label bebes-label">
-                                Bébés<br>
-                                - de 2 ans
-                            </div>
-                            <div class="bebes-control">
-                                <button disabled="true" title="decrement" class="decrement-btn bebes" onclick="decrement('#bebe-value','.bebes')" type="submit"><i class="fa-solid fa-xs fa-minus"></i>
-                                    <img width=30px src="../assets/minus.svg">
-                                </button>
-                                <a id="bebe-value">0</a>
-                                <button title="increment" class="increment-btn bebes" onclick="increment('#bebe-value','.bebes')"><i class="fa-solid fa-xs fa-plus"></i>
-                                    <img width=30px src="../assets/plus.svg">
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div><button style="width: 80%; margin-left: 1cm; margin-top: 0.5cm;" type="button" class="btn btn-danger">Réserver</button></div>
-            <div class="texte">
-                <p class="texteR" style="margin-bottom: 0;"> Aucun montant ne vous sera</p>
-                <p class="texteR" style="margin-top: 0;"> debité pour le moment </p>
-            </div>
-            <div class="prix">
-                <div class="nbJour">
-                    <div style="justify-content: space-between;" class="containerRow texteR" >
-                        <p> PRIX x NBjour</p>
-                        <p> Total prix</p>
-                    </div>
-
-                    <div style="justify-content: space-between;" class="containerRow texteR" >
-                        <p> Frais de service <br> YMARA (10%)</p>
-                        <p> frais service </p>
-                    </div>
-
-                </div>
-                <div style="justify-content: space-between;" class="prixTOT texteR">
-                    <p><b>TOTOAL</b></p>
-                    <p><b>prix total</b></p>
-                </div>
 
 
 
-
-            </div>
-
-
-        </div>
 
 
 
     </div>
-    <div>
-        <!-- <div class="containerRow">-->
-        <div class="containerC">
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> Très très el endroit calme et paisible. La vue est incroyable et le spa privatif très apprécié. Merci Daniel pour la qualité de l’établissement et du service</p>
-            </div>
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> Nous avons passé un très bon séjour! Tout était très bien!
-                    Merci! </p>
-            </div>
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> Le séjour était absolument parfait :) le petit déjeuner était vraiment bon et nous avons également fait une dégustation des huiles d'olive produites à la ferme </p>
-            </div>
-            <!-- </div>
-         <div class="containerCal">
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> Nous sommes toujours si positivement éblouis. Waouh. Tout le logement est juste un rêve. La piscine, la vue, les chambres ainsi que la salle de sport panoramique étaient tout</p>
-            </div>
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> L'endroit idéal pour se détendre avec un restaurant de première classe, une belle piscine et un service d'hébergement. Nous nous sommes sentis tout à fait à l'aise et </p>
-            </div>
-            <div class="containerComm">
-                <div class="containerRow">
-                    <img width="45px" height="40px" src="../assets/user.png">
-                    <div class="containerUser">
-                        <p>  userName </p>
-                        <p style="font-size: 13px;"> date</p>
-                    </div>
-                </div>
-                <p> J'ai tout aimé dans ce logement ! Nouveau, magnifiquement conçu, haut dans la colline, vue incroyable, piscine impressionnante, bon petit-déjeuner et donc la liste continue. </p>
-            </div>
-        </div>-->
-        </div>
-    </div>
-    <div>
-        <div class="form-floating">
-            <textarea class="form-control  " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
-            <div class="form-text"> le commentaire ne doit pas contenir  de diffamation, d’injure, d’insulte ou de calomnie </div>
-           <!-- <button  style="margin-top: 1cm" type="button" class="btn btn-outline-secondary">entrer </button>-->
-        </div>
 
-    </div>
+
+
 
     {% endblock %}
-{% block javascripts %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="{{asset('script/test.js')}}"> </script>
-{% endblock %}
+    {% block javascripts %}
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="{{asset('script/reservation.js')}}"> </script>
+    {% endblock %}
