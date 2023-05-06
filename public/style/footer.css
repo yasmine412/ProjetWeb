@@ -5,12 +5,11 @@
     position: sticky;
     bottom: 0;
     z-index: 200;
-    overflow: hidden;
 }
 
 
 #myContent1 {
-    padding: 10px;
+    padding-top: 10px;
     z-index:200;
 }
 
