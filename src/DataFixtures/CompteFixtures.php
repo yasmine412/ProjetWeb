@@ -6,7 +6,7 @@ namespace App\DataFixtures;
 use App\Entity\Compte;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
+require_once 'vendor\fzaninotto\faker\src\autoload.php';
 USe vendor\fzaninotto\faker\src\Faker\Factory;
 
 
