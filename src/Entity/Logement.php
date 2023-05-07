@@ -66,10 +66,14 @@ class Logement
     #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: Réservation::class, orphanRemoval: true)]
     private Collection $rServations;
 
+    #[ORM\OneToMany(mappedBy: 'id_logement', targetEntity: Commentaire::class, orphanRemoval: true)]
+    private Collection $commentaires;
+
     public function __construct()
     {
         $this->imagesLogements = new ArrayCollection();
         $this->rServations = new ArrayCollection();
+        $this->commentaires = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -299,6 +303,36 @@ class Logement
             // set the owning side to null (unless already changed)
             if ($rServation->getIdLogement() === $this) {
                 $rServation->setIdLogement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires->add($commentaire);
+            $commentaire->setIdLogement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): self
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getIdLogement() === $this) {
+                $commentaire->setIdLogement(null);
             }
         }
 
