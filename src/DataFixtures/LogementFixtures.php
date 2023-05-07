@@ -6,8 +6,6 @@ use App\Entity\Logement;
 use App\Entity\Compte;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
-require_once 'vendor\fzaninotto\faker\src\autoload.php';
 Use vendor\fzaninotto\faker\src\Faker\Factory;
 
 class LogementFixtures extends Fixture
