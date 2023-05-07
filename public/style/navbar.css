@@ -3,13 +3,17 @@ header {
     border-bottom: 1px solid #ebebeb;
     padding:6px;
     color:#484848;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
 }
 
 /*nav {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+display: flex;
+justify-content: space-between;
+max-width: 1200px;
+margin: 0 auto;
 } */
 
 
