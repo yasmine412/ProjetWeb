@@ -10,21 +10,21 @@
 
 {% block body %}
     <div class="subnav">
-        <button id="open-modal" data-toggle="modal"  data-target="#myModal">
+        <button class="btn-filtre" id="open-modal" data-toggle="modal"  data-target="#myModal">
             <i class="fa-solid fa-sliders "></i>
             Filters
         </button>
         <div id="myModal" class="modal fade" >
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content" id="filtre-content">
                     <div class="header">
                         <span class="close"><i class="fa-solid fa-xmark fa-2xs" data-dismiss="modal"></i></span>
                         <h4 class="modal-title">Filtres</h4>
                     </div>
 
-                    <div class="modal-body">
+                    <div class="modal-body" id="filtres-body">
 
-                        <div class="modal-item fourchette-prix">
+                        <div class="modal-item fourchette-prix fc">
                             <h5>Fourchette de prix</h5>
                             <span>Le prix moyen par nuit est de 401€ </span><br>
                             <div id="price-div">
@@ -35,19 +35,19 @@
                             </div>
                         </div>
 
-                        <div class="modal-item type-logement">
+                        <div class="modal-item type-logement fc">
                             <h5>Type de logement</h5>
-                            <label>
+                            <label class="fl">
                                 <input type="checkbox" name="logement" value="logement_entier">
                                 <b>Logement entier</b>
                                 <br><span>Un logement entier rien que pour vous.</span>
                             </label>
-                            <label>
+                            <label class="fl">
                                 <input type="checkbox" name="logement" value="chambre_privee">
                                 <b>Chambre privée</b>
                                 <br><span>Une chambre privée dans un logement ou un hôtel, avec des parties communes partagées avec d'autres personnes.</span>
                             </label>
-                            <label>
+                            <label class="fl">
                                 <input type="checkbox" name="logement" value="chambre_partagee">
                                 <b>Chambre partagée</b>
                                 <br><span>Un espace couchage et des parties communes qui peuvent être partagés avec d'autres personnes.</span>
@@ -55,7 +55,7 @@
 
                         </div>
 
-                        <div class="modal-item chambres-lits">
+                        <div class="modal-item chambres-lits fc">
                             <h5>Chambres et lits</h5>
                             <div class="chambres">
                                 <h6>Chambres</h6>
@@ -122,43 +122,43 @@
                             </div>
                         </div>
 
-                        <div class="modal-item equipements">
+                        <div class="modal-item equipements fc">
                             <h5>Équipements</h5>
                             <div class="equipement-base">
                                 <h6>Produits et services de base</h6>
                                 <div class="grid-container">
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="wifi">
                                             <span>Wifi</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="cuisine">
                                             <span>Cuisine</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="lave-linge">
                                             <span>Lave-linge</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="seche-linge">
                                             <span>Sèche-linge</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="climatisation">
                                             <span>Climatisation</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="chauffage">
                                             <span>Chauffage</span>
                                         </label>
@@ -169,25 +169,25 @@
 
                                 <div class="grid-container" >
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="espace">
                                             <span>Espace de travail dedié</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="television">
                                             <span>Télévision</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="seche-cheveux">
                                             <span>Sèche-cheveux</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="fer-a-repasser">
                                             <span>Fer à repasser</span>
                                         </label>
@@ -197,61 +197,61 @@
                                     </div>
                                     <div class="grid-item"></div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="piscine">
                                             <span>Piscine</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="jacuzzi">
                                             <span>Jacuzzi</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="parking">
                                             <span>Parking</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="station">
                                             <span>Station de recharge pour véhicules électriques</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="lit">
                                             <span>Lit pour bébé</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="salle">
                                             <span>Salle de sport</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="barbecue">
                                             <span>Barbecue</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="dej">
                                             <span>Petit déjeuner</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="cheminee">
                                             <span>Cheminée</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="fumeur">
                                             <span>Logement fumeur</span>
                                         </label>
@@ -261,13 +261,13 @@
                                     </div>
                                     <div class="grid-item"></div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="bord">
                                             <span>Bord de mer</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="front">
                                             <span>Front de mer</span>
                                         </label>
@@ -277,13 +277,13 @@
                                     </div>
                                     <div class="grid-item"></div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="fumee">
                                             <span>Détection de fumée</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="carbone">
                                             <span>Détecteur de monoxyde de carbone</span>
                                         </label>
@@ -296,57 +296,57 @@
                             </div>
                         </div>
 
-                        <div class="modal-item reservation">
+                        <div class="modal-item reservation fc">
                             <div class="reservation-title">
                                 <h5>Options de réservation</h5>
                             </div>
                             <div class="option-reservation">
-                                <label class="description">
+                                <label class="description fl">
                                     <span>Réservation instantanée</span><br>
                                     <span>Logements que vous pouvez réserver sans attendre l'approbation de l'hôte</span>
                                 </label>
-                                <label class="switch">
+                                <label class="switch fl">
                                     <input type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                             <div class="option-reservation">
-                                <label class="description">
+                                <label class="description fl">
                                     <span>Arrivée autonome</span><br>
                                     <span>Accès facile au logement à l'arrivée</span>
                                 </label>
-                                <label class="switch">
+                                <label class="switch fl">
                                     <input type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="modal-item equipements">
+                        <div class="modal-item equipements fc">
                             <h5>Éléments d'accessibilité</h5>
                             <div class="equipement-base">
                                 <h6>Entrée et stationnement pour les voyageurs</h6>
                                 <div class="grid-container">
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="access" value="entree">
                                             <span>Entrée de plain-pied pour les voyageurs</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="access" value="largeur">
                                             <span>Largeur de l'entrée > 81 cm</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="access" value="parking">
                                             <span>Place de parking accessible</span>
                                         </label>
                                     </div>
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="access" value="plain-pied">
                                             <span>Accès de plain-pied à l'entrée</span>
                                         </label>
@@ -362,14 +362,14 @@
                                     <div class="grid-item"></div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="chambre" value="plain-pied">
                                             <span>Accès de plain-pied à la chambre</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="chambre" value="largeur">
                                             <span>Largeur de l'entrée > 81 cm</span>
                                         </label>
@@ -381,42 +381,42 @@
                                     <div class="grid-item"></div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="plain-pied">
                                             <span>Accès de plain-pied à la salle de bains</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="largeur">
                                             <span>Largeur de l'entrée > 81 cm</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="barre-douche">
                                             <span>Barre d'appui pour douche</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="barre-toilettes">
                                             <span>Barre d'appui pour toilettes</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="douche-plain-pied">
                                             <span>Douche de plain-pied</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="salle-de-bain" value="siege">
                                             <span>Siège de douche ou de bain</span>
                                         </label>
@@ -429,14 +429,14 @@
                                     <div class="grid-item"></div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="bord">
                                             <span>Bord de mer</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="front">
                                             <span>Front de mer</span>
                                         </label>
@@ -448,14 +448,14 @@
                                     <div class="grid-item"></div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="fumee">
                                             <span>Détection de fumée</span>
                                         </label>
                                     </div>
 
                                     <div class="grid-item">
-                                        <label>
+                                        <label class="fl">
                                             <input type="checkbox" name="equipement" value="carbone">
                                             <span>Détecteur de monoxyde de carbone</span>
                                         </label>
@@ -467,7 +467,7 @@
                             </div>
                         </div>
 
-                        <div class="modal-item last reservation">
+                        <div class="modal-item last reservation fc">
                             <div class="reservation-title">
                                 <h5>Séjours exceptionnels</h5>
                             </div>
@@ -503,7 +503,15 @@
         </div>
     </div>
 
-    </div>
+
+
+
+
+
+
+
+
+
 {% endblock %}
 
 {%  block javascripts %}

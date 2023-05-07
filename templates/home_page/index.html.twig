@@ -48,40 +48,197 @@
 </head>
 <body>
 
-
-
 {% include 'header/index.html.twig' %}
 {% include 'inscription/Inscription.html.twig' %}
 {%  include 'subnav_carousel.html.twig' %}
 {% include 'connexion/connexion.html.twig' %}
-{% set i = 1 %}
-{% for logement in logements %}
-    {% if i%4 == 1 %}
 <div class="grand_conteneur">
-    {% endif %}
     <div class="conteneur-annonce">
         <div class="images-maison">
-            {%set img=controller.imageParId(i) %}
+            {% include 'carousel.html.twig' with {'numAnnonce': 1} %}
 
-            {% include 'carousel.html.twig' with {'numAnnonce': logement.getID(),'images':img} %}
+
         </div>
-        <div class="pays"> <div>{{ logement.getVille() }},{{logement.getPays() }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
-        <div class="titre">{{ logement.getRue()}}</div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
         <div class="date">1-6 Mai</div>
-        <div class="prix">{%set floatNumber=logement.getPrixNuité() %}
-                          {% set intNumber = floatNumber|round(0, 'floor') %}
-            {{ intNumber }}$
-    <span class="nuité">par nuit</span></div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
     </div>
-    {% if i%4 == 0 %}
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+
+            {% include 'carousel.html.twig' with {'numAnnonce': 2} %}
+             </div>
+        <div class="pays">
+            <div>Raguse,Italie </div>
+            <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div>
+        </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
     </div>
-        {% endif %}
-    {% set i = i + 1 %}
-{% endfor %}
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {% include 'carousel.html.twig' with {'numAnnonce': 3} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {% include 'carousel.html.twig' with {'numAnnonce': 4} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+</div>
+
+<div class="grand_conteneur">
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+
+            {%  include 'carousel.html.twig' with {'numAnnonce':5} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+
+            {%  include 'carousel.html.twig' with {'numAnnonce':6} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':7} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':8} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+</div>
+<div class="grand_conteneur">
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':9} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+
+            {%  include 'carousel.html.twig' with {'numAnnonce':10} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':11} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+          {%  include 'carousel.html.twig' with {'numAnnonce':12} %}
+
+        </div>
+
+    <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+    <div class="titre">Professionnel</div>
+    <div class="date">1-6 Mai</div>
+    <div class="prix">228$ <span class="nuité">par nuit</span></div>
+</div> </div>
 
 
+<div class="grand_conteneur">
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':13} %}
 
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
 
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+
+            {%  include 'carousel.html.twig' with {'numAnnonce':14} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':15} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+    <div class="conteneur-annonce">
+        <div class="images-maison">
+            {%  include 'carousel.html.twig' with {'numAnnonce':16} %}
+
+        </div>
+        <div class="pays"> <div>Raguse,Italie </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">Professionnel</div>
+        <div class="date">1-6 Mai</div>
+        <div class="prix">228$ <span class="nuité">par nuit</span></div>
+    </div>
+</div>
 </body>
 {% include('fragments/footer.html.twig') %}
 {% block javascripts %}
