@@ -1,17 +1,18 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ymara{% endblock %}</title>
 
 {% block stylesheets %}
-
     <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('style/search-bar.css') }}">
     <link rel="stylesheet" href="{{ asset("style/navbar.css") }} ">
     <link rel="stylesheet"  href="{{ asset("style/dropdown-menu.css") }}" >
-    <link rel="stylesheet" href="{{ asset('style/inscription-style.css') }}">
-    <link rel="stylesheet" href="{{ asset("style/connexion-style.css") }}">
 
 {% endblock %}
 
-
+</head>
 <body>
 {% block body %}
     <header>
@@ -73,24 +74,21 @@
                 </div>
             </div>
 
-            <a id="logement" class="navbar-item" type="submit" target="_blank" href="{{ path('app_post_item_form') }}" >
+            <a id="logement" class="navbar-item" type="submit" href="{{ path('app_post_item_form') }}" >
                 Mettre mon logement sur Ymara
             </a>
 
             <div class="menu" >
-                <button class="dropdown_item navbar-item account-dropbtn" id="navbar-icons" onclick="dropdownFunction('#account','account-show')">
+                <button class="navbar-item account-dropbtn" id="navbar-icons" onclick="dropdownFunction('#account','account-show')">
                     <i class="fa-solid fa-bars"></i>
                     <i class="fa-solid fa-user"></i>
                 </button>
                 <div id="account" class="dropdown-menu dropdown-account-content">
-
-                     <a class="dropdown-item dropdown-account" id="open-modal" data-toggle="modal"  data-target="#myModal1">
-                        Connexion
-                    </a>
-                    <a class="dropdown-item dropdown-account" id="open-modal" data-toggle="modal"  data-target="#myModal2">Inscription</a>
+                    <a class="dropdown-item dropdown-account" >Connexion</a>
+                    <a class="dropdown-item dropdown-account">Inscription</a>
                     <hr/>
                     <a class="dropdown-divider dropdown-account"></a>
-                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}" >Mettre mon logement</a>
+                    <a class="dropdown-item dropdown-account" >Mettre logement</a>
                     <a class="dropdown-item dropdown-account">Aide</a>
                 </div>
             </div>
@@ -98,25 +96,16 @@
 
 
     </header>
-
-
-
-
 {% endblock %}
-
-
-
 {% block javascripts %}
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/81363d573b.js" crossorigin="anonymous"></script>
-    <script src="{{  asset("script/dropdown-menu.js") }} "></script>
+     <script src="{{  asset("script/dropdown-menu.js") }} "></script>
     <script src="{{ asset("script/dropdown-buttons.js") }}"></script>
     <script src="{{  asset("script/search-bar.js") }}"></script>
 
-
 {% endblock %}
 </body>
-
+</html>
