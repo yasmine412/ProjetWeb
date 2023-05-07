@@ -11,7 +11,7 @@ class SubnavController extends AbstractController
     #[Route('/subnav', name: 'app_subnav')]
     public function index(): Response
     {
-        return $this->render('subnav/index.html.twig', [
+        return $this->render('header/index.html.twig', [
             'controller_name' => 'SubnavController',
         ]);
     }

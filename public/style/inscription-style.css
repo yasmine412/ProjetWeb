@@ -1,29 +1,5 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-body{
-    background: white;  /* fallback for old browsers */
-
-
-
-}
-.row{
-    background: white;
-    border-radius: 30px;
-    box-shadow: 12px 12px 22px rgba(37, 31, 31, 0.79);
-}
-#uiImg {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-.btn1{
+.btn2{
     border: none;
     outline: none;
     height: 50px;
@@ -33,7 +9,7 @@ body{
     background-color: #e61e4d;
     font-weight: bold;
 }
-.btn1:hover{
+.btn2:hover{
     background: white;
     border:2px solid #e61e4d;
     color: #e61e4d;
@@ -42,16 +18,41 @@ small .text-reset{
     border: none;
     background: none;
 }
-.div-form{
-    overflow-y:scroll;
-    height: 558.8px;
 
-}
-.drow{
-    height: 558.8px;
 
-}
 .logo-form{
     height: 70px;
     width: 55px;
+}
+
+#myModal2 {
+    display: none; /* Hide the modal by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0,0.4); /* Black with opacity */
+
+}
+
+#inscri-content {
+    background-color: #fefefe;
+    margin: 1.8% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    /* margin-top:7px; */
+    width:780px;
+    height:537px;
+    border-radius:9.5px;
+}
+#inscri-dialog {
+    position:relative;
+    display:table;
+
+    width: auto;
+    pointer-events: none;
 }

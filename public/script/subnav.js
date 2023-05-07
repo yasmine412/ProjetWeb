@@ -42,7 +42,11 @@ function showMore(btnId,additionalItemsContainerId) {
 
 price.addEventListener('input', () => {
     affiche.innerHTML ="<b>"+ price.value+ " €</b>";
-});
+})
+
+
+
+;
 
 
 

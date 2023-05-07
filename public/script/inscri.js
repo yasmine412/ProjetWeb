@@ -1,24 +1,24 @@
-document.querySelector('#email').addEventListener('blur', validateEmail);
-document.querySelector('#password').addEventListener('blur', validatePassword);
-document.querySelector('#tel').addEventListener('blur', validatePhone);
-document.querySelector('#ddn').addEventListener('blur', validateAge);
-document.querySelector('#nom').addEventListener('blur', validateNom);
-document.querySelector('#prenom').addEventListener('blur', validatePrenom);
+document.querySelector('#email1').addEventListener('blur', validateEmail);
+document.querySelector('#password1').addEventListener('blur', validatePassword);
+document.querySelector('#tel1').addEventListener('blur', validatePhone);
+document.querySelector('#ddn1').addEventListener('blur', validateAge);
+document.querySelector('#nom1').addEventListener('blur', validateNom);
+document.querySelector('#prenom1').addEventListener('blur', validatePrenom);
 
 
-document.querySelector('.btn1').addEventListener('click', validateEmail);
-document.querySelector('.btn1').addEventListener('click', validatePassword);
-document.querySelector('.btn1').addEventListener('click', validateAge);
-document.querySelector('.btn1').addEventListener('click', validatePhone);
-document.querySelector('.btn1').addEventListener('click', validateNom);
-document.querySelector('.btn1').addEventListener('click', validatePrenom);
+document.querySelector('.btn2').addEventListener('click', validateEmail);
+document.querySelector('.btn2').addEventListener('click', validatePassword);
+document.querySelector('.btn2').addEventListener('click', validateAge);
+document.querySelector('.btn2').addEventListener('click', validatePhone);
+document.querySelector('.btn2').addEventListener('click', validateNom);
+document.querySelector('.btn2').addEventListener('click', validatePrenom);
 
 
 
-const reSpaces = /^\S*$/;
+
 
 function validateNom(){
-    const s=document.querySelector('#nom');
+    const s=document.querySelector('#nom1');
     const name=s.value.trim();
     const re=/^[a-zA-ZÀ-ÿ]+(([',. -][a-zA-ZÀ-ÿ ])?[a-zA-ZÀ-ÿ]*)*$/;
 
@@ -38,7 +38,7 @@ function validateNom(){
 
 
 function validatePrenom(){
-    const firstname=document.querySelector('#prenom');
+    const firstname=document.querySelector('#prenom1');
     const re=/^[a-zA-ZÀ-ÿ]+(([',. -][a-zA-ZÀ-ÿ ])?[a-zA-ZÀ-ÿ]*)*$/;
     if(re.test(firstname.value)){
         firstname.classList.remove('is-invalid');
@@ -53,7 +53,7 @@ function validatePrenom(){
 }
 
 function validateEmail(e) {
-    const email = document.querySelector('#email');
+    const email = document.querySelector('#email1');
     const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
     if (reSpaces.test(email.value) && re.test(email.value)) {
@@ -70,7 +70,7 @@ function validateEmail(e) {
 }
 
 function validatePassword() {
-    const password = document.querySelector('#password');
+    const password = document.querySelector('#password1');
     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (re.test(password.value) && reSpaces.test(password.value)) {
         password.classList.remove('is-invalid');
@@ -85,7 +85,7 @@ function validatePassword() {
     }
 }
 function validatePhone(){
-    const tel=document.querySelector('#tel');
+    const tel=document.querySelector('#tel1');
     const re=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if(re.test(tel.value)){
         tel.classList.remove('is-invalid');
@@ -102,7 +102,7 @@ function validatePhone(){
     }
 }
 function calculAge(){
-    const userinput = document.getElementById("#ddn").value;
+    const userinput = document.getElementById("#ddn1").value;
     const dob = new Date(userinput);
     if(userinput==null || userinput==='') {
         return false;
@@ -124,32 +124,36 @@ function calculAge(){
         return (age) ;
     }
 }
-function  validateAge(){
-    const Age1=document.querySelector('#ddn');
+function  validateAge() {
+    const Age1 = document.querySelector('#ddn1');
     const dob = new Date(Age1.value);
-
-    //calculate month difference from current date in time
-    const month_diff = Date.now() - dob.getTime();
-
-    //convert the calculated difference in date format
-    const age_dt = new Date(month_diff);
-
-    //extract year from date
-    const year = age_dt.getUTCFullYear();
-
-    //now calculate the age of the user
-    const age = Math.abs(year - 1970);
-
-
-    if (age >= 18){
-        Age1.classList.add('is-valid');
-        Age1.classList.remove('is-invalid');
-        return true;
-    }else{
-        Age1.classList.add('is-invalid');
-        Age1.classList.remove('is-valid');
+    if (Age1.value == null || Age1.value === '') {
         return false;
+    } else {
 
+        //calculate month difference from current date in time
+        const month_diff = Date.now() - dob.getTime();
+
+        //convert the calculated difference in date format
+        const age_dt = new Date(month_diff);
+
+        //extract year from date
+        const year = age_dt.getUTCFullYear();
+
+        //now calculate the age of the user
+        const age = Math.abs(year - 1970);
+
+
+        if (age >= 18) {
+            Age1.classList.add('is-valid');
+            Age1.classList.remove('is-invalid');
+            return true;
+        } else {
+            Age1.classList.add('is-invalid');
+            Age1.classList.remove('is-valid');
+            return false;
+
+        }
     }
 }
 
