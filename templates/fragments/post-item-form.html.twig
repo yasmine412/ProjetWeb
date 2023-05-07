@@ -1,3 +1,5 @@
+
+
 <div class="form-body" xmlns="http://www.w3.org/1999/html">
     <div class="form-holder">
         <div class="form-content">
@@ -5,39 +7,40 @@
                 <h3>Mettre mon logemet sur Ymara</h3>
 
                 <p>Remplir le formulaire suivant</p>
-                <form class="requires-validation" novalidate>
+                <form method=post class="requires-validation" >
+
 
                     <fieldset>
 
                         <div class="col-md-12 mb-4 mt-4">
                             <label class="form-label" for="type">Type du logement proposé: </label>
                             <br>
-                            <input type="radio" class="btn-check" name="type" id="maison" autocomplete="off" required>
+                            <input type="radio" class="btn-check" name="typeLogement" id="maison"  autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="maison">
                                 <i class="bi bi-house-door"></i>
                                 <span>Maison</span>
                             </label>
 
-                            <input type="radio" class="btn-check" name="type" id="appartement" autocomplete="off"
+                            <input type="radio" class="btn-check" name="typeLogement" id="appartement" autocomplete="off"
                                    required>
                             <label class="btn btn-sm btn-outline-secondary" for="appartement">
                                 <i class="bi bi-building"></i>
                                 <span>Appartement</span>
                             </label>
 
-                            <input type="radio" class="btn-check" name="type" id="maison_hôtes" autocomplete="off"
+                            <input type="radio" class="btn-check" name="typeLogement" id="maison_hotes" autocomplete="off"
                                    required>
-                            <label class="btn btn-sm btn-outline-secondary" for="maison_hôtes">
+                            <label class="btn btn-sm btn-outline-secondary" for="maison_hotes">
                                 <i class="bi bi-house"></i>
                                 <span>Maison d'hôtes</span>
                             </label>
 
-                            <input type="radio" class="btn-check" name="type" id="ferme" autocomplete="off" required>
+                            <input type="radio" class="btn-check" name="typeLogement" id="ferme" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="ferme">
                                 <span>Ferme</span></label>
 
-                            <input type="radio" class="btn-check" name="type" id="hôtel" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="hôtel">
+                            <input type="radio" class="btn-check" name="typeLogement" id="hotel" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="hotel">
                                 <i class="bi bi-bank"></i>
                                 <span>Hôtel</span></label>
 
@@ -49,7 +52,7 @@
 
                         <div class="col-md-12 mb-4 mt-4">
                             <label class="form-label">Type de l'espace proposé: </label>
-                            <select class="form-select " required>
+                            <select class="form-select " name="typeEspace" required>
                                 <option selected disabled value="">Espace</option>
                                 <option value="entier">Un logement entier</option>
                                 <option value="privée">Une chambre privée</option>
@@ -169,37 +172,114 @@
                         <div class="col-md-12 mb-4 mt-4 ">
                             <label class="form-label" for="equipement">Equipements: </label>
                             <br>
+
                             <input type="checkbox" class="btn-check" name="equipement" id="wifi" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="wifi">
-                                <i class="bi bi-wifi"></i>
                                 Wifi
                             </label>
 
                             <input type="checkbox" class="btn-check" name="equipement" id="television" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="television">
-                                <i class="bi bi-tv"></i>
                                 <span>Télévision</span>
                             </label>
 
                             <input type="checkbox" class="btn-check" name="equipement" id="climatisation"
                                    autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="climatisation">
-                                <i class="bi bi-thermometer-snow"></i>
                                 <span>Climatisation</span>
                             </label>
 
+                            <input type="checkbox" class="btn-check" name="equipement" id="Chauffage" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="Chauffage">
+                                <span>Chauffage</span></label>
+
                             <input type="checkbox" class="btn-check" name="equipement" id="parking" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="parking">
-                                <i class="bi bi-p-car-front-fill"></i>
                                 <span>Parking</span>
                             </label>
 
                             <input type="checkbox" class="btn-check" name="equipement" id="cuisine" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="cuisine">
-                                <i class="bi bi-cup"></i>
                                 <span>Cuisine</span></label>
 
+                            <input type="checkbox" class="btn-check" name="equipement" id="laveLinge" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="laveLinge">
+                                <span>Lave-linge</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="sècheLinge" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="sècheLinge">
+                                <span> Sèche-linge</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="espaceTravail" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="espaceTravail">
+                                <span> Espace de travail dedié</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="sècheCheveux" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="sècheCheveux">
+                                <span> Sèche-cheveux</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="recharge" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="recharge">
+                                <span>Recharge véhicules électriques</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="fer" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="fer">
+                                <span> Fer à repasser</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="piscine" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="piscine">
+                                <span>Piscine</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="jacuzzi" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="jacuzzi">
+                                <span>Jacuzzi</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="litBebe" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="litBebe">
+                                <span> Lit pour bébé</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="salleSport" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="salleSport">
+                                <span> Salle de sport</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="barbecue" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="barbecue">
+                                <span>Barbecue</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="petitDej" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="petitDej">
+                                <span> Petit déjeuner</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="cheminee" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="cheminee">
+                                <span>Cheminée</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="detectionMonoxyde" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="detectionMonoxyde">
+                                <span> Détecteur de monoxyde de carbone</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="detectionFumee" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="detectionFumee">
+                                <span> Détection de fumée</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="fumeur" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="fumeur">
+                                <span> Logement fumeur</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="bordMer" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="bordMer">
+                                <span> Bord de mer</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement" id="frontMer" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="frontMer">
+                                <span> Front de mer</span></label>
+
+
+
+
                         </div>
+
+
 
 
                         <div class="col-md-12 mb-4 mt-4">
@@ -232,7 +312,7 @@
                     </fieldset>
 
                     <div class="form-button ">
-                        <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                        <button id="submit" type="submit" class="btn btn-primary">Valider</button>
                     </div>
 
                 </form>
@@ -240,3 +320,4 @@
         </div>
     </div>
 </div>
+
