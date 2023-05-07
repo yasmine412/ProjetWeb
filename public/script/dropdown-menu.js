@@ -3,6 +3,7 @@ const dropdownToggle1 = document.querySelector('.dropbtn');
 const dropdownContent = document.querySelector('.dropdown-content');
 const dropdownToggle2 = document.querySelector('#navbar-icons');
 const dropdownAccountContent = document.querySelector('#account');
+const accountBtn = document.querySelector('.account-dropbtn');
 
 
 
@@ -15,8 +16,9 @@ function dropdownFunction(dropdownToggle,showToggle) {
 // Close the dropdown if the user clicks outside of it
 
 document.addEventListener("click", (event) => {
-    if (event.target !== dropdownToggle1 && event.target.closest(".dropdown-content") !== dropdownContent) {
-        dropdownContent.classList.remove("show");
+    let isClickInside =  dropdownAccountContent.contains(event.target)|| accountBtn.contains(event.target);
+    if (!isClickInside) {
+        dropdownAccountContent.classList.remove("account-show");
     }
 });
 
