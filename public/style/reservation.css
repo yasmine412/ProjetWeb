@@ -2,6 +2,12 @@ body{
     display: flex;
     justify-content: center;
     padding:6cm;
+    font-family: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 15px;
+}
+.descripTexte{
+    font-size: 17px;
+    font-family: system-ui;
 }
 
 .descrip{
@@ -9,6 +15,7 @@ body{
     border-top: 0.2px solid rgb(200, 197, 197);
     padding-top: 1cm;
     padding-bottom: 1cm;
+    font-size: 17px;
     font-family: system-ui;
 }
 
@@ -58,13 +65,22 @@ body{
 .containerCal-item2{
     padding: 10px;
 }
+.containerCal-item3{
+    margin-left: 0;
+    padding: 0 0 0 0;
+}
+.p.containerCal-item3{
+    margin-bottom: 0;
+}
 .LeftSide{
     border-radius: 25px;
     border: 1px solid #e0E0E0;
     padding: 0.6cm;
-
     height: fit-content;
     box-shadow: 0px 20px 20px 0px rgb(0,0,0,0.1);
+    font-size: 18px;
+   /* position: absolute;
+    z-index: 1;*/
 
 }
 .container1{
@@ -103,10 +119,9 @@ body{
     border-width: thin;
 }
 .Depart{
-    display: flex;
-    flex-direction: column;
 
     border-left: 1px solid rgb(57, 56, 56);
+
 }
 .containerComm{
     display: flex;
@@ -149,7 +164,9 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 1cm;
+    margin-top: 1.5cm;
+    /*position: relative;
+    overflow: auto; /* permettre le défilement du contenu de la div parent */
 
 }
 .Apropos{
@@ -171,35 +188,66 @@ body{
 .select{
 
 
-    border-radius: 25px;
+    border-radius: 12px;
     border-color: #605e5e;
     border-style: ridge;
     border-width: thin;
     height: 19%;
     align-content: center;
+    font-size: 17px;
 }
 .LaDate{
     display: flex;
     flex-direction: row;
+    border-bottom: 1px solid rgb(57, 56, 56);
 }
+.system{
+    font-family:system-ui;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.cursive{
+    font-family: cursive;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.titre{
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: normal;
+}
+
 .texte{
 
-    font-size: 9x;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 0;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: system-ui;
+   /* font-family: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  */  margin-left: 0;
+
+}
+.texteRR{
+    font-size: 14px;
+    font-family: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 7px 7px 0px 7px;
 
 
 }
+
 .texteR{
-    font-size: 9x;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 10px;
+    font-size: 10px;
+    font-family: "Circular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 7px 7px 0px 7px;
+
 
 }
 .texteCenter{
     display: flex;
     justify-content:center;
-    padding-left: 0;
+    align-items: center;
+    padding:0;
+    margin:0;
     flex-direction: column;
 }
 .texte p{text-align: center;}
@@ -220,8 +268,8 @@ body{
 
 .dropbtn {
     color:black;
-    padding: 16px;
-    font-size: 16px;
+    padding: 4px 4px 0px 7px;
+    font-size: 14px;
     border: none;
     cursor: pointer;
 
@@ -352,6 +400,7 @@ body{
     background-color: #ffffff;
     border: #ffffff;
     display: block;
+    color: #517df5;
 }
 
 

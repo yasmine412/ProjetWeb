@@ -182,8 +182,6 @@ window.onclick = function(event) {
 
 
 
-
-
 //commentaire
 const commentTextarea = document.querySelector('#floatingTextarea2');
 const submitBtn = document.querySelector('btn-outline-secondary');
