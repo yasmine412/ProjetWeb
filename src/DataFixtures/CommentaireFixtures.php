@@ -8,7 +8,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 
-require_once 'vendor\fzaninotto\faker\src\autoload.php';
 
 use vendor\fzaninotto\faker\src\Faker\Factory;
 
