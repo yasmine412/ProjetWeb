@@ -14,6 +14,12 @@ function dropdownFunction(dropdownToggle,showToggle) {
 }
 
 // Close the dropdown if the user clicks outside of it
+document.addEventListener("click", (event) => {
+    if (event.target !== dropdownToggle1 && event.target.closest(".dropdown-content") !== dropdownContent) {
+        dropdownContent.classList.remove("show");
+    }
+});
+
 
 document.addEventListener("click", (event) => {
     let isClickInside =  dropdownAccountContent.contains(event.target)|| accountBtn.contains(event.target);
