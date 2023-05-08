@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ImageController!{% endblock %}
+
+{% block body %}
+
+    {% for image in images %}
+        <img src="data:image/png;base64,{{ image.data }}" >
+    {% endfor %}
+
+{% endblock %}
