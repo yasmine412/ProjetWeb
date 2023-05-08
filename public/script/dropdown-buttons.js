@@ -1,5 +1,6 @@
 let totalValue = 0;
 const incrementBtns = document.querySelectorAll(".increment-btn");
+const nb_voyageurs = document.querySelector("#nb_voyageurs");
 
 
 
@@ -15,7 +16,7 @@ function increment(inputField,inputClass) {
         totalValue++;
         input.textContent = inputValue;
         decrementBtn.disabled = false;
-        
+        nb_voyageurs.textContent = "Voyageurs " + totalValue;
     }
     
     if (totalValue==16) {
@@ -42,11 +43,12 @@ function decrement(inputField,inputClass) {
         incrementBtns.forEach(element => {
             element.disabled = false;
         })
-
+        nb_voyageurs.textContent = "Voyageurs " + totalValue;
     }
     else {
         decrementBtn.disabled = true;
     }
+
     
 }
 

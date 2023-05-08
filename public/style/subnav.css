@@ -415,6 +415,16 @@ input[type=range]::-ms-thumb {
     border-bottom:none;
 }
 
+#validation {
+    background: #FF5A5F;
+    border:none;
+}
+
+#validation:hover {
+    background: #FF5A5F;
+    border:none;
+    opacity: 0.9;
+}
 
 
 
