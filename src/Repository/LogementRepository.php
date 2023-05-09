@@ -57,10 +57,10 @@ class LogementRepository extends ServiceEntityRepository
             $location = "";
         }
         if ($datedebut == " ") {
-            $datedebut = "1700-01-01";
+            $datedebut = "";
         }
         if ($datefin == " ") {
-            $datefin = "3000-01-01";
+            $datefin = "";
         }
         if ($nb_voyageurs == " ") {
             $nb_voyageurs = 0;
@@ -72,8 +72,10 @@ class LogementRepository extends ServiceEntityRepository
         $sql = 'SELECT * FROM logement l WHERE pays LIKE :location AND nbr_lits >= :nb_voyageurs
             AND l.id NOT IN (
                 SELECT id_logement_id FROM reservation r1 
-                WHERE r1.date_debut BETWEEN :datedebut AND :datefin
-                    /*OR r1.date_fin BETWEEN :datedebut AND :datefin*/
+                WHERE (r1.date_debut > :datedebut AND r1.date_fin < :datefin)
+                    OR (r1.date_fin > :datedebut AND r1.date_fin < :datefin)
+                
+                
             )
         ';
 
