@@ -88,6 +88,52 @@ class LogementRepository extends ServiceEntityRepository
 
     }
 
+    public function findByKeyword($mot)
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.Description LIKE :mot')
+            ->setParameter('mot', '%' . $mot . '%')
+            ->getQuery()
+            ->getResult();
+    }
+    public function findBySearchBarfiltre($location, $datedebut, $datefin, $nb_voyageurs,$filtrec) {
+        if ($location == " ") {
+            $location = "";
+        }
+        if ($datedebut == " ") {
+            $datedebut = "";
+        }
+        if ($datefin == " ") {
+            $datefin = "";
+        }
+        if ($nb_voyageurs == " ") {
+            $nb_voyageurs = 0;
+        }
+
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb' ,'root' ,'');
+
+
+        $sql = 'SELECT * FROM logement l WHERE pays LIKE :location AND nbr_lits >= :nb_voyageurs AND Description LIKE :filtrec
+            AND l.id NOT IN (
+                SELECT id_logement_id FROM reservation r1 
+                WHERE (DATE(r1.date_debut) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
+                    OR (DATE(r1.date_fin) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
+                
+            )
+        ';
+
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute(['location' => '%'.$location.'%',
+            'datedebut' => $datedebut,
+            'datefin' => $datefin,
+            'nb_voyageurs' => $nb_voyageurs,
+            'filtrec' => '%'.$filtrec.'%'
+        ]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+
+    }
+
 
     /*public function findBySearchBar($location,$datedebut,$datefin,$nb_voyageurs) {
         if ($location == " ") {

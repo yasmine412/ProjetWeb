@@ -54,10 +54,30 @@ class HomePageController extends AbstractController
     #[Route('/homepage/testhome', name: 'app_home_page_id')]
     public function indexTestHome(): Response {
         $logements = $this->repository->findReservationByLogement(16);
+
         return $this->render('home_page/index.html.twig', ['controller' => $this,
             'logements'=>$logements,
         ]);
     }
+    #[Route('/homepage/filtreCarousel={filtrec}', name: 'app_home_page_filtreCarousel')]
+    public function indexfiltreCarousel($filtrec): Response
+    {
+        $logements=$this->repository->findByKeyword($filtrec);
+
+        return $this->render('home_page/index.html.twig', ['controller' => $this,
+            'logements'=>$logements,
+        ]);
+    }
+   #[Route('/homepage/location={location}/date_debut={date_debut}/date_fin={date_fin}/nb_voyageurs={nb_voyageurs}/filtreCarousel={filtrec}', name: 'app_home_page_filtrecar')]
+    public function indexserachfiltre($location,$date_debut,$date_fin,$nb_voyageurs,$filtrec): Response
+    {
+        $logements=$this->repository->findBySearchBarfiltre($location,$date_debut,$date_fin,$nb_voyageurs,$filtrec);
+
+        return $this->render('home_page/index.html.twig', ['controller' => $this,
+            'logements'=>$logements,
+        ]);
+    }
+
 
 
 
