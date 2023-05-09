@@ -25,6 +25,7 @@ searchButton.addEventListener('click', () => {
     }
     if (checkOutValue) {
         windowPath = windowPath + `/date_fin=${checkOutValue}`;
+        console.log(checkOutValue)
     }
     else {
         windowPath = windowPath + `/date_fin= `;

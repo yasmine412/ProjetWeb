@@ -1,11 +1,11 @@
 
 .footer_container {
-    margin: 0;
     background-color: white;
-    position: sticky;
     bottom: 0;
     z-index: 200;
+    position: fixed;
     overflow: hidden;
+    width: 100%;
 }
 
 
@@ -19,6 +19,7 @@
 
     padding: 50px;
     z-index:200;
+    height: 60vh;
 }
 
 

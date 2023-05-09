@@ -72,10 +72,8 @@ class LogementRepository extends ServiceEntityRepository
         $sql = 'SELECT * FROM logement l WHERE pays LIKE :location AND nbr_lits >= :nb_voyageurs
             AND l.id NOT IN (
                 SELECT id_logement_id FROM reservation r1 
-                WHERE (r1.date_debut > :datedebut AND r1.date_fin < :datefin)
-                    OR (r1.date_fin > :datedebut AND r1.date_fin < :datefin)
-                
-                
+                WHERE (DATE(r1.date_debut) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
+                    OR (DATE(r1.date_fin) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
             )
         ';
 
