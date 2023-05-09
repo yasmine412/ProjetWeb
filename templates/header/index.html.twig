@@ -16,7 +16,7 @@
 {% block body %}
     <header>
         <nav class="navbar">
-            <a class="navbar-brand" href="#"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
+            <a class="navbar-brand" href="{{ path('app_home_page') }}"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
             <div class="search-bar">
                 <a class="contenaire">
                     <input type="text"  name="location" id="location" placeholder="Où ?">
@@ -33,7 +33,7 @@
                 </a>
 
                 <div class="dropdown search-bar-item">
-                    <a onclick="dropdownFunction('#myDropdown','show')" id="nb_voyageurs" class="dropbtn">Voyageurs 0</a>
+                    <a onclick="dropdownFunction('#myDropdown','show')" id="nb_voyageurs" class="dropbtn">Voyageurs <span id="nbreVoyageurs">0</span></a>
                     <div id="myDropdown" class="dropdown-content">
                         <div class="dropdown-item adults-container" >
                             <div class="label adults-label">

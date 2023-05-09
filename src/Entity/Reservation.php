@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
+#[ORM\Table(name: 'reservation')]
 class Reservation
 {
     #[ORM\Id]
@@ -26,11 +27,11 @@ class Reservation
 
     #[ORM\ManyToOne(inversedBy: 'rServations')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $IdLocataire = null;
+    private ?Compte $IdLocataire = null;
 
     #[ORM\ManyToOne(inversedBy: 'rServations')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $IdProprietaire = null;
+    private ?Compte $IdProprietaire = null;
 
     public function getId(): ?int
     {
@@ -73,24 +74,24 @@ class Reservation
         return $this;
     }
 
-    public function getIdLocataire(): ?User
+    public function getIdLocataire(): ?Compte
     {
         return $this->IdLocataire;
     }
 
-    public function setIdLocataire(?User $IdLocataire): self
+    public function setIdLocataire(?Compte $IdLocataire): self
     {
         $this->IdLocataire = $IdLocataire;
 
         return $this;
     }
 
-    public function getIdProprietaire(): ?User
+    public function getIdProprietaire(): ?Compte
     {
         return $this->IdProprietaire;
     }
 
-    public function setIdProprietaire(?User $IdProprietaire): self
+    public function setIdProprietaire(?Compte $IdProprietaire): self
     {
         $this->IdProprietaire = $IdProprietaire;
 

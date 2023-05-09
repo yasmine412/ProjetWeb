@@ -1,45 +1,41 @@
-// // Get references to the "from" and "to" date inputs
-// const fromInput = document.querySelector('from-date');
-// const toInput = document.querySelector('to-date');
+const searchButton = document.querySelector('#search-btn')
+let windowPath = window.location.origin + '/homepage'
+searchButton.addEventListener('click', () => {
+    const locationInput = document.querySelector('#location')
+    const locationValue = locationInput.value;
+    const checkInInput = document.querySelector('#check-in')
+    const checkInValue = checkInInput.value;
+    const checkOutInput = document.querySelector('#check-out')
+    const checkOutValue = checkOutInput.value;
+    const guestInput = document.querySelector('#nbreVoyageurs')
+    const guestValue = guestInput.textContent;
 
-// // Add an event listener to the "from" input to validate the date
-// fromInput.addEventListener('change', function() {
-//   // Parse the date from the input value
-//   const fromDate = new Date(fromInput.value);
+    if (locationValue) {
+        windowPath = windowPath + `/location=${locationValue}`;
+    }
+    else {
+        windowPath = windowPath + `/location= `;
+    }
+    if (checkInValue) {
+        windowPath = windowPath + `/date_debut=${checkInValue}`;
 
-//   // If the date is invalid, clear the input and return
-//   if (isNaN(fromDate.getTime())) {
-//     fromInput.value = '';
-//     return;
-//   }
+    }
+    else {
+        windowPath = windowPath + `/date_debut= `;
+    }
+    if (checkOutValue) {
+        windowPath = windowPath + `/date_fin=${checkOutValue}`;
+    }
+    else {
+        windowPath = windowPath + `/date_fin= `;
+    }
+    if (guestValue) {
+        windowPath = windowPath + `/nb_voyageurs=${guestValue}`;
+    }
+    else {
+        windowPath = windowPath + `/nb_voyageurs= `;
+    }
+    window.location.href= windowPath;
 
-//   // If the "to" input already has a value, compare the dates
-//   if (toInput.value) {
-//     const toDate = new Date(toInput.value);
-//     if (fromDate > toDate) {
-//       toInput.value = '';
-//       alert('The "to" date cannot be earlier than the "from" date.');
-//     }
-//   }
-// });
+});
 
-// // Add an event listener to the "to" input to validate the date
-// toInput.addEventListener('change', function() {
-//   // Parse the date from the input value
-//   const toDate = new Date(toInput.value);
-
-//   // If the date is invalid, clear the input and return
-//   if (isNaN(toDate.getTime())) {
-//     toInput.value = '';
-//     return;
-//   }
-
-//   // If the "from" input already has a value, compare the dates
-//   if (fromInput.value) {
-//     const fromDate = new Date(fromInput.value);
-//     if (fromDate > toDate) {
-//       toInput.value = '';
-//       alert('The "to" date cannot be earlier than the "from" date.');
-//     }
-//   }
-// });

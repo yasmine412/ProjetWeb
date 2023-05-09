@@ -17,7 +17,7 @@ class Logement
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 3)]
-    private ?string $PrixNuite = null;
+    private ?string $prix_nuité = null;
 
     #[ORM\Column(length: 20)]
     private ?string $TypeLogement = null;
@@ -55,6 +55,10 @@ class Logement
     #[ORM\Column]
     private array $Equipements = [];
 
+    #[ORM\ManyToOne(inversedBy: 'logements')]
+    #[ORM\JoinColumn(nullable: false)]
+
+    private ?Compte $idCompte = null;
 
     #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: ImagesLogement::class, orphanRemoval: true)]
     private Collection $imagesLogements;
@@ -64,10 +68,6 @@ class Logement
 
     #[ORM\OneToMany(mappedBy: 'id_logement', targetEntity: Commentaire::class, orphanRemoval: true)]
     private Collection $commentaires;
-
-    #[ORM\ManyToOne(inversedBy: 'logements')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $idUser = null;
 
     public function __construct()
     {
@@ -93,14 +93,14 @@ class Logement
         return $this;
     }
 
-    public function getPrixNuite(): ?string
+    public function getprix_nuité(): ?string
     {
-        return $this->PrixNuite;
+        return $this->prix_nuité;
     }
 
-    public function setPrixNuite(string $PrixNuite): self
+    public function setprix_nuitee(string $prix_nuité): self
     {
-        $this->PrixNuite = $PrixNuite;
+        $this->prix_nuité = $prix_nuité;
 
         return $this;
     }
@@ -237,6 +237,17 @@ class Logement
         return $this;
     }
 
+    public function getIdCompte(): ?Compte
+    {
+        return $this->idCompte;
+    }
+
+    public function setIdCompte(?Compte $idCompte): self
+    {
+        $this->idCompte = $idCompte;
+
+        return $this;
+    }
 
     /**
      * @return Collection<int, ImagesLogement>
@@ -324,18 +335,6 @@ class Logement
                 $commentaire->setIdLogement(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getIdUser(): ?User
-    {
-        return $this->idUser;
-    }
-
-    public function setIdUser(?User $idUser): self
-    {
-        $this->idUser = $idUser;
 
         return $this;
     }

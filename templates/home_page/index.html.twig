@@ -27,16 +27,18 @@
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-       <link rel="stylesheet" href={{ "style/card.css" }}>
-       <link rel="stylesheet" href={{"style/carousel.css"  }}>
+
 
        <link rel="stylesheet" href="{{  asset("style/subnav.css") }}" >
 
 
 
-       <link rel="stylesheet" href={{"style/subnav-carousel.css"  }}>
+       <link rel="stylesheet" href={{asset("style/subnav-carousel.css" ) }}>
 
        <link rel="stylesheet" href="{{asset('style/footer.css') }}">
+
+       <link rel="stylesheet" href={{asset("style/card.css")}}>
+       <link rel="stylesheet" href={{asset("style/carousel.css" ) }}>
 
 
 
@@ -61,14 +63,14 @@
     {% endif %}
     <div class="conteneur-annonce">
         <div class="images-maison">
-            {%set img=controller.imageParId(i) %}
+            {%set img=controller.imageParId(logement.id) %}
 
-            {% include 'carousel.html.twig' with {'numAnnonce': logement.getID(),'images':img} %}
+            {% include 'carousel.html.twig' with {'numAnnonce': logement.id,'images':img} %}
         </div>
-        <div class="pays"> <div>{{ logement.getVille() }},{{logement.getPays() }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
-        <div class="titre">{{ logement.getRue()}}</div>
+        <div class="pays"> <div>{{ logement.ville }},{{logement.pays }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+        <div class="titre">{{ logement.rue}}</div>
         <div class="date">1-6 Mai</div>
-        <div class="prix">{%set floatNumber=logement.getPrixNuité() %}
+        <div class="prix">{%set floatNumber=logement.prix_nuité %}
                           {% set intNumber = floatNumber|round(0, 'floor') %}
             {{ intNumber }}$
     <span class="nuité">par nuit</span></div>

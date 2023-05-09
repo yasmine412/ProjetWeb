@@ -2,10 +2,9 @@
 
 namespace App\DataFixtures;
 
-
+use App\Entity\Compte;
 use App\Entity\Logement;
 use App\Entity\Reservation;
-use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -26,10 +25,10 @@ class ReservationFixtures extends Fixture
             while ($j>=$k){$k=$faker->dateTime();}
             $reservation->setDateFin($k);
 
-            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+            $compte = $manager->getRepository(Compte::class)->find($faker->numberBetween(1, 20));
         $reservation->setIdLocataire($compte);
 
-        $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+        $compte = $manager->getRepository(Compte::class)->find($faker->numberBetween(1, 20));
             $reservation->setIdProprietaire($compte);
 
         $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(1, 16));

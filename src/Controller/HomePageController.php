@@ -33,8 +33,6 @@ class HomePageController extends AbstractController
         return $images;
     }
 
-
-
     #[Route('/homepage', name: 'app_home_page')]
     public function index(): Response
     {$logement=$this->repository->findAll();
@@ -42,6 +40,25 @@ class HomePageController extends AbstractController
           'logements'=>$logement,
         ]);
     }
+
+    #[Route('/homepage/location={location}/date_debut={date_debut}/date_fin={date_fin}/nb_voyageurs={nb_voyageurs}', name: 'app_home_page_location')]
+    public function indexId($location,$date_debut,$date_fin,$nb_voyageurs): Response
+    {
+        $logements=$this->repository->findBySearchBar($location,$date_debut,$date_fin,$nb_voyageurs);
+
+        return $this->render('home_page/index.html.twig', ['controller' => $this,
+          'logements'=>$logements,
+        ]);
+    }
+
+    #[Route('/homepage/testhome', name: 'app_home_page_id')]
+    public function indexTestHome(): Response {
+        $logements = $this->repository->findReservationByLogement(16);
+        return $this->render('home_page/index.html.twig', ['controller' => $this,
+            'logements'=>$logements,
+        ]);
+    }
+
 
 
 }
