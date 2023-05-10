@@ -5,18 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-qmHUA9XPRstx8+HPZGnq68tTzTt/QLTtBEsR+1l2sNv9XWtmvlNUsk0nvbcZLqnFjrIwy2QUp1rJr1tp04/Kkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/heart.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href={{ "style/card.css" }}>
+    <link rel="stylesheet" href={{"style/carousel.css"  }}>
+
+
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 
@@ -31,42 +41,78 @@
 
 <header>
 
-</header>
-<hr>
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset("style/navbar.css") }} ">
+    <link rel="stylesheet"  href="{{ asset("style/dropdown-menu.css") }}" >
 
 
-<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
+        <div class="nav-container" >
 
-<div class="nav-container" >
+            <h1>Réservations</h1>
 
-        <h1>Réservations</h1>
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">à venir</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Terminées</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Annulées</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">à venir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Terminées</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Annulées</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tout</a>
-                    </li>
-                </ul>
+
+        </div>
+
+        <a id="logement" class="navbar-item" type="submit" target="_blank" href="{{ path('app_post_item_form') }}" >
+            Mettre mon logement sur Ymara
+        </a>
+
+        <div class="menu" >
+            <button class="dropdown_item navbar-item account-dropbtn" id="navbar-icons" onclick="dropdownFunction('#account','account-show')">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <div id="account" class="dropdown-menu dropdown-account-content">
+
+                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}" >Mettre mon logement</a>
+                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_home_page') }}">Page d'accueil</a>
+                <hr/>
+                <a class="dropdown-divider dropdown-account"></a>
+                <a class="dropdown-item dropdown-account">Aide</a>
+                <a class="dropdown-item dropdown-account btn-cnx" target="_blank" href="{{ path('app_logout') }}">
+                    Deconnexion
+                </a>
             </div>
         </div>
     </nav>
 
 
-    </div>
-</div>
 
-<hr>
+
+
+</header>
+
+
+
+<body>
+
+
+
+
+
 
 
    {{ include ('reservation/cardReservation.html.twig')}}
@@ -74,9 +120,28 @@
 
 
 
-
-
 </body>
+
+<script src="{{  asset("script/dropdown-menu.js") }} "></script>
+<script src="{{ asset("script/dropdown-buttons.js") }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/81363d573b.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="{{ asset('script/navCarousel.js') }}"></script>
+
+<script src="https://kit.fontawesome.com/20d1a76219.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 </html>
+
 
 

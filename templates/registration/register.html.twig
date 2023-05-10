@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ asset('style/inscription-style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+
+
+    <div class="container">
+
+
+        {{ form_start(registrationForm,{'attr':{'class':'needs-validation','novalidate':'novalidate'}}) }}
+        <img class="logo-form" src="{{ asset('assets/logo-ymara.png') }}" alt="">
+        <h2>Bienvenu à <span style="background: -webkit-linear-gradient(#962fbf, #e61e4d); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">YMARA</span></h2>
+
+        <div class="content">
+
+
+            {% set class='' %}
+            {% if not registrationForm.Nom.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.Nom.vars.id }}" class="control-label">Nom</label>
+                {{ form_widget(registrationForm.Nom , {'attr':{'class':'form-control','placeholder':'Nom'}}) }}
+                {% do registrationForm.Nom.setRendered %}
+                {% if not registrationForm.Nom.vars.valid %}
+                    {% for error in registrationForm.Nom.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+
+
+            {% set class='' %}
+            {% if not registrationForm.Prenom.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.Prenom.vars.id }}">Prénom</label>
+                {{ form_widget(registrationForm.Prenom , {'attr':{'class':'form-control','placeholder':'Prénom'}}) }}
+                {% do registrationForm.Prenom.setRendered %}
+                {% if not registrationForm.Prenom.vars.valid %}
+                    {% for error in registrationForm.Prenom.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+            {% set class='' %}
+            {% if not registrationForm.email.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.email.vars.id }}">Adresse Mail</label>
+                {{ form_widget(registrationForm.email , {'attr':{'class':'form-control','placeholder':'Adresse Mail'}}) }}
+                {% do registrationForm.email.setRendered %}
+                {% if not registrationForm.email.vars.valid %}
+                    {% for error in registrationForm.email.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+
+            {% set class='' %}
+            {% if not registrationForm.plainPassword.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.plainPassword.vars.id }}">Mot de passe</label>
+                {{ form_widget(registrationForm.plainPassword , {'attr':{'class':'form-control','placeholder':'Mot de passe','type':'password'}}) }}
+                {% do registrationForm.plainPassword.setRendered %}
+                {% if not registrationForm.plainPassword.vars.valid %}
+                    {% for error in registrationForm.plainPassword.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+
+            {% set class='' %}
+            {% if not registrationForm.Telephone.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.Telephone.vars.id }}">téléphone</label>
+                {{ form_widget(registrationForm.Telephone, {'attr':{'class':'form-control','placeholder':'numero de téléphone'}}) }}
+                {% do registrationForm.Telephone.setRendered %}
+                {% if not registrationForm.Telephone.vars.valid %}
+                    {% for error in registrationForm.Telephone.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+
+            {% set class='' %}
+            {% if not registrationForm.Age.vars.valid %}
+                {% set class='has-error' %}
+            {% endif %}
+            <div class="input-box {{ class }}">
+                <label for="{{ registrationForm.Age.vars.id }}">Age</label>
+                {{ form_widget(registrationForm.Age, {'attr':{'class':'form-control','type':'date','placeholder':'Entrez votre age'}}) }}
+                {% do registrationForm.Age.setRendered %}
+                {% if not registrationForm.Age.vars.valid %}
+                    {% for error in registrationForm.Age.vars.errors %}
+                        <span class="help-block">{{ error.message }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+
+        {% set class='' %}
+        {% if not registrationForm.agreeTerms.vars.valid %}
+            {% set class='has-error' %}
+        {% endif %}
+        <div class="{{ class }}">
+            <label for="{{ registrationForm.agreeTerms.vars.id }}">Agree terms</label>
+            {{ form_widget(registrationForm.agreeTerms) }}
+            {% do registrationForm.agreeTerms.setRendered %}
+            {% if not registrationForm.agreeTerms.vars.valid %}
+                {% for error in registrationForm.agreeTerms.vars.errors %}
+                    <span class="help-block">{{ error.message }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <div class="button-container">
+            <button type="submit" class="btn2">S'inscrire</button>
+        </div>
+        {{ form_end(registrationForm) }}
+
+    </div>
+
+
+
+
+{% endblock %}
+
+                    {% block javascripts %}
+                        <script src="{{ asset('node_modules/@popperjs/core/dist/umd/popper.js') }}"></script>
+                        <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.js') }}"></script>
+                        <script src="{{ asset('script/inscri.js') }}"></script>
+
+                    {% endblock %}

@@ -26,7 +26,7 @@ class CompteFixtures extends Fixture
             $fileContents = file_get_contents($pathToWebpFile);
             $compte->setPhoto($fileContents);
             $compte->setPassword($faker->password());
-            $compte->setPrénom($faker->firstName());
+            $compte->setPrenom($faker->firstName());
             $compte->setDateNaissance($faker->dateTime());
             $compte->setTelephone(strval($faker->numberBetween(10000000,99999999)));
             $manager->persist($compte);

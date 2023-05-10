@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 h1{
-    color: black;
+    background: -webkit-linear-gradient(#962fbf, #e61e4d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 hr{
     color: black;
@@ -40,4 +42,11 @@ body{
 }
 .nav-link:hover::after{
     opacity: 1;
+}
+.navbar-brand {
+    height: 60px;
+    margin-left:50px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+
 }

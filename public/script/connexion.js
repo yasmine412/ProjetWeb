@@ -1,5 +1,5 @@
-document.querySelector('#email').addEventListener('blur', validateEmail);
-document.querySelector('#password').addEventListener('blur', validatePassword);
+document.querySelector('#compte_Email').addEventListener('blur', validateEmail);
+document.querySelector('#compte_Password').addEventListener('blur', validatePassword);
 document.querySelector('.btn1').addEventListener('click', validateEmail);
 document.querySelector('.btn1').addEventListener('click', validatePassword);
 
@@ -8,8 +8,8 @@ const reSpaces = /^\S*$/;
 
 
 
-function validateEmail(e) {
-    const email = document.querySelector('#email');
+function validateEmail() {
+    const email = document.querySelector('#compte_Email');
     const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
     if (reSpaces.test(email.value) && re.test(email.value)) {
@@ -26,7 +26,7 @@ function validateEmail(e) {
 }
 
 function validatePassword() {
-    const password = document.querySelector('#password');
+    const password = document.querySelector('#compte_Password');
     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (re.test(password.value) && reSpaces.test(password.value)) {
         password.classList.remove('is-invalid');
@@ -63,3 +63,28 @@ function validatePassword() {
         );
     }
 })();
+
+function connexionModalOpened() {
+    var currentPath = window.location.pathname;
+    window.history.pushState(null,null,currentPath+"/login");
+}
+
+document.querySelector('.btn-cnx').addEventListener('click',function(){window.onclick=function (event) {
+    const modal = document.querySelector('#myModal1');
+    setTimeout(function () {
+        if (!modal.classList.contains("show")) {
+            var currentPath = window.location.pathname;
+            const newUrl = currentPath.replace('/login', '');
+            window.history.pushState(null, null, newUrl);
+        }
+    }, 150);
+}})
+
+
+
+
+function connexioncloseModal() {
+    var currentPath = window.location.pathname;
+    const newUrl = currentPath.replace('/login', '');
+    window.history.pushState(null, null, newUrl);
+}

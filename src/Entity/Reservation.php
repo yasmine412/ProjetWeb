@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\RéservationRepository;
+use App\Repository\ReservationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: RéservationRepository::class)]
-class Réservation
+#[ORM\Entity(repositoryClass: ReservationRepository::class)]
+class Reservation
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -15,7 +15,7 @@ class Réservation
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $DateDébut = null;
+    private ?\DateTimeInterface $DateDebut = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $DateFin = null;
@@ -26,25 +26,25 @@ class Réservation
 
     #[ORM\ManyToOne(inversedBy: 'rServations')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Compte $IdLocataire = null;
+    private ?User $IdLocataire = null;
 
     #[ORM\ManyToOne(inversedBy: 'rServations')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Compte $IdProprietaire = null;
+    private ?User $IdProprietaire = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDateDébut(): ?\DateTimeInterface
+    public function getDateDebut(): ?\DateTimeInterface
     {
-        return $this->DateDébut;
+        return $this->DateDebut;
     }
 
-    public function setDateDébut(\DateTimeInterface $DateDébut): self
+    public function setDateDebut(\DateTimeInterface $DateDebut): self
     {
-        $this->DateDébut = $DateDébut;
+        $this->DateDebut = $DateDebut;
 
         return $this;
     }
@@ -73,24 +73,24 @@ class Réservation
         return $this;
     }
 
-    public function getIdLocataire(): ?Compte
+    public function getIdLocataire(): ?User
     {
         return $this->IdLocataire;
     }
 
-    public function setIdLocataire(?Compte $IdLocataire): self
+    public function setIdLocataire(?User $IdLocataire): self
     {
         $this->IdLocataire = $IdLocataire;
 
         return $this;
     }
 
-    public function getIdProprietaire(): ?Compte
+    public function getIdProprietaire(): ?User
     {
         return $this->IdProprietaire;
     }
 
-    public function setIdProprietaire(?Compte $IdProprietaire): self
+    public function setIdProprietaire(?User $IdProprietaire): self
     {
         $this->IdProprietaire = $IdProprietaire;
 

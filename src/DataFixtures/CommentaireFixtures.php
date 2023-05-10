@@ -1,12 +1,11 @@
 <?php
 
 namespace App\DataFixtures;
-use App\Entity\Compte;
+use App\Entity\User;
 Use App\Entity\Logement;
 use App\Entity\Commentaire;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
 
 
 use vendor\fzaninotto\faker\src\Faker\Factory;
@@ -21,8 +20,8 @@ class CommentaireFixtures extends Fixture
 
             $commentaire->setText($faker->word);
 
-            $compte = $manager->getRepository(Compte::class)->find($faker->numberBetween(1, 20));
-            $commentaire->setIdCompte($compte);
+            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+            $commentaire->setIdUser($compte);
 
             $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(1, 16));
             $commentaire->setIdLogement($logement);

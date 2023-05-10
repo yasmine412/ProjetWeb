@@ -3,7 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Logement;
-use App\Entity\Compte;
+
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 Use vendor\fzaninotto\faker\src\Faker\Factory;
@@ -66,10 +67,10 @@ return($a[$i]);
 
             $logement->setTitre($faker->realText(20));
             $logement->setDescription($faker->realText(30).$this->genran().$faker->realText(30));
-            $logement->setPrixNuité(strval($faker->randomFloat(NULL, 0,2000)));
+            $logement->setPrixNuite(strval($faker->randomFloat(NULL, 0,2000)));
 
-            $compte= $manager->getRepository(Compte::class)->find($faker->numberBetween(1,20));
-            $logement->setIdCompte($compte);
+            $compte= $manager->getRepository(User::class)->find($faker->numberBetween(1,20));
+            $logement->setIdUser($compte);
 
 
             $manager->persist($logement);

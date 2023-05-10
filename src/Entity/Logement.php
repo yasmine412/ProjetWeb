@@ -17,7 +17,7 @@ class Logement
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 3)]
-    private ?string $PrixNuité = null;
+    private ?string $PrixNuite = null;
 
     #[ORM\Column(length: 20)]
     private ?string $TypeLogement = null;
@@ -55,19 +55,19 @@ class Logement
     #[ORM\Column]
     private array $Equipements = [];
 
-    #[ORM\ManyToOne(inversedBy: 'logements')]
-    #[ORM\JoinColumn(nullable: false)]
-
-    private ?Compte $idCompte = null;
 
     #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: ImagesLogement::class, orphanRemoval: true)]
     private Collection $imagesLogements;
 
-    #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: Réservation::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: Reservation::class, orphanRemoval: true)]
     private Collection $rServations;
 
     #[ORM\OneToMany(mappedBy: 'id_logement', targetEntity: Commentaire::class, orphanRemoval: true)]
     private Collection $commentaires;
+
+    #[ORM\ManyToOne(inversedBy: 'logements')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $idUser = null;
 
     public function __construct()
     {
@@ -93,14 +93,14 @@ class Logement
         return $this;
     }
 
-    public function getPrixNuité(): ?string
+    public function getPrixNuite(): ?string
     {
-        return $this->PrixNuité;
+        return $this->PrixNuite;
     }
 
-    public function setPrixNuité(string $PrixNuité): self
+    public function setPrixNuite(string $PrixNuite): self
     {
-        $this->PrixNuité = $PrixNuité;
+        $this->PrixNuite = $PrixNuite;
 
         return $this;
     }
@@ -237,17 +237,6 @@ class Logement
         return $this;
     }
 
-    public function getIdCompte(): ?Compte
-    {
-        return $this->idCompte;
-    }
-
-    public function setIdCompte(?Compte $idCompte): self
-    {
-        $this->idCompte = $idCompte;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, ImagesLogement>
@@ -280,14 +269,14 @@ class Logement
     }
 
     /**
-     * @return Collection<int, Réservation>
+     * @return Collection<int, Reservation>
      */
     public function getRServations(): Collection
     {
         return $this->rServations;
     }
 
-    public function addRServation(Réservation $rServation): self
+    public function addRServation(Reservation $rServation): self
     {
         if (!$this->rServations->contains($rServation)) {
             $this->rServations->add($rServation);
@@ -297,7 +286,7 @@ class Logement
         return $this;
     }
 
-    public function removeRServation(Réservation $rServation): self
+    public function removeRServation(Reservation $rServation): self
     {
         if ($this->rServations->removeElement($rServation)) {
             // set the owning side to null (unless already changed)
@@ -335,6 +324,18 @@ class Logement
                 $commentaire->setIdLogement(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIdUser(): ?User
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(?User $idUser): self
+    {
+        $this->idUser = $idUser;
 
         return $this;
     }

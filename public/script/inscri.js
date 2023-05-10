@@ -1,9 +1,9 @@
-document.querySelector('#email1').addEventListener('blur', validateEmail);
-document.querySelector('#password1').addEventListener('blur', validatePassword);
-document.querySelector('#tel1').addEventListener('blur', validatePhone);
-document.querySelector('#ddn1').addEventListener('blur', validateAge);
-document.querySelector('#nom1').addEventListener('blur', validateNom);
-document.querySelector('#prenom1').addEventListener('blur', validatePrenom);
+document.querySelector('#compte_Email').addEventListener('blur', validateEmail);
+document.querySelector('#compte_Password').addEventListener('blur', validatePassword);
+document.querySelector('#compte_Telephone').addEventListener('blur', validatePhone);
+document.querySelector('#compte_DateNaissance').addEventListener('blur', validateAge);
+document.querySelector('#compte_Nom').addEventListener('blur', validateNom);
+document.querySelector('#compte_Prenom').addEventListener('blur', validatePrenom);
 
 
 document.querySelector('.btn2').addEventListener('click', validateEmail);
@@ -18,7 +18,7 @@ document.querySelector('.btn2').addEventListener('click', validatePrenom);
 
 
 function validateNom(){
-    const s=document.querySelector('#nom1');
+    const s=document.querySelector('#compte_Nom');
     const name=s.value.trim();
     const re=/^[a-zA-ZÀ-ÿ]+(([',. -][a-zA-ZÀ-ÿ ])?[a-zA-ZÀ-ÿ]*)*$/;
 
@@ -38,7 +38,7 @@ function validateNom(){
 
 
 function validatePrenom(){
-    const firstname=document.querySelector('#prenom1');
+    const firstname=document.querySelector('#compte_Prenom');
     const re=/^[a-zA-ZÀ-ÿ]+(([',. -][a-zA-ZÀ-ÿ ])?[a-zA-ZÀ-ÿ]*)*$/;
     if(re.test(firstname.value)){
         firstname.classList.remove('is-invalid');
@@ -53,7 +53,7 @@ function validatePrenom(){
 }
 
 function validateEmail(e) {
-    const email = document.querySelector('#email1');
+    const email = document.querySelector('#compte_Email');
     const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
     if (reSpaces.test(email.value) && re.test(email.value)) {
@@ -70,7 +70,7 @@ function validateEmail(e) {
 }
 
 function validatePassword() {
-    const password = document.querySelector('#password1');
+   const  password = document.querySelector('#compte_Password');
     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
     if (re.test(password.value) && reSpaces.test(password.value)) {
         password.classList.remove('is-invalid');
@@ -85,7 +85,7 @@ function validatePassword() {
     }
 }
 function validatePhone(){
-    const tel=document.querySelector('#tel1');
+    const tel=document.querySelector('##compte_Telephone');
     const re=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if(re.test(tel.value)){
         tel.classList.remove('is-invalid');
@@ -102,7 +102,7 @@ function validatePhone(){
     }
 }
 function calculAge(){
-    const userinput = document.getElementById("#ddn1").value;
+    const userinput = document.getElementById("#compte_DateNaissance").value;
     const dob = new Date(userinput);
     if(userinput==null || userinput==='') {
         return false;
@@ -125,7 +125,7 @@ function calculAge(){
     }
 }
 function  validateAge() {
-    const Age1 = document.querySelector('#ddn1');
+    const Age1 = document.querySelector('#compte_DateNaissance');
     const dob = new Date(Age1.value);
     if (Age1.value == null || Age1.value === '') {
         return false;
@@ -184,3 +184,33 @@ function  validateAge() {
         );
     }
 })();
+
+// Get a reference to your modal element
+
+
+function inscriptionModalOpened() {
+    var currentPath = window.location.pathname;
+    window.history.pushState(null,null,currentPath+"/inscription");
+}
+
+document.querySelector('.btn-inscri').addEventListener('click',function(){window.onclick=function (event) {
+    const modal = document.querySelector('#myModal2');
+    setTimeout(function () {
+        if (!modal.classList.contains("show")) {
+            var currentPath = window.location.pathname;
+            const newUrl = currentPath.replace('/inscription', '');
+            window.history.pushState(null, null, newUrl);
+        }
+    }, 150);
+}})
+
+
+
+
+function inscriptioncloseModal() {
+    var currentPath = window.location.pathname;
+    const newUrl = currentPath.replace('/inscription', '');
+    window.history.pushState(null, null, newUrl);
+}
+
+
