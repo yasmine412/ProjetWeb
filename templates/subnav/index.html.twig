@@ -26,29 +26,29 @@
 
                         <div class="modal-item fourchette-prix fc">
                             <h5>Fourchette de prix</h5>
-                            <span>Le prix moyen par nuit est de 401€ </span><br>
+                            <span>Le prix moyen par nuit est de 1300 $</span><br>
                             <div id="price-div">
-                                <span id="prix-affiche"><b>10 €</b></span>
+                                <span id="prix-affiche"><b>2000 $</b></span>
                             </div>
                             <div data-role="rangeslider">
-                                <input type="range" name="price" id="price" min="10" value="10" max="540">
+                                <input type="range" name="price" id="price" min="500" value="2000" max="2000">
                             </div>
                         </div>
 
                         <div class="modal-item type-logement fc">
                             <h5>Type de logement</h5>
                             <label class="fl">
-                                <input type="checkbox" name="logement" value="logement_entier">
+                                <input type="radio" name="logement" value="logement_entier">
                                 <b>Logement entier</b>
                                 <br><span>Un logement entier rien que pour vous.</span>
                             </label>
                             <label class="fl">
-                                <input type="checkbox" name="logement" value="chambre_privee">
+                                <input type="radio" name="logement" value="chambre_privee">
                                 <b>Chambre privée</b>
                                 <br><span>Une chambre privée dans un logement ou un hôtel, avec des parties communes partagées avec d'autres personnes.</span>
                             </label>
                             <label class="fl">
-                                <input type="checkbox" name="logement" value="chambre_partagee">
+                                <input type="radio" name="logement" value="chambre_partagee">
                                 <b>Chambre partagée</b>
                                 <br><span>Un espace couchage et des parties communes qui peuvent être partagés avec d'autres personnes.</span>
                             </label>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="lits">
                                 <h6>Lits</h6>
-                                <div class="number-boxes">
+                                <div id="lits" class="number-boxes">
                                     <span id="tout" class="selected">Tout</span>
                                     <span>1</span>
                                     <span>2</span>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="salles-de-bain">
                                 <h6>Salles de bain</h6>
-                                <div class="number-boxes">
+                                <div id="salledeau" class="number-boxes">
                                     <span id="tout" class="selected">Tout</span>
                                     <span>1</span>
                                     <span>2</span>
@@ -126,7 +126,7 @@
                             <h5>Équipements</h5>
                             <div class="equipement-base">
                                 <h6>Produits et services de base</h6>
-                                <div class="grid-container">
+                                <div class="grid-container" id="equipements">
                                     <div class="grid-item">
                                         <label class="fl">
                                             <input type="checkbox" name="equipement" value="wifi">
@@ -476,7 +476,7 @@
                                 <label class="description">
                                     <span>Superhôte</span><br>
                                     <span>Séjournez chez des hôtes reconnus.</span><br>
-                                    <a style="color:black; font-weight:500;" target="_blank" href="https://www.airbnb.fr/d/superhost">En savoir plus</a>
+                                    <a style="color:black; font-weight:500; cursor:pointer;" >En savoir plus</a>
                                 </label>
                                 <label class="switch">
                                     <input type="checkbox">
@@ -495,11 +495,14 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="modal-footer">
                         <button type="button" id="validation" class="btn btn-secondary" data-dismiss="modal" >Valider les filtres</button>
-                    </div>
                 </div>
             </div>
+
+        </div>
         </div>
     </div>
 

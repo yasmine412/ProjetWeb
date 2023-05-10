@@ -7,6 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Logement;
@@ -26,15 +27,15 @@ class HomePageController extends AbstractController
 
     public function imageParId($id){
         $images = $this->repositoryImage->findBy(['idLogement'=>$id]);
-            foreach ($images as $image)
-            {$image->setData(base64_encode(stream_get_contents($image->getData())));}
+        foreach ($images as $image)
+        {$image->setData(base64_encode(stream_get_contents($image->getData())));}
 
 
         return $images;
     }
 
     #[Route('/homepage', name: 'app_home_page')]
-    public function index(): Response
+    public function index(Request $request): Response
     {$logement=$this->repository->findAll();
         return $this->render('home_page/index.html.twig', ['controller' => $this,
           'logements'=>$logement,
@@ -44,7 +45,7 @@ class HomePageController extends AbstractController
     #[Route('/homepage/location={location}/date_debut={date_debut}/date_fin={date_fin}/nb_voyageurs={nb_voyageurs}', name: 'app_home_page_location')]
     public function indexId($location,$date_debut,$date_fin,$nb_voyageurs): Response
     {
-        $logements=$this->repository->findBySearchBar($location,$date_debut,$date_fin,$nb_voyageurs);
+        $logements=$this->repository->findBySearchBar(ucfirst(strtolower($location)),$date_debut,$date_fin,$nb_voyageurs);
 
         return $this->render('home_page/index.html.twig', ['controller' => $this,
           'logements'=>$logements,
@@ -77,6 +78,19 @@ class HomePageController extends AbstractController
             'logements'=>$logements,
         ]);
     }
+
+
+    #[Route('/homepage/filtres&prix={prix}&type_logement={type_logement}&chambres={chambres}&lits={lits}&salledeau={salledeau}&type_propriete={type_propriete}',name:'app_home_page_filtre' )]
+    public function indexFiltre($prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete): Response
+    {
+        $logements=$this->repository->findByFiltre($prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete);
+
+        return $this->render('home_page/index.html.twig', ['controller' => $this,
+            'logements'=>$logements,
+        ]);
+    }
+
+
 
 
 

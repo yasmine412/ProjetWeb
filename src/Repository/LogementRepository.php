@@ -134,32 +134,82 @@ class LogementRepository extends ServiceEntityRepository
 
     }
 
+    public function findByFiltre($prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete) {
+        if ($type_logement == " ") {
+            $type_logement = "";
+        }
+        if ($chambres=="Tout") {
+            $chambres = 0;
+        }
+        if ($lits=="Tout") {
+            $lits = 0;
+        }
+        if ($salledeau=="Tout") {
+            $salledeau = 0;
+        }
+        if ($type_propriete=="blank") {
+            $type_propriete = "";
+        }
+        $typeProp = array(
+            "maison" => 0,
+            "appartement" => 1,
+            "maison-dhotes" => 2,
+            "hotel" => 3,
+            "" => 7,
+        );
 
-    /*public function findBySearchBar($location,$datedebut,$datefin,$nb_voyageurs) {
-        if ($location == " ") {
-            $location = "";
+        $typeLog = array(
+            "logement_entier" => 0,
+            "chambre_privee" => 1,
+            "chambre_partagee" => 2,
+            "" => 7
+        );
+
+        $type_logement = $typeLog[$type_logement];
+        $type_propriete = $typeProp[$type_propriete];
+        $chambres = (int)$chambres;
+        $lits = (int)$lits;
+        $salledeau = (int)$salledeau;
+
+
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb', 'root', '');
+        $sql = 'SELECT * FROM logement l WHERE 
+         prix_nuité <= ?
+       AND nbr_chambres >= ?
+       AND nbr_lits >= ?
+       AND nbr_sdb >= ?';
+        if (($type_propriete == 7)||($type_logement == 7)) {
+            if ($type_propriete != 7) {
+                $sql = $sql . ' AND type_logement = ?';
+            }
+            if ($type_logement != 7) {
+                $sql = $sql . ' AND type_espace = ?';
+            }
         }
-        if ($datedebut == " ") {
-            $datedebut = "1700-01-01";
+        else {
+            $sql = $sql . ' AND type_logement = ? AND type_espace = ?';
         }
-        if ($datefin == " ") {
-            $datefin = "3000-01-01";
+
+
+        $prix=(int)$prix;
+
+        $stmt = $conn->prepare($sql);
+        if (($type_logement == 7)&&($type_propriete == 7)) {
+            $stmt->execute([$prix, $chambres, $lits, $salledeau]);
         }
-        if ($nb_voyageurs == " ") {
-            $nb_voyageurs = 0;
+        else if ($type_logement == 7) {
+            $stmt->execute([$prix, $chambres, $lits, $salledeau, $type_propriete]);
         }
-        $qb = $this->createQueryBuilder('l');
-            $qb->select('r.idLogement')
-               ->from(Reservation::class, 'r')
-                ->where('l.id NOT IN (SELECT idLogement FROM  App\Entity\Reservation r1 WHERE r1.dateDebut BETWEEN :datedebut AND :datefin OR r1.dateFin BETWEEN :datedebut AND :datefin )')
-            ->andWhere('l.ville LIKE :location')
-            ->andWhere('l.NbrLits >= :nb_voyageurs')
-            ->setParameter('datedebut', $datedebut)
-            ->setParameter('datefin', $datefin)
-            ->setParameter('location', '%'.$location.'%')
-            ->setParameter('nb_voyageurs', $nb_voyageurs);
-        return $qb->getQuery()->getResult();
-    } */
+        else if ($type_propriete == 7) {
+            $stmt->execute([$prix, $chambres, $lits, $salledeau, $type_logement]);
+        }
+        else {
+            $stmt->execute([$prix, $chambres, $lits, $salledeau, $type_propriete, $type_logement]);
+        }
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
 
     /*public function findByPays($pays): array
     {

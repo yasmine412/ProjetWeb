@@ -10,12 +10,16 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
     This friendly message is coming from:
+    <div>{{ data.name }}</div>
+    <div>{{ data.email }}</div>
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/Users/ASUS X415/Desktop/Projet/ProjetSymfony/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/ASUS X415/Desktop/Projet/ProjetSymfony/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
     </ul>
 </div>
 
+{% endblock %}
+{% block javascripts %}
+    <script src="{{  asset("script/subnav.js") }}"></script>
 {% endblock %}

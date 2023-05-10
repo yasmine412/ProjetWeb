@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortedNames = countryNames.sort();
         let output = "";
         sortedNames.forEach(name => {
-            console.log(name)
             output += ' <option value="'+name+'">'+name+'</option>';
         })
 

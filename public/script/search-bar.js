@@ -1,5 +1,13 @@
 const searchButton = document.querySelector('#search-btn')
 let windowPath = window.location.origin + '/homepage'
+const searchBar = document.querySelector('.search-bar')
+
+searchBar.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchButton.click();
+    }
+});
+
 searchButton.addEventListener('click', () => {
     const locationInput = document.querySelector('#location')
     const locationValue = locationInput.value;
