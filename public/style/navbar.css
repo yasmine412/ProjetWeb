@@ -93,7 +93,7 @@ button:disabled {
     color:grey;
     margin-right: 45px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
 
 
