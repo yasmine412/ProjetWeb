@@ -92,6 +92,8 @@ button:disabled {
     border: 1px solid #e0E0E0;
     color:grey;
     margin-right: 45px;
+    display: flex;
+    justify-content: space-between;
 }
 
 
