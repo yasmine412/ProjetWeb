@@ -83,12 +83,20 @@
 
             <div class="menu" >
                 <button class="dropdown_item navbar-item account-dropbtn" id="navbar-icons" onclick="dropdownFunction('#account','account-show')">
-                    <i class="fa-solid fa-bars"></i>
-                    <i class="fa-solid fa-user"></i>
+                    <!--<i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-user"></i> -->
+                    {% if(app.user) %}
+                    <img style="width:20px; height:20px;" src="{{ asset('assets/menu_rose.svg') }}" >
+                    <img style="width:20px; height:20px;" src="{{ asset('assets/account_rose.svg') }}" >
+                    {% else   %}
+                    <img style="width:20px; height:20px;" src="{{ asset('assets/menu_gris.svg') }}" >
+                    <img style="width:20px; height:20px;" src="{{ asset('assets/account_gris.svg') }}" >
+                    {% endif %}
+
                 </button>
                 <div id="account" class="dropdown-menu dropdown-account-content">
                     {% if(app.user) %}
-                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_reservation_index')~'/'~app.user.id }}">Mes Reservations</a>
+                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_reservation_index')~'/'~app.user.id }}">Mes Réservations</a>
                     <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}">Mettre mon logement</a>
                     <hr/>
 
