@@ -27,8 +27,6 @@
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-
-
        <link rel="stylesheet" href="{{  asset("style/subnav.css") }}" >
 
 
@@ -53,9 +51,8 @@
 
 
 {% include 'header/index.html.twig' %}
-{% include 'inscription/Inscription.html.twig' %}
 {%  include 'subnav_carousel.html.twig' %}
-{% include 'connexion/connexion.html.twig' %}
+
 {% set i = 1 %}
 {% for logement in logements %}
     {% if i%4 == 1 %}
@@ -70,7 +67,7 @@
         <div class="pays"> <div>{{ logement.ville }},{{logement.pays }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
         <div class="titre">{{ logement.rue}}</div>
         <div class="date">1-6 Mai</div>
-        <div class="prix">{%set floatNumber=logement.prix_nuité %}
+        <div class="prix">{%set floatNumber=logement.prix_nuite %}
                           {% set intNumber = floatNumber|round(0, 'floor') %}
             {{ intNumber }}$
     <span class="nuité">par nuit</span></div>
@@ -116,12 +113,12 @@
             crossorigin="anonymous"></script>
 
 
-    <script src="{{ asset('script/connexion.js') }}"></script>
+
 
     <script src="{{ asset('node_modules/@popperjs/core/dist/umd/popper.js') }}"></script>
     <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('script/inscri.js') }}"></script>
-    <script src="{{ asset('script/pays.js') }}"></script>
+
+
 
 
 

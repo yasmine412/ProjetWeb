@@ -26,13 +26,13 @@ class ReservationFixtures extends Fixture
             while ($j>=$k){$k=$faker->dateTime();}
             $reservation->setDateFin($k);
 
-            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(13, 32));
         $reservation->setIdLocataire($compte);
 
-        $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+        $compte = $manager->getRepository(User::class)->find($faker->numberBetween(13, 32));
             $reservation->setIdProprietaire($compte);
 
-        $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(1, 16));
+        $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(35, 54));
         $reservation->setIdLogement($logement);
 
             $manager->persist($reservation);

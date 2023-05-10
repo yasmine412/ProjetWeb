@@ -17,7 +17,7 @@ class Logement
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 3)]
-    private ?string $prix_nuité = null;
+    private ?string $prix_nuite = null;
 
     #[ORM\Column(length: 20)]
     private ?string $TypeLogement = null;
@@ -58,7 +58,7 @@ class Logement
     #[ORM\ManyToOne(inversedBy: 'logements')]
     #[ORM\JoinColumn(nullable: false)]
 
-    private ?Compte $idCompte = null;
+    private ?User $idUser = null;
 
     #[ORM\OneToMany(mappedBy: 'idLogement', targetEntity: ImagesLogement::class, orphanRemoval: true)]
     private Collection $imagesLogements;
@@ -93,14 +93,14 @@ class Logement
         return $this;
     }
 
-    public function getprix_nuité(): ?string
+    public function getprix_nuite(): ?string
     {
-        return $this->prix_nuité;
+        return $this->prix_nuite;
     }
 
-    public function setprix_nuitee(string $prix_nuité): self
+    public function setprix_nuite(string $prix_nuite): self
     {
-        $this->prix_nuité = $prix_nuité;
+        $this->prix_nuite = $prix_nuite;
 
         return $this;
     }
@@ -237,14 +237,14 @@ class Logement
         return $this;
     }
 
-    public function getIdCompte(): ?Compte
+    public function getIdUser(): ?User
     {
-        return $this->idCompte;
+        return $this->idUser;
     }
 
-    public function setIdCompte(?Compte $idCompte): self
+    public function setIdUser(?User $idUser): self
     {
-        $this->idCompte = $idCompte;
+        $this->idUser = $idUser;
 
         return $this;
     }

@@ -20,10 +20,10 @@ class CommentaireFixtures extends Fixture
 
             $commentaire->setText($faker->word);
 
-            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(1, 20));
+            $compte = $manager->getRepository(User::class)->find($faker->numberBetween(13, 32));
             $commentaire->setIdUser($compte);
 
-            $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(1, 16));
+            $logement = $manager->getRepository(Logement::class)->find($faker->numberBetween(35, 54));
             $commentaire->setIdLogement($logement);
 
             $manager->persist($commentaire);

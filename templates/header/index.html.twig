@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="{{ asset('style/search-bar.css') }}">
     <link rel="stylesheet" href="{{ asset("style/navbar.css") }} ">
     <link rel="stylesheet"  href="{{ asset("style/dropdown-menu.css") }}" >
-    <link rel="stylesheet" href="{{ asset('style/inscription-style.css') }}">
-    <link rel="stylesheet" href="{{ asset("style/connexion-style.css") }}">
 
 {% endblock %}
 
@@ -84,10 +82,10 @@
                 </button>
                 <div id="account" class="dropdown-menu dropdown-account-content">
 
-                     <a class="dropdown-item dropdown-account" id="open-modal" data-toggle="modal"  data-target="#myModal1">
+                     <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_login') }}">
                         Connexion
                     </a>
-                    <a class="dropdown-item dropdown-account" id="open-modal" data-toggle="modal"  data-target="#myModal2">Inscription</a>
+                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_register') }}">Inscription</a>
                     <hr/>
                     <a class="dropdown-divider dropdown-account"></a>
                     <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}" >Mettre mon logement</a>

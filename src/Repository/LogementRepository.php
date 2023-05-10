@@ -174,7 +174,7 @@ class LogementRepository extends ServiceEntityRepository
 
         $conn = new PDO('mysql:host=localhost;dbname=ymaradb', 'root', '');
         $sql = 'SELECT * FROM logement l WHERE 
-         prix_nuité <= ?
+         prix_nuite <= ?
        AND nbr_chambres >= ?
        AND nbr_lits >= ?
        AND nbr_sdb >= ?';
@@ -264,7 +264,7 @@ class LogementRepository extends ServiceEntityRepository
         $conn = new PDO('mysql:host=localhost;dbname=ymaradb', 'root', '');
         $sql = 'SELECT * FROM logement l WHERE 
         pays LIKE ? AND nbr_lits >= ?
-       AND  prix_nuité <= ?
+       AND  prix_nuite <= ?
        AND nbr_chambres >= ?
        AND nbr_lits >= ?
        AND nbr_sdb >= ?';
@@ -339,7 +339,7 @@ class LogementRepository extends ServiceEntityRepository
 
         $conn = new PDO('mysql:host=localhost;dbname=ymaradb', 'root', '');
         $sql = 'SELECT * FROM logement l WHERE 
-         prix_nuité <= ?
+         prix_nuite <= ?
        AND nbr_chambres >= ?
        AND nbr_lits >= ?
        AND nbr_sdb >= ?
@@ -430,7 +430,7 @@ class LogementRepository extends ServiceEntityRepository
         $conn = new PDO('mysql:host=localhost;dbname=ymaradb', 'root', '');
         $sql = 'SELECT * FROM logement l WHERE 
         pays LIKE ? AND nbr_lits >= ?
-       AND  prix_nuité <= ?
+       AND  prix_nuite <= ?
        AND nbr_chambres >= ?
        AND nbr_lits >= ?
        AND nbr_sdb >= ?
