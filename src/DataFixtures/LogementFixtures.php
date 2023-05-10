@@ -69,7 +69,7 @@ return($a[$i]);
             $logement->setDescription($faker->realText(30).$this->genran().$faker->realText(30));
             $logement->setprix_nuite(strval($faker->randomFloat(NULL, 0,2000)));
 
-            $compte= $manager->getRepository(User::class)->find($faker->numberBetween(13,32));
+            $compte= $manager->getRepository(User::class)->find($faker->numberBetween(1,20));
             $logement->setIdUser($compte);
 
 
