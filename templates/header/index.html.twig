@@ -87,15 +87,28 @@
                     <i class="fa-solid fa-user"></i>
                 </button>
                 <div id="account" class="dropdown-menu dropdown-account-content">
+                    {% if(app.user) %}
+                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_reservation_index')~'/'~app.user.id }}">Mes Reservations</a>
+                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}">Mettre mon logement</a>
+                    <hr/>
 
-                     <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_login') }}">
+                     <a class="dropdown-item dropdown-account"  href="{{ path('app_logout') }}">
+                        Déconnexion
+                    </a>
+                    <a class="dropdown-item dropdown-account">Aide</a>
+                    {% else   %}
+                    <a class="dropdown-item dropdown-account"  href="{{ path('app_login') }}">
                         Connexion
                     </a>
                     <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_register') }}">Inscription</a>
                     <hr/>
-                    <a class="dropdown-divider dropdown-account"></a>
-                    <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}" >Mettre mon logement</a>
+                        <a class="dropdown-item dropdown-account" target="_blank" {% if(app.user) %}
+                            href="{{ path('app_post_item_form') }}"
+                        {% else   %}
+                            href="{{ path('app_login') }}"
+                        {% endif %} >Mettre mon logement</a>
                     <a class="dropdown-item dropdown-account">Aide</a>
+                    {% endif %}
                 </div>
             </div>
         </nav>
