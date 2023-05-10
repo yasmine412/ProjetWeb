@@ -56,12 +56,11 @@
 {% set i = 1 %}
 {% for logement in logements %}
     {% if i%4 == 1 %}
-<div class="grand_conteneur">
+<div class="grand_conteneur" >
     {% endif %}
-    <div class="conteneur-annonce">
+    <div class="conteneur-annonce" >
         <div class="images-maison">
             {%set img=controller.imageParId(logement.id) %}
-
             {% include 'carousel.html.twig' with {'numAnnonce': logement.id,'images':img} %}
         </div>
         <div class="pays"> <div>{{ logement.ville }},{{logement.pays }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
@@ -77,6 +76,8 @@
         {% endif %}
     {% set i = i + 1 %}
 {% endfor %}
+
+
 
 
 

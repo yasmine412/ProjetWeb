@@ -47,7 +47,7 @@
 
 
     <nav class="navbar">
-        <a class="navbar-brand" href="#"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
+        <a class="navbar-brand" href="{{ path('app_home_page') }}"><img alt="Airbnb logo" src={{ asset("assets/logo-ymara.png")}}></a>
         <div class="nav-container" >
 
             <h1>Réservations</h1>
@@ -57,17 +57,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">à venir</a>
+                                <a class="nav-link" href="{{ path('app_reservation_index')~'/'~app.user.id }}">Tout</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Terminées</a>
+                                <a class="nav-link" aria-current="page" href="{{ path('app_reservation_index')~'/'~app.user.id~"/encours" }}">En Cours</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Annulées</a>
+                                <a class="nav-link" aria-current="page" href="{{ path('app_reservation_index')~'/'~app.user.id~"/datevenir" }}">à venir</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Tout</a>
+                                <a class="nav-link" href="{{ path('app_reservation_index')~'/'~app.user.id~"/datefin" }}">Terminées</a>
                             </li>
+
+
                         </ul>
                     </div>
                 </div>
@@ -87,14 +89,14 @@
             </button>
             <div id="account" class="dropdown-menu dropdown-account-content">
 
-                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}" >Mettre mon logement</a>
-                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_home_page') }}">Page d'accueil</a>
+                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_reservation_index')~'/'~app.user.id }}">Mes Reservations</a>
+                <a class="dropdown-item dropdown-account" target="_blank" href="{{ path('app_post_item_form') }}">Mettre mon logement</a>
                 <hr/>
-                <a class="dropdown-divider dropdown-account"></a>
-                <a class="dropdown-item dropdown-account">Aide</a>
-                <a class="dropdown-item dropdown-account btn-cnx" target="_blank" href="{{ path('app_logout') }}">
-                    Deconnexion
+
+                <a class="dropdown-item dropdown-account"  href="{{ path('app_logout') }}">
+                    Déconnexion
                 </a>
+                <a class="dropdown-item dropdown-account">Aide</a>
             </div>
         </div>
     </nav>
@@ -113,11 +115,36 @@
 
 
 
+{% if app.user.id ==id %}
+
+    {% set i = 1 %}
+    {% for logement in logements %}
+        {% if i%4 == 1 %}
+            <div class="grand_conteneur" >
+        {% endif %}
+        <div class="conteneur-annonce" >
+            <div class="images-maison">
+                {%set img=controller.imageParId(logement.id) %}
 
 
-   {{ include ('reservation/cardReservation.html.twig')}}
+                {% include 'carousel.html.twig' with {'numAnnonce': logement.id,'images':img} %}
+            </div>
+            <div class="pays"> <div>{{ logement.ville }},{{logement.pays }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
+            <div class="titre">{{ logement.rue}}</div>
+            <div class="date">1-6 Mai</div>
+            <div class="prix">{%set floatNumber=logement.prix_nuite %}
+                {% set intNumber = floatNumber|round(0, 'floor') %}
+                {{ intNumber }}$
+                <span class="nuité">par nuit</span></div>
+        </div>
+        {% if i%4 == 0 %}
+            </div>
+        {% endif %}
+        {% set i = i + 1 %}
+    {% endfor %}
+{% else %}<div class="alert alert-danger"> Ce n'est pas votre page</div>
 
-
+{% endif %}
 
 
 </body>

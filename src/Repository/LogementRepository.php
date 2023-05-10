@@ -49,6 +49,7 @@ class LogementRepository extends ServiceEntityRepository
 
     }
 
+
     /**
      * @throws Exception
      */
@@ -72,15 +73,15 @@ class LogementRepository extends ServiceEntityRepository
         $sql = 'SELECT * FROM logement l WHERE pays LIKE :location AND nbr_lits >= :nb_voyageurs
             AND l.id NOT IN (
                 SELECT id_logement_id FROM reservation r1 
-                WHERE (DATE(r1.date_debut) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
+               AND (DATE(r1.date_debut) < :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
                     OR (DATE(r1.date_fin) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
             )
         ';
 
         $stmt = $conn -> prepare($sql);
         $stmt -> execute(['location' => '%'.$location.'%',
-            'datedebut' => $datedebut,
-            'datefin' => $datefin,
+            'datedebut' => "'".$datedebut."'",
+            'datefin' => "'".$datefin."'",
             'nb_voyageurs' => $nb_voyageurs
         ]);
         $results = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -95,6 +96,43 @@ class LogementRepository extends ServiceEntityRepository
             ->setParameter('mot', '%' . $mot . '%')
             ->getQuery()
             ->getResult();
+    }
+    public function findByUser($iduser) {
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb' ,'root' ,'');
+        $sql = 'SELECT * FROM logement l  WHERE l.id in (select r.id_logement_id from reservation r WHERE r.id_locataire_id = :iduser) ';
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute(['iduser' => $iduser]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+
+    }
+    public function findByUserDateVenir($iduser) {
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb' ,'root' ,'');
+        $sql = 'SELECT * FROM logement l  WHERE l.id in (select r.id_logement_id from reservation r WHERE r.id_locataire_id = :iduser AND r.date_debut>CURRENT_DATE) ';
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute(['iduser' => $iduser]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+
+    }
+    public function findByUserDateter($iduser) {
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb' ,'root' ,'');
+        $sql = 'SELECT * FROM logement l  WHERE l.id in (select r.id_logement_id from reservation r WHERE r.id_locataire_id = :iduser AND r.date_fin<CURRENT_DATE) ';
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute(['iduser' => $iduser]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+
+    }
+    public function findByUserencours($iduser) {
+        $conn = new PDO('mysql:host=localhost;dbname=ymaradb' ,'root' ,'');
+        $sql = 'SELECT * FROM logement l  WHERE l.id in (select r.id_logement_id from reservation r WHERE r.id_locataire_id = :iduser AND r.date_fin>CURRENT_DATE
+                                                                                    AND r.date_debut<CURRENT_DATE) ';
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute(['iduser' => $iduser]);
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $results;
+
     }
     public function findBySearchBarfiltre($location, $datedebut, $datefin, $nb_voyageurs,$filtrec) {
         if ($location == " ") {
