@@ -7,6 +7,8 @@ let windowPathSub = window.location.origin + '/homepage';
 const type_propriete = document.querySelector('.type-propriete');
 let logement = document.querySelector('input[type="radio"]:checked');
 let nb = 0;
+let subPath = null;
+let newPath = null;
 
 // Add click event listener to each box
 
@@ -58,10 +60,25 @@ valider.addEventListener('click', () => {
     if (window.location.pathname === '/homepage') {
         windowPathSub = windowPathSub + "/filtres&"
     }
+    else if (window.location.pathname.includes('/filtreCarousel=')) {
+        if (window.location.pathname.includes('/filtres&')) {
+            subPath = window.location.pathname.split('/filtreCarousel=');
+            windowPathSub = subPath[0].split('/filtres&')[0] + '/filtres&';
+            subPath = subPath[1];
+        }
+        else {
+            subPath = window.location.pathname.split('/filtreCarousel=');
+            newPath = subPath[0].split('/filtres&');
+            windowPathSub = newPath[0] + '/filtres&';
+            subPath = subPath[1];
+        }
+
+    }
     else if (window.location.pathname.includes('/filtres&')) {
         let position = window.location.pathname.indexOf("/filtres&");
         windowPathSub = window.location.origin + window.location.pathname.slice(0, position) + "/filtres&";
     }
+
     else {
         windowPathSub = window.location.origin + window.location.pathname + "/filtres&"
     }
@@ -94,7 +111,10 @@ valider.addEventListener('click', () => {
     else {
         windowPathSub = windowPathSub + '&type_propriete=blank';
     }
-    console.log(windowPathSub)
+
+    if (subPath) {
+        windowPathSub = windowPathSub + '/filtreCarousel=' +subPath;
+    }
     window.location.href = windowPathSub;
 
 

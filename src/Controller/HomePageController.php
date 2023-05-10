@@ -102,6 +102,16 @@ public function searchBarFiltre($location,$date_debut,$date_fin,$nb_voyageurs,$p
 }
 
 
+#[Route('/homepage/filtres&prix={prix}&type_logement={type_logement}&chambres={chambres}&lits={lits}&salledeau={salledeau}&type_propriete={type_propriete}/filtreCarousel={filtrec}',name:'app_home_page_filtre_filtreCarousel' )]
+public function searchFiltresFiltreCarousel($prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete,$filtrec): Response
+{
+    $logements = $this->repository->findByFiltreAndCarousel($prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete,$filtrec);
+    return $this->render('home_page/index.html.twig', ['controller' => $this,
+        'logements'=>$logements,
+    ]);
+}
+
+
 
 
 
