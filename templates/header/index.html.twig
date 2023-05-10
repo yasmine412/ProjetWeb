@@ -71,7 +71,13 @@
                 </div>
             </div>
 
-            <a id="logement" class="navbar-item" type="submit" target="_blank" href="{{ path('app_post_item_form') }}" >
+            <a id="logement" class="navbar-item" type="submit" target="_blank"
+               {% if(app.user) %}
+               href="{{ path('app_post_item_form') }}"
+               {% else   %}
+                href="{{ path('app_login') }}"
+                 {% endif %}
+ >
                 Mettre mon logement sur Ymara
             </a>
 
