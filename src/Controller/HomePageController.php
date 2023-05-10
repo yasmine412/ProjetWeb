@@ -90,6 +90,17 @@ class HomePageController extends AbstractController
         ]);
     }
 
+#[Route('/homepage/location={location}/date_debut={date_debut}/date_fin={date_fin}/nb_voyageurs={nb_voyageurs}/filtres&prix={prix}&type_logement={type_logement}&chambres={chambres}&lits={lits}&salledeau={salledeau}&type_propriete={type_propriete}', name: 'app_home_page_locationFiltre')]
+public function searchBarFiltre($location,$date_debut,$date_fin,$nb_voyageurs,$prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete) : Response
+{
+
+    $logements = $this->repository->findBySearchBarFiltres($location,$date_debut,$date_fin,$nb_voyageurs,$prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete);
+
+    return $this->render('home_page/index.html.twig', ['controller' => $this,
+        'logements'=>$logements,
+    ]);
+}
+
 
 
 
