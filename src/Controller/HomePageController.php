@@ -111,6 +111,16 @@ public function searchFiltresFiltreCarousel($prix,$type_logement,$chambres,$lits
     ]);
 }
 
+#[Route('/homepage/location={location}/date_debut={date_debut}/date_fin={date_fin}/nb_voyageurs={nb_voyageurs}/filtres&prix={prix}&type_logement={type_logement}&chambres={chambres}&lits={lits}&salledeau={salledeau}&type_propriete={type_propriete}/filtreCarousel={filtrec}',name:'app_home_page_searchbar_filtre_filtreCarousel' )]
+public function searchSearchbarFiltresFiltreCarousel($location,$date_debut,$date_fin,$nb_voyageurs,$prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete,$filtrec) : Response
+{
+    $logements = $this->repository->findBySearchBarFiltresCarousel($location,$date_debut,$date_fin,$nb_voyageurs,$prix,$type_logement,$chambres,$lits,$salledeau,$type_propriete,$filtrec);
+    return $this->render('home_page/index.html.twig', ['controller' => $this,
+        'logements'=>$logements,
+    ]);
+}
+
+
 
 
 
