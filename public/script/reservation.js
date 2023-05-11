@@ -1,8 +1,9 @@
 const coeur = document.getElementById('coeur');
+console.log('hello')
 
-coeur.addEventListener('click', function() {
+/*coeur.addEventListener('click', function() {
     coeur.src = '../assets/heart-fill.svg';
-});
+}); */
 
 
 
