@@ -56,44 +56,20 @@
                                         <span class="close"><i class="fa-solid fa-xmark fa-xs"></i></span>
 
 
-
-
                                         <div class="centerImg">
                                             {% for key, image in images %}
                                                 {% if key % 3 == 0 %}
-                                                    <img class="containerCal-item2" width="60%" height="500px" src="../assets/{{ image.Data }}">
-                                                    <div class="containerRowImg">
-                                                        {% for i in 1..2 %}
-                                                            {% set nextImageIndex = key + i %}
-                                                            {% if nextImageIndex < images|length %}
-                                                                <img width="39%" height="300px" src="../assets/{{ images[nextImageIndex].Data }}">
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </div>
+                                                <img class="containerCal-item2" width="60%" height="500px" src="data:image/png;base64,{{ image.Data }}">
+                                                 {% elseif key % 3 == 1 %}
+                                                     <div class="containerRowImg">
+                                                     <img width="39%" height="300px" src="data:image/png;base64,{{ image.Data }}">
+                                                 {% elseif key % 3 == 2 %}
+                                                     <img width="39%" height="300px" src="data:image/png;base64,{{ image.Data }}">
+                                                     </div>
                                                 {% endif %}
+
                                             {% endfor %}
                                         </div>
-                                        <!-- <div class="centerImg">
-                                             <img class="containerCal-item2" width="60%" height="500px" src="../assets/villa.webp">
-                                             <div class="containerRowImg">
-                                                 <img  width="39%" height="300px" src="../assets/villa2.webp">
-                                                 <img  width="39%" height="300px" src="../assets/villa3.webp">
-                                             </div>
-                                             <img  width="60%" height="500px" src="../assets/villa4.webp">
-                                             <div class="containerRowImg">
-                                                 <img  width="39%" height="300px" src="../assets/villa5.webp">
-                                                 <img  width="39%" height="300px" src="../assets/villa6.webp">
-                                             </div>
-                                             <img  width="60%" height="500px" src="../assets/villa7.webp">
-                                             <div class="containerRowImg">
-                                                 <img  width="39%" height="300px" src="../assets/villa8.webp">
-                                                 <img  width="39%" height="300px" src="../assets/villa9.webp">
-                                             </div>
-                                         </div>-->
-
-
-
-
 
                                     </div>
 
@@ -154,43 +130,21 @@
                     <div class="descrip containerCal-item">
                         <u class="texte" style="font-size: 20px;">description:</u>
                         <div class="texte-partiel">
-                            <p class="descripTexte"> {{ logement.description|slice(0,3) }}
-                            </p>
-                            <button id="btn-en-savoir-plus" ><u>En savoir plus></u></button>
-                            <div id="texte-complet" >
-                                <p class="descripTexte">  {{ logement.description }}</p>
-                            </div>
+                             {{ logement.description|slice(0,300) }}
                         </div>
+                            <button id="btn-en-savoir-plus" ><u>En savoir plus></u></button>
+                            <div class="texte-complet" >
+                                {{ logement.description }}
+                            </div>
+
                     </div>
 
 
-                    <!--<div class="equipement containerCal-item2">
-                        <u>Ce que propose ce logement </u><br>
-                        <div class="containerRow containerCal-item2">
-                            <img width="30px" src="../assets/cuisine.png">
-                            cuisine
-                        </div>
-                        <div class="containerRow containerCal-item2">
-                            <img width="30px" src="../assets/wifi.png">
-                            wifi
-                        </div>
-                        <div class="containerRow containerCal-item2">
-                            <img width="30px" src="../assets/parking.png">
-                            Parking gratuit sur place
-                        </div>
-                        <div class="containerRow containerCal-item2">
-                            <img width="30px" src="../assets/climatisation.png">
-                            Climatisation : système split sans évacuation
-                        </div>
-                        <div class="containerRow containerCal-item2">
-                            <img width="30px" src="../assets/Lave-vaisselle.png">
-                            Lave-vaisselle
-                        </div>-->
+
                     <div class="cursive" style="font-size: 20px;"> Ce que propose le logement </div>
                     <div class="containerEq">
-
                         {% for equipement in equipments_first %}
-                            <div class="containerEquip containerCal-item2"> <img width="30px"  src="{{ asset('assets/'~ equipement ~'.png')  }}"> <div style=" font-family:cursive; font-weight: lighter; padding-left: 10px" >{{ equipement }}</div></div>
+                            <div class="containerEquip "> <img width="30px"  src="{{ asset('assets/'~ equipement ~'.png')  }}"> <div style=" font-family:cursive; font-weight: lighter; padding-left: 10px" >{{ equipement }}</div></div>
                         {% endfor %}
                     </div>
                     <!-- le bouton qui affiche tous les aquipements -->
@@ -199,31 +153,6 @@
                     <div id="myModal" class="modal">
                         <div class="modal-content containerCal">
 
-                            <!--<i  class="bi bi-x-circle close"></i>
-
-
-                            <div>
-                                <div class="containerRow containerCal-item2">
-                                    <img width="30px" src="../assets/cuisine.png">
-                                    cuisine
-                                </div>
-                                <div class="containerRow containerCal-item2">
-                                    <img width="30px" src="../assets/wifi.png">
-                                    wifi
-                                </div>
-                                <div class="containerRow containerCal-item2">
-                                    <img width="30px" src="../assets/parking.png">
-                                    Parking gratuit sur place
-                                </div>
-                                <div class="containerRow containerCal-item2">
-                                    <img width="30px" src="../assets/climatisation.png">
-                                    Climatisation : système split sans évacuation
-                                </div>
-                                <div class="containerRow containerCal-item2">
-                                    <img width="30px" src="../assets/Lave-vaisselle.png">
-                                    Lave-vaisselle
-                                </div>
-                            </div>-->
                             <div class="containerCal">
                                 {% for equipement in equipements_present %}
                                     <div class="containerEquip containerCal-item2"> <img width="30px" src="{{ asset('assets/'~ equipement ~'.png')  }}"> <div style=" font-family:cursive; font-weight: lighter; padding-left: 10px" >{{ equipement }}</div></div>
@@ -319,7 +248,7 @@
                     </div>
                     {% if (app.user) %}
                         <div>
-                            <button id="mon_bouton" style="width: 80%; margin-left: 1cm; margin-top: 0.5cm;" type="button" class="btn btn-danger"  onclick="window.location.href = window.location.origin + '/reservation/'+'{{ app.user.id }}'">
+                            <button id="mon_bouton" style="width: 80%; margin-left: 1cm; margin-top: 0.5cm;" type="button" class="btn btn-danger" disabled  onclick="window.location.href = window.location.origin + '/reservation/'+'{{ app.user.id }}'">
                                 Réserver
                             </button>
                         </div>
@@ -396,7 +325,6 @@
 {% endblock %}
     {% block javascripts %}
         <script>
-            {#
             var reservations = {{ reservations|json_encode()|raw }};
             var button = document.getElementById('mon_bouton');
             var dateArrivee = document.getElementById('date_arrivee');
@@ -415,21 +343,30 @@
             });
 
             function checkReservationDates() {
+                console.log('Reservations:', reservations);
+
                 var arrivee = new Date(dateArrivee.value);
                 var depart = new Date(dateDepart.value);
 
-                for (var i = 0; i < reservations.length; i++) {
+                if (dateArrivee.value && dateDepart.value)
+                {
+                    for (var i = 0; i < reservations.length; i++) {
                     var dateDebut = new Date(reservations[i].DateDebut);
                     var dateFin = new Date(reservations[i].DateFin);
+                        console.log(reservations[i].DateFin);
+                        console.log(reservations[i].DateDebut);
 
-                    if (arrivee > dateDebut && depart < dateFin) {
-                        button.disabled = true;
-                        return;
+                    if ((arrivee > dateDebut) && (depart < dateFin)) {
+                        $b=1;
+                        alert('date reservé');
+                        console.log($b);
                     }
-                }
 
-                button.disabled = false;
-            } #}
+
+                }
+                if($b==0)
+                { button.disabled = false;}}
+            }
 
 
 

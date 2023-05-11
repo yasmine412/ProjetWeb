@@ -139,6 +139,16 @@ body{
 
 
 }
+.containerEq{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.containerEquip{
+    width: 300px;
+    padding: 10px;
+}
+
 .equipement{
     display: flex;
     flex-direction: column;
@@ -393,8 +403,14 @@ body{
 }
 
 /* en savoir plus */
-#texte-complet {
+.texte-complet {
     display: none;
+    font-size: 17px;
+    font-family: system-ui;
+}
+.texte-partiel{
+    font-size: 17px;
+    font-family: system-ui;
 }
 #btn-en-savoir-plus {
     background-color: #ffffff;

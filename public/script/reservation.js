@@ -91,24 +91,24 @@ function decrement(inputField,inputClass) {
 
 }
 
-/*(document).ready(function() {
-   const EnSav = document.querySelector(".en-savoir-plus");
-   const Text = document.querySelector(".texte-complet");
-   EnSav.click(function() {
-      Text.show();
-   });
-});*/
+
 
 
 
 
 // en savoir plus
 const btnEnSavoirPlus = document.getElementById('btn-en-savoir-plus');
-const texteComplet = document.getElementById('texte-complet');
-
+const texteComplet = document.querySelector('.texte-complet');
+const textePartiel = document.querySelector('.texte-partiel');
 btnEnSavoirPlus.addEventListener('click', function() {
-    texteComplet.style.display = 'block';
-    btnEnSavoirPlus.style.display = 'none';
+    if (textePartiel)
+    {textePartiel.style.display = 'none';}
+    console.log("hahkd");
+    if(texteComplet)
+    {texteComplet.style.display = 'block';
+    }
+    btnEnSavoirPlus.style.display='none';
+
 });
 
 
@@ -198,40 +198,7 @@ commentTextarea.addEventListener('keyup', () => {
 
 
 
-/* calendrier personalisé
 
-$(document).ready(function() {
-    $('#calendar').fullCalendar({
-        selectable: true,
-        selectHelper: true,
-        header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,basicWeek,basicDay'
-        },
-        eventRender: function(event, element) {
-            if (event.available == false) {
-                element.css('text-decoration', 'line-through');
-                element.css('color', '#9e9e9e');
-                element.draggable = false;
-            }
-        },
-        events: [
-            {
-                title: 'Disponible',
-                start: '2023-05-01',
-                end: '2023-05-03',
-                available: true
-            },
-            {
-                title: 'Non disponible',
-                start: '2023-05-05',
-                end: '2023-05-07',
-                available: false
-            }
-        ]
-    });
-});*/
 
 
 // le clique sur le boutton reserver
