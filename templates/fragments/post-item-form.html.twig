@@ -3,125 +3,143 @@
         <div class="form-content">
             <div class="form-items">
                 <h3>Mettre mon logemet sur Ymara</h3>
-
                 <p>Remplir le formulaire suivant</p>
-                <form class="requires-validation" novalidate>
 
-                    <fieldset>
+                {% for message in app.session.flashBag.get('success') %}
+                    <div class="alert alert-secondary">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {#                <form id="form" class="requires-validation" method="post">#}
+                {{ form_start(form) }}
 
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label class="form-label" for="type">Type du logement proposé: </label>
-                            <br>
-                            <input type="radio" class="btn-check" name="type" id="maison" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="maison">
-                                <i class="bi bi-house-door"></i>
-                                <span>Maison</span>
-                            </label>
+                <fieldset>
 
-                            <input type="radio" class="btn-check" name="type" id="appartement" autocomplete="off"
-                                   required>
-                            <label class="btn btn-sm btn-outline-secondary" for="appartement">
-                                <i class="bi bi-building"></i>
-                                <span>Appartement</span>
-                            </label>
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label class="form-label" for="type">Type du logement proposé: </label>
+                        <div class="row">
+                            {{ form_widget(form.TypeLogement) }}</div>
 
-                            <input type="radio" class="btn-check" name="type" id="maison_hôtes" autocomplete="off"
-                                   required>
-                            <label class="btn btn-sm btn-outline-secondary" for="maison_hôtes">
-                                <i class="bi bi-house"></i>
-                                <span>Maison d'hôtes</span>
-                            </label>
+                        {#                            <input type="radio" class="btn-check" name="typeLogement" id="maison" autocomplete="off" required>#}
 
-                            <input type="radio" class="btn-check" name="type" id="ferme" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="ferme">
-                                <span>Ferme</span></label>
+                        {#                            <label class="btn btn-sm btn-outline-secondary" for="maison">#}
+                        {#                                <i class="bi bi-house-door"></i>#}
+                        {#                                <span>Maison</span>#}
+                        {#                            </label>#}
 
-                            <input type="radio" class="btn-check" name="type" id="hôtel" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="hôtel">
-                                <i class="bi bi-bank"></i>
-                                <span>Hôtel</span></label>
+                        {#                            <input type="radio" class="btn-check" name="typeLogement" id="appartement" autocomplete="off"#}
+                        {#                                   required>#}
+                        {#                            <label class="btn btn-sm btn-outline-secondary" for="appartement">#}
+                        {#                                <i class="bi bi-building"></i>#}
+                        {#                                <span>Appartement</span>#}
+                        {#                            </label>#}
 
-                            <div class="valid-feedback mv-up">Type de logement sélectionné!</div>
-                            <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de logement!</div>
+                        {#                            <input type="radio" class="btn-check" name="typeLogement" id="maison_hotes" autocomplete="off"#}
+                        {#                                   required>#}
+                        {#                            <label class="btn btn-sm btn-outline-secondary" for="maison_hôtes">#}
+                        {#                                <i class="bi bi-house"></i>#}
+                        {#                                <span>Maison d'hôtes</span>#}
+                        {#                            </label>#}
 
-                        </div>
+                        {#                            <input type="radio" class="btn-check" name="typeLogement" id="hotel" autocomplete="off" required>#}
+                        {#                            <label class="btn btn-sm btn-outline-secondary" for="hôtel">#}
+                        {#                                <i class="bi bi-bank"></i>#}
+                        {#                                <span>Hôtel</span></label>#}
+
+                        <div class="valid-feedback mv-up">Type de logement sélectionné!</div>
+                        <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de logement!</div>
+
+                    </div>
 
 
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label class="form-label">Type de l'espace proposé: </label>
-                            <select class="form-select " required>
-                                <option selected disabled value="">Espace</option>
-                                <option value="entier">Un logement entier</option>
-                                <option value="privée">Une chambre privée</option>
-                                <option value="partagée">Une chambre partagée</option>
-                            </select>
-                            <div class="valid-feedback mv-up">Type de l'espace sélectionné!</div>
-                            <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de l'espace!</div>
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label class="form-label">Type de l'espace proposé: </label>
 
-                        </div>
-                        <div class="col-md-12 mb-4 mt-4">
+                        {#                            <select class="form-select " name="typeEspace" required>#}
+                        {#                                <option selected disabled value="">Espace</option>#}
+                        {#                                <option value="entier">Un logement entier</option>#}
+                        {#                                <option value="privée">Une chambre privée</option>#}
+                        {#                                <option value="partagée">Une chambre partagée</option>#}
+                        {#                            </select>#}
+
+                        {{ form_widget(form.TypeEspace) }}
+                        <div class="valid-feedback mv-up">Type de l'espace sélectionné!</div>
+                        <div class="invalid-feedback mv-up">Veuillez sélectionnez un type de l'espace!</div>
+
+                    </div>
+                    <div class="col-md-12 mb-4 mt-4">
 
                         <div class="row">
-                        <div class="col-md-3 " >
-                            <div class="col-md-12">
-                                <label class="form-label" for="numero">N°logement:</label>
-                                <select class="form-control" id="numero" name="numero"  required>
-                                </select>
-                            </div>
+                            <div class="col-md-3 " >
+                                <div class="col-md-12">
+                                    <label class="form-label" for="numero">N°logement:</label>
+                                    {#                                <select class="form-control" id="numero" name="numero"  required>#}
+                                    {#                                </select>#}
+                                    {{ form_widget(form.NumLogement) }}
+                                </div>
 
-                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
-                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
-                        </div>
+                                <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
+                                <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
+                            </div>
 
                             <div class="col-md-9" >
-                            <div class="col-md-12">
-                                <label class="form-label" for="rue">Rue:</label>
-                                <input class="form-control" type="text" name="rue" placeholder="Rue"
-                                       required>
+                                <div class="col-md-12">
+                                    <label class="form-label" for="rue">Rue:</label>
+                                    {#                                <input class="form-control" type="text" name="rue" placeholder="Rue"#}
+                                    {#                                       required>#}
+                                    {{ form_widget(form.Rue) }}
+
+                                </div>
+
+
+                            </div></div>
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label for="country">Pays:</label>
+                                    {#                                <select class="form-control" id="countries" name="country" required></select>#}
+                                    {{ form_widget(form.Pays) }}
+                                </div>
+
 
                             </div>
 
-                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
-                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
-                            </div></div>
+                            <div class="col-md-9 ">
+                                <div class="col-md-12">
+                                    <label class="form-label" for="Ville">Ville:</label>
+                                    {#                                        <input class="form-control" type="text" name="ville" placeholder="Ville"#}
+                                    {#                                               required>#}
+                                    {{ form_widget(form.Ville) }}
 
+
+                                </div>
+
+                            </div>
+                        </div></div>
+
+
+
+                </fieldset>
+                <fieldset>
+                    <div class="col md-12">
+                        <label class="form-label">Informations principales:</label>
+
+                        <div id="myCounter" class="count-content">
                             <div class="row">
 
-                                <div class="col-md-3">
-                            <div class="col-md-12">
-                            <label for="country">Pays:</label>
-                                <select class="form-control" id="countries" name="country" required></select>
-                            </div>
-
-                            <div class="valid-feedback mv-up">Localisation sélectionnée!</div>
-                            <div class="invalid-feedback mv-up">Veuillez sélectionnez une localisation!</div>
-                        </div>
-
-                                <div class="col-md-9 ">
-                                    <div class="col-md-12">
-                                        <label class="form-label" for="Ville">Ville:</label>
-                                        <input class="form-control" type="text" name="ville" placeholder="Ville"
-                                               required>
-
-                                    </div>
-
-                                  </div>
-                            </div></div>
 
 
-
-                    </fieldset>
-                    <fieldset>
-                        <div class="col md-12">
-                            <label class="form-label">Informations principales:</label>
-
-                               <div id="myCounter" class="count-content">
-                                <div class="item-container">
-
+                                <div class="col-md-4">
                                     <div class="label item-label">
                                         Chambres
                                     </div>
-                                    <div class="item-control">
+                                </div>
+                                <div class="col-md-8">
+                                    {{ form_widget(form.NbrChambres) }}
+                                </div>
+                                {# <div class="item-control">
                                         <button disabled="disabled" type="button" title="Decrement"
                                                 class="decrement-btn item" id="chambre-decrement"
                                                 onclick="decrement('#chambre')"><i class="fa-solid fa-xs fa-minus"></i>
@@ -130,14 +148,19 @@
                                         <button type="button" title="Increment" class="increment-btn item"
                                                 id="chambre-increment" onclick="increment('#chambre')"><i
                                                     class="fa-solid fa-plus fa-xs"></i></button>
-                                    </div>
-                                </div>
+                                    </div>#}
+                            </div>
+                            <div class="row">
 
-                                <div class=" item-container">
+                                <div class="col-md-4">
                                     <div class="label item-label">
                                         Salles de bain
                                     </div>
-                                    <div class="item-control">
+                                </div>
+                                <div class="col-md-8">
+                                    {{ form_widget(form.Nbr_sdb) }}
+                                </div>
+                                {#<div class="item-control">
                                         <button disabled="disabled" type="button" title="Decrement"
                                                 class="decrement-btn item" id="salle-decrement"
                                                 onclick="decrement('#salle')"><i class="fa-solid fa-xs fa-minus"></i>
@@ -146,12 +169,17 @@
                                         <button type="button" title="Increment" class="increment-btn item"
                                                 id="salle-increment" onclick="increment('#salle')"><i
                                                     class="fa-solid fa-xs fa-plus"></i></button>
-                                    </div>
+                                    </div>#}
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="label item-label">Lits</div>
+                                </div>
+                                <div class="col-md-8">
+                                    {{ form_widget(form.NbrLits) }}
                                 </div>
 
-                                <div class="item-container">
-                                    <div class="label item-label">Lits</div>
-                                    <div class="item-control">
+                                {# <div class="item-control">
                                         <button disabled="disabled" type="button" title="Decrement"
                                                 class="decrement-btn item" id="lit-decrement"
                                                 onclick="decrement('#lit')"><i class="fa-solid fa-xs fa-minus"></i>
@@ -160,82 +188,160 @@
                                         <button type="button" title="Increment" class="increment-btn item"
                                                 id="lit-increment" onclick="increment('#lit')"><i
                                                     class="fa-solid fa-xs fa-plus"></i></button>
-                                    </div>
-                                </div>
-
+                                    </div>#}
                             </div>
-                        </div>
 
-                        <div class="col-md-12 mb-4 mt-4 ">
-                            <label class="form-label" for="equipement">Equipements: </label>
-                            <br>
-                            <input type="checkbox" class="btn-check" name="equipement" id="wifi" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-4 mt-4 ">
+                        <label class="form-label" >Equipements: </label>
+                        <br>
+                        <div class="row">
+                            {{ form_widget(form.Equipements) }}
+                        </div>
+                        {# <input type="checkbox" class="btn-check" name="equipement[wifi]" id="wifi" value="0" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="wifi">
-                                <i class="bi bi-wifi"></i>
                                 Wifi
                             </label>
 
-                            <input type="checkbox" class="btn-check" name="equipement" id="television" autocomplete="off">
+                            <input type="checkbox" class="btn-check" name="equipement[television]" id="television" value="0" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="television">
-                                <i class="bi bi-tv"></i>
                                 <span>Télévision</span>
                             </label>
 
-                            <input type="checkbox" class="btn-check" name="equipement" id="climatisation"
-                                   autocomplete="off">
+                            <input type="checkbox" class="btn-check" name="equipement[climatisation]" id="climatisation"  value="0" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="climatisation">
-                                <i class="bi bi-thermometer-snow"></i>
                                 <span>Climatisation</span>
                             </label>
 
-                            <input type="checkbox" class="btn-check" name="equipement" id="parking" autocomplete="off">
+                            <input type="checkbox" class="btn-check" name="equipement[Chauffage]" id="Chauffage" value="0"  autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="Chauffage">
+                                <span>Chauffage</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[parking]" id="parking" value="0" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="parking">
-                                <i class="bi bi-p-car-front-fill"></i>
                                 <span>Parking</span>
                             </label>
 
-                            <input type="checkbox" class="btn-check" name="equipement" id="cuisine" autocomplete="off">
+                            <input type="checkbox" class="btn-check" name="equipement[cuisine]" id="cuisine" value="0" autocomplete="off">
                             <label class="btn btn-sm btn-outline-secondary" for="cuisine">
-                                <i class="bi bi-cup"></i>
                                 <span>Cuisine</span></label>
 
-                        </div>
+                            <input type="checkbox" class="btn-check" name="equipement[laveLinge]" id="laveLinge" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="laveLinge">
+                                <span>Lave-linge</span></label>
 
+                            <input type="checkbox" class="btn-check" name="equipement[sècheLinge]" id="sècheLinge" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="sècheLinge">
+                                <span> Sèche-linge</span></label>
 
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label for="formFileDisabled" class="form-label">Veuillez saisir des images de votre
-                                logement</label>
-                            <input class="form-control" type="file" id="formFileDisabled" multiple required>
-                        </div>
+                            <input type="checkbox" class="btn-check" name="equipement[espaceTravail]" id="espaceTravail" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="espaceTravail">
+                                <span> Espace de travail dedié</span></label>
 
-                    </fieldset>
+                            <input type="checkbox" class="btn-check" name="equipement[sècheCheveux]" id="sècheCheveux" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="sècheCheveux">
+                                <span> Sèche-cheveux</span></label>
 
+                            <input type="checkbox" class="btn-check" name="equipement[recharge]" id="recharge" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="recharge">
+                                <span>Recharge véhicules électriques</span></label>
 
-                    <fieldset>
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label class="form-label" for="titre">Titre de l'annonce:</label>
-                            <input class="form-control" type="text" name="titre" placeholder="Titre de l'annonce"
-                                   required>
+                            <input type="checkbox" class="btn-check" name="equipement[fer]" id="fer" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="fer">
+                                <span> Fer à repasser</span></label>
 
-                        </div>
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label class="form-label">Description:</label>
-                            <div>
-                                <TEXTAREA class="form-control" placeholder="Description" NAME="description" ROWS=5 COLS=150> </TEXTAREA>
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-4 mt-4">
-                            <label class="form-label" for="typeNumber">Prix par nuit:</label>
-                            <input type="text" id="typeNumber" class="form-control" placeholder="Prix" required/>
-                        </div>
+                            <input type="checkbox" class="btn-check" name="equipement[piscine]" id="piscine" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="piscine">
+                                <span>Piscine</span></label>
 
-                    </fieldset>
+                            <input type="checkbox" class="btn-check" name="equipement[jacuzzi]" id="jacuzzi" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="jacuzzi">
+                                <span>Jacuzzi</span></label>
 
-                    <div class="form-button ">
-                        <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                            <input type="checkbox" class="btn-check" name="equipement[litBebe]" id="litBebe" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="litBebe">
+                                <span> Lit pour bébé</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[salleSport]" id="salleSport" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="salleSport">
+                                <span> Salle de sport</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[barbecue]" id="barbecue" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="barbecue">
+                                <span>Barbecue</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[petitDej]" id="petitDej" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="petitDej">
+                                <span> Petit déjeuner</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[cheminee]" id="cheminee" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="cheminee">
+                                <span>Cheminée</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[detectionMonoxyde]" id="detectionMonoxyde" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="detectionMonoxyde">
+                                <span> Détecteur de monoxyde de carbone</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[detectionFumee]" id="detectionFumee" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="detectionFumee">
+                                <span> Détection de fumée</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[fumeur]" id="fumeur" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="fumeur">
+                                <span> Logement fumeur</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[bordMer]" id="bordMer" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="bordMer">
+                                <span> Bord de mer</span></label>
+
+                            <input type="checkbox" class="btn-check" name="equipement[frontMer]" id="frontMer" value="0" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="frontMer">
+                                <span> Front de mer</span></label>#}
+
                     </div>
 
-                </form>
+
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label for="formFileDisabled" class="form-label">Veuillez saisir des images de votre logement</label>
+                        {#                            <input class="form-control" name="imageLogement" type="file" id="formFileDisabled" multiple required>#}
+                        {{ form_widget(form.images) }}
+                    </div>
+
+                </fieldset>
+
+
+                <fieldset>
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label class="form-label" for="titre">Titre de l'annonce:</label>
+                        {#<input class="form-control" type="text" name="titre" placeholder="Titre de l'annonce"
+                                   required>#}
+                        {{ form_widget(form.Titre) }}
+
+                    </div>
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label class="form-label">Description:</label>
+                        <div>
+                            {#                                <TEXTAREA class="form-control" placeholder="Description" NAME="description" ROWS=5 COLS=150> </TEXTAREA>#}
+                            {{ form_widget(form.Description) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 mt-4">
+                        <label class="form-label" for="typeNumber">Prix par nuit:</label>
+                        {#                            <input type="text" id="typeNumber" class="form-control" placeholder="Prix" required/>#}
+                        {{ form_widget(form.prix_nuite) }}
+                    </div>
+
+                </fieldset>
+
+                <div class="form-button ">
+                    {#                        <button id="submit" type="submit" class="btn btn-primary">Register</button>#}
+                    {{ form_widget(form.Valider) }}
+                </div>
+
+                {#                </form>#}{{ form_end(form) }}
+
             </div>
         </div>
     </div>
