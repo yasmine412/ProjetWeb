@@ -73,22 +73,21 @@ class LogementRepository extends ServiceEntityRepository
         $sql = 'SELECT * FROM logement l WHERE pays LIKE :location AND nbr_lits >= :nb_voyageurs
             AND l.id NOT IN (
                 SELECT id_logement_id FROM reservation r1 
-               AND (DATE(r1.date_debut) < :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
+                WHERE (DATE(r1.date_debut) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
                     OR (DATE(r1.date_fin) > :datedebut AND DATE(r1.date_fin) < DATE(:datefin))
             )
         ';
 
         $stmt = $conn -> prepare($sql);
         $stmt -> execute(['location' => '%'.$location.'%',
-            'datedebut' => "'".$datedebut."'",
-            'datefin' => "'".$datefin."'",
+            'datedebut' => $datedebut,
+            'datefin' => $datefin,
             'nb_voyageurs' => $nb_voyageurs
         ]);
         $results = $stmt->fetchAll(PDO::FETCH_OBJ);
         return $results;
 
     }
-
     public function findByKeyword($mot)
     {
         return $this->createQueryBuilder('l')
