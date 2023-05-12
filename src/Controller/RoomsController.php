@@ -1,31 +1,62 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\ImagesLogement;
+use App\Entity\Reservation;
+use App\Form\ReservationType;
+use Cassandra\Date;
+use DateTime;
+use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Logement;
 
 use App\Repository\ReservationRepository;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ObjectRepository;
 use App\Repository\CommentaireRepository;
 use App\Repository\UserRepository;
 use App\Repository\ImagesLogementRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RoomsController extends AbstractController
-{   private $entityManager;
+{
 
+
+    private ObjectManager $manager;
+    private ObjectRepository $repository;
+    private ObjectRepository $repositoryImage;
+
+
+    public function __construct(private ManagerRegistry $doctrine)
+    {
+        $this->manager = $this->doctrine->getManager();
+        $this->repository = $this->manager->getRepository(Logement::class);
+        $this->repositoryImage = $this->manager->getRepository(ImagesLogement::class);
+
+    }
+
+    public function imageParId($id){
+        $images = $this->repositoryImage->findBy(['idLogement'=>$id]);
+        foreach ($images as $image)
+        {$image->setData(base64_encode(stream_get_contents($image->getData())));}
+
+
+        return $images;
+    }
 
     #[Route('/homepage/rooms/{id<\d+>}', name: 'app_rooms')]
     public function index(logement $logement = null,
                           CommentaireRepository $commentaireRepository,
                           UserRepository $compteRepository,
-                          EntityManagerInterface $entityManager,
                           ImagesLogementRepository $ImagesLogementRepository,
                           ReservationRepository $reservationRepository,
+                          Request $request,
+                          ManagerRegistry $managerRegistry,
 
     ):Response
     {
@@ -90,25 +121,67 @@ class RoomsController extends AbstractController
 
 
         //les images du logement
-        $imag=[];
-        $images = $ImagesLogementRepository->findBy(['idLogement' => $logement->getId()]);
-        $nb=0;
-        foreach ($images as $key=>$value)
-        {$value->setData(base64_encode(stream_get_contents($value->getData())));
-            if ($nb==0)
-            { $image1=$images[0];
-                $nb=$nb+1;}
-            else
-            {
-                $imag[$key]=$images[$key];
-            }
 
-        }
+        /*$images = $ImagesLogementRepository->findBy(['idLogement' => $logement->getId()]);
+        foreach ($images as $image)
+        {$image->setData(base64_encode(stream_get_contents($image->getData())));}*/
+
+
 
         $prix=$logement->getprix_nuite();
 
+        $reservation= new Reservation();
+        $form=$this->createForm(ReservationType::class,$reservation);
+        $form->handleRequest($request);
 
         $reservations = $reservationRepository->findBy(['idLogement' =>$logement->getId()]);
+
+
+            $dateArrivee =$form->get('DateDebut')->getData();
+            $dateDepart =$form->get('DateFin')->getData();
+
+
+            $b=1;
+                foreach ( $reservations as $reservation) {
+                    if (
+                        (($reservation->getDateDebut() < $dateDepart) && ($reservation->getDateFin() > $dateDepart))||
+                        (($reservation->getDateDebut() < $dateArrivee) && ($reservation->getDateFin() > $dateArrivee))||
+                        (($reservation->getDateDebut() > $dateArrivee) && ($reservation->getDateFin() < $dateDepart))
+                    )
+                    {
+                        $b = 0;
+                        $this->addFlash('error_date','Ces dates ne sont pas disponibles');
+                    }
+                }
+
+        if ($form->isSubmitted()) {
+            if ($this->getUser())
+            {
+
+            if ($b){
+                $reservation->setIdLocataire($this->getUser());
+                $reservation->setIdLogement($logement);
+                $reservation->setIdProprietaire($compteProp);
+                $manager = $managerRegistry->getManager();
+                $manager->persist($reservation);
+               $manager->flush();
+                $id=$this->getUser()->getId();
+               return $this->redirectToRoute('app_reservation_index_id',
+                   ['logements'=>$logement,
+                       'id'=>$id]);
+
+        }
+          /* else{
+                $this->addFlash('error_date','Ces dates ne sont pas disponibles');
+            }*/
+            }
+
+            else
+            {
+                return $this->redirectToRoute('app_login');
+            }
+
+            }
 
 
 
@@ -126,10 +199,12 @@ class RoomsController extends AbstractController
             'nbCommentaire'=>$nbCommentaire,
             'pays'=>$pays,
             'ville'=>$ville,
-            'images'=>$images,
-            'imag'=>$imag,
+            //'images'=>$images,
             'prix'=>$prix,
             'reservations' => $reservations,
+            'controller' => $this,
+            'form'=>$form->createView()
+
         ]);
     }
 }

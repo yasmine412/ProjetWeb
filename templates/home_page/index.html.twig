@@ -67,7 +67,7 @@
         {% set path= path('app_home_page') ~ '/rooms/' ~ logement.id %}
         <div style="cursor:pointer;" onclick="window.location.href='{{ path }}'" class="pays"> <div>{{ logement.ville }},{{logement.pays }} </div> <div><i class="bi bi-star-fill"></i>  <span class="note">5,0</span></div> </div>
         <div style="cursor:pointer;" onclick="window.location.href='{{ path }}'" class="titre">{{ logement.rue}}</div>
-        <div style="cursor:pointer;" onclick="window.location.href='{{ path }}'" class="date">1-6 Mai</div>
+        <div style="cursor:pointer;" onclick="window.location.href='{{ path }}'" class="date">N° Logement {{ logement.id }}</div>
         <div style="cursor:pointer;" onclick="window.location.href='{{ path }}'" class="prix">{%set floatNumber=logement.prix_nuite %}
             {% set intNumber = floatNumber|round(0, 'floor') %}
             {{ intNumber }}$

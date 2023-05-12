@@ -102,7 +102,7 @@ class LogementType extends AbstractType
             ->add('Nbr_sdb', IntegerType::class, [
                 'attr' => ['class' => 'form-control',
                     'min' => 0,
-                    'max' => 10]
+                    'max' => 50]
             ])
             ->add('NbrChambres', IntegerType::class, [
                 'attr' => ['class' => 'form-control',
